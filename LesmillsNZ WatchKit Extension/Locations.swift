@@ -15,7 +15,9 @@ struct ClubLocation: Decodable {
 
 class ClubLocations: ObservableObject {
     let locations: [ClubLocation]
-    
+    var count: Int {
+        locations.count
+    }
     var selected: ClubLocation {
         locations[0]
     }

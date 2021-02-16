@@ -28,20 +28,10 @@ struct DaysMenuView: View {
     var body: some View {
         VStack (alignment: .leading) {
             let clubs = ClubLocations()
-            CurrentClubView(name: clubs.selected.name)
-                .contentShape(Rectangle())
-                .onTapGesture {
-                    print(clubs.locations)
-                }
-//            NavigationLink(
-//                destination: LocationsView(locations: clubs)) {
-//                CurrentClubView(name: clubs.selected.name)
-//                    .contentShape(Rectangle())
-//                    .onTapGesture {
-//                        print(clubs.locations)
-//                    }
-//                }
-//            }
+            NavigationLink(
+                destination: LocationsView(clubLocations: clubs)) {
+                CurrentClubView(name: clubs.selected.name)
+            }.buttonStyle(PlainButtonStyle())
             List {
                 NavigationLink(
                     destination: TimetableView(title: "Sun 15/02")) {
@@ -78,8 +68,7 @@ struct DaysMenuView: View {
                     Text("Sat 21 Feb")
                         .padding(.leading, 10)
                 }
-            }
-            .navigationTitle("Lesmills NZ")
+            }.navigationTitle("Lesmills NZ")
         }
     }
 }

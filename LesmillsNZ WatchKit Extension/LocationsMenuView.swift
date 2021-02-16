@@ -21,16 +21,20 @@ struct LocationButton: View {
 }
 
 struct LocationsView: View {
-    let locations: ClubLocations
+    let clubLocations: ClubLocations
     var body: some View {
         List {
-//            LocationButton()
+            ForEach(0 ..< clubLocations.count) {
+                let location = self.clubLocations.locations[$0]
+                LocationButton(location: location)
+            }
         }
+        .navigationTitle("Set Club")
     }
 }
 
-//struct LocationsView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        LocationsView()
-//    }
-//}
+struct LocationsView_Previews: PreviewProvider {
+    static var previews: some View {
+        LocationsView(clubLocations:ClubLocations())
+    }
+}
