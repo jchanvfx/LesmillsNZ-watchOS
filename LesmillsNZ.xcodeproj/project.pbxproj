@@ -7,11 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		851096F625DB4B850002295E /* TimetableRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 851096F525DB4B850002295E /* TimetableRequest.swift */; };
+		8510970125DB89650002295E /* LocationsMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8510970025DB89650002295E /* LocationsMenuView.swift */; };
 		85440DD025D7D1AB003567D9 /* WorkoutInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85440DCF25D7D1AB003567D9 /* WorkoutInfoView.swift */; };
 		85440DD525D7D1BF003567D9 /* WorkoutRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85440DD425D7D1BF003567D9 /* WorkoutRowView.swift */; };
-		85440DDD25D92B00003567D9 /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85440DDC25D92B00003567D9 /* MenuView.swift */; };
-		8584EFFF25DA696B00311A2F /* WorkoutModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8584EFFE25DA696B00311A2F /* WorkoutModel.swift */; };
-		8584F00425DA738900311A2F /* test_data.json in Resources */ = {isa = PBXBuildFile; fileRef = 8584F00325DA738900311A2F /* test_data.json */; };
+		85440DDD25D92B00003567D9 /* DaysMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85440DDC25D92B00003567D9 /* DaysMenuView.swift */; };
+		8584EFFF25DA696B00311A2F /* FitnessClasses.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8584EFFE25DA696B00311A2F /* FitnessClasses.swift */; };
 		85AC5BA525D7CC890014D4F3 /* LesmillsNZApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85AC5BA425D7CC890014D4F3 /* LesmillsNZApp.swift */; };
 		85AC5BA725D7CC890014D4F3 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85AC5BA625D7CC890014D4F3 /* ContentView.swift */; };
 		85AC5BA925D7CC8C0014D4F3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 85AC5BA825D7CC8C0014D4F3 /* Assets.xcassets */; };
@@ -24,6 +25,8 @@
 		85AC5BC625D7CC8F0014D4F3 /* ComplicationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85AC5BC525D7CC8F0014D4F3 /* ComplicationController.swift */; };
 		85AC5BC825D7CC910014D4F3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 85AC5BC725D7CC910014D4F3 /* Assets.xcassets */; };
 		85AC5BCB25D7CC910014D4F3 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 85AC5BCA25D7CC910014D4F3 /* Preview Assets.xcassets */; };
+		85AE6F1A25DB8ACE002D9F28 /* Locations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85AE6F1925DB8ACE002D9F28 /* Locations.swift */; };
+		85AE6F2525DB8D70002D9F28 /* locations.json in Resources */ = {isa = PBXBuildFile; fileRef = 85AE6F2425DB8D70002D9F28 /* locations.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,11 +72,12 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		851096F525DB4B850002295E /* TimetableRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimetableRequest.swift; sourceTree = "<group>"; };
+		8510970025DB89650002295E /* LocationsMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationsMenuView.swift; sourceTree = "<group>"; };
 		85440DCF25D7D1AB003567D9 /* WorkoutInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutInfoView.swift; sourceTree = "<group>"; };
 		85440DD425D7D1BF003567D9 /* WorkoutRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutRowView.swift; sourceTree = "<group>"; };
-		85440DDC25D92B00003567D9 /* MenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
-		8584EFFE25DA696B00311A2F /* WorkoutModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutModel.swift; sourceTree = "<group>"; };
-		8584F00325DA738900311A2F /* test_data.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = test_data.json; path = ../../../../../Desktop/test_data.json; sourceTree = "<group>"; };
+		85440DDC25D92B00003567D9 /* DaysMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DaysMenuView.swift; sourceTree = "<group>"; };
+		8584EFFE25DA696B00311A2F /* FitnessClasses.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FitnessClasses.swift; sourceTree = "<group>"; };
 		85AC5BA125D7CC890014D4F3 /* LesmillsNZ.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LesmillsNZ.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		85AC5BA425D7CC890014D4F3 /* LesmillsNZApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LesmillsNZApp.swift; sourceTree = "<group>"; };
 		85AC5BA625D7CC890014D4F3 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -90,6 +94,8 @@
 		85AC5BC725D7CC910014D4F3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		85AC5BCA25D7CC910014D4F3 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		85AC5BCC25D7CC910014D4F3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		85AE6F1925DB8ACE002D9F28 /* Locations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Locations.swift; sourceTree = "<group>"; };
+		85AE6F2425DB8D70002D9F28 /* locations.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = locations.json; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.json; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -167,11 +173,15 @@
 				85AC5BC725D7CC910014D4F3 /* Assets.xcassets */,
 				85AC5BCC25D7CC910014D4F3 /* Info.plist */,
 				85AC5BC925D7CC910014D4F3 /* Preview Content */,
-				85440DDC25D92B00003567D9 /* MenuView.swift */,
+				85AE6F2425DB8D70002D9F28 /* locations.json */,
+				8510970025DB89650002295E /* LocationsMenuView.swift */,
+				85440DDC25D92B00003567D9 /* DaysMenuView.swift */,
 				85AC5BC125D7CC8F0014D4F3 /* TimetableView.swift */,
 				85440DCF25D7D1AB003567D9 /* WorkoutInfoView.swift */,
 				85440DD425D7D1BF003567D9 /* WorkoutRowView.swift */,
-				8584EFFE25DA696B00311A2F /* WorkoutModel.swift */,
+				85AE6F1925DB8ACE002D9F28 /* Locations.swift */,
+				8584EFFE25DA696B00311A2F /* FitnessClasses.swift */,
+				851096F525DB4B850002295E /* TimetableRequest.swift */,
 			);
 			path = "LesmillsNZ WatchKit Extension";
 			sourceTree = "<group>";
@@ -179,7 +189,6 @@
 		85AC5BC925D7CC910014D4F3 /* Preview Content */ = {
 			isa = PBXGroup;
 			children = (
-				8584F00325DA738900311A2F /* test_data.json */,
 				85AC5BCA25D7CC910014D4F3 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
@@ -304,7 +313,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				85AC5BCB25D7CC910014D4F3 /* Preview Assets.xcassets in Resources */,
-				8584F00425DA738900311A2F /* test_data.json in Resources */,
+				85AE6F2525DB8D70002D9F28 /* locations.json in Resources */,
 				85AC5BC825D7CC910014D4F3 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -328,9 +337,12 @@
 				85AC5BC425D7CC8F0014D4F3 /* LesmillsNZApp.swift in Sources */,
 				85440DD525D7D1BF003567D9 /* WorkoutRowView.swift in Sources */,
 				85AC5BC225D7CC8F0014D4F3 /* TimetableView.swift in Sources */,
-				8584EFFF25DA696B00311A2F /* WorkoutModel.swift in Sources */,
-				85440DDD25D92B00003567D9 /* MenuView.swift in Sources */,
+				8584EFFF25DA696B00311A2F /* FitnessClasses.swift in Sources */,
+				85AE6F1A25DB8ACE002D9F28 /* Locations.swift in Sources */,
+				85440DDD25D92B00003567D9 /* DaysMenuView.swift in Sources */,
 				85440DD025D7D1AB003567D9 /* WorkoutInfoView.swift in Sources */,
+				8510970125DB89650002295E /* LocationsMenuView.swift in Sources */,
+				851096F625DB4B850002295E /* TimetableRequest.swift in Sources */,
 				85AC5BC625D7CC8F0014D4F3 /* ComplicationController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

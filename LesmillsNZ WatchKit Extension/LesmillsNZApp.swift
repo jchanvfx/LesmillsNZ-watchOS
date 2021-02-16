@@ -12,7 +12,7 @@ struct LesmillsNZApp: App {
     var body: some Scene {
         WindowGroup {
             NavigationView {
-                MenuView()
+                DaysMenuView()
             }
         }
     }

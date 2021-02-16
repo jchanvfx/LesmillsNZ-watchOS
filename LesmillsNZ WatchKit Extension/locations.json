@@ -1,0 +1,41 @@
+[
+    {"AUCKLAND CITY": {
+        "id": "01",
+        "address": "186 Victoria Street, Auckland"}},
+    {"BRITOMART": {
+        "id": "09",
+        "address": "2 Britomart Place, Britomart"}},
+    {"CHRISTCHURCH": {
+        "id": "02",
+        "address": "203 Cashel St, Christchurch Central"}},
+    {"DUNEDIN": {
+        "id": "03",
+        "address": "12 Dowling St, Dunedin"}},
+    {"HAMILTON": {
+        "id": "05",
+        "address": "747 Victoria Street, Hamilton"}},
+    {"HOWICK": {
+        "id": "12",
+        "address": "100 Whitford Rd, Somerville"}},
+    {"HUTT CITY": {
+        "id": "08",
+        "address": "7 Pretoria St, Lower Hutt"}},
+    {"NEW LYNN": {
+        "id": "07",
+        "address": "2-4 Rankin Ave, New Lynn"}},
+    {"NEWMARKET": {
+        "id": "13",
+        "address": "269 Khyber Pass Road, Newmarket"}},
+    {"LAMBTON QUAY": {
+        "id": "10",
+        "address": "86-90 Lambton Quay, Wellington"}},
+    {"LES MILLS AT HOME": {
+        "id": "LMAH",
+        "address": "Instagram @lesmillsnz / TVNZ"}},
+    {"TAKAPUNA": {
+        "id": "06",
+        "address": "Cnr Lake Road &, Como St,Shore City, Takapuna"}},
+    {"TARANAKI STREET": {
+        "id": "04",
+        "address": "52-70 Taranaki St, Wellington"}}
+]
