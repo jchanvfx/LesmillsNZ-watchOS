@@ -1,41 +1,41 @@
 [
-    {"AUCKLAND CITY": {
+    {"name": "AUCKLAND CITY",
         "id": "01",
-        "address": "186 Victoria Street, Auckland"}},
-    {"BRITOMART": {
+        "address": "186 Victoria Street, Auckland"},
+    {"name": "BRITOMART",
         "id": "09",
-        "address": "2 Britomart Place, Britomart"}},
-    {"CHRISTCHURCH": {
+        "address": "2 Britomart Place, Britomart"},
+    {"name": "CHRISTCHURCH",
         "id": "02",
-        "address": "203 Cashel St, Christchurch Central"}},
-    {"DUNEDIN": {
+        "address": "203 Cashel St, Christchurch Central"},
+    {"name": "DUNEDIN",
         "id": "03",
-        "address": "12 Dowling St, Dunedin"}},
-    {"HAMILTON": {
+        "address": "12 Dowling St, Dunedin"},
+    {"name": "HAMILTON",
         "id": "05",
-        "address": "747 Victoria Street, Hamilton"}},
-    {"HOWICK": {
+        "address": "747 Victoria Street, Hamilton"},
+    {"name": "HOWICK",
         "id": "12",
-        "address": "100 Whitford Rd, Somerville"}},
-    {"HUTT CITY": {
+        "address": "100 Whitford Rd, Somerville"},
+    {"name": "HUTT CITY",
         "id": "08",
-        "address": "7 Pretoria St, Lower Hutt"}},
-    {"NEW LYNN": {
+        "address": "7 Pretoria St, Lower Hutt"},
+    {"name": "NEW LYNN",
         "id": "07",
-        "address": "2-4 Rankin Ave, New Lynn"}},
-    {"NEWMARKET": {
+        "address": "2-4 Rankin Ave, New Lynn"},
+    {"name": "NEWMARKET",
         "id": "13",
-        "address": "269 Khyber Pass Road, Newmarket"}},
-    {"LAMBTON QUAY": {
+        "address": "269 Khyber Pass Road, Newmarket"},
+    {"name": "LAMBTON QUAY",
         "id": "10",
-        "address": "86-90 Lambton Quay, Wellington"}},
-    {"LES MILLS AT HOME": {
+        "address": "86-90 Lambton Quay, Wellington"},
+    {"name": "LES MILLS AT HOME",
         "id": "LMAH",
-        "address": "Instagram @lesmillsnz / TVNZ"}},
-    {"TAKAPUNA": {
+        "address": "Instagram @lesmillsnz / TVNZ"},
+    {"name": "TAKAPUNA",
         "id": "06",
-        "address": "Cnr Lake Road &, Como St,Shore City, Takapuna"}},
-    {"TARANAKI STREET": {
+        "address": "Cnr Lake Road &, Como St,Shore City, Takapuna"},
+    {"name": "TARANAKI STREET",
         "id": "04",
-        "address": "52-70 Taranaki St, Wellington"}}
+        "address": "52-70 Taranaki St, Wellington"}
 ]
