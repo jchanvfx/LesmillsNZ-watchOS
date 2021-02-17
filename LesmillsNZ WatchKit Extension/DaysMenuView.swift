@@ -33,6 +33,12 @@ struct DaysMenuView: View {
                 CurrentClubView(name: clubs.selected.name)
             }.buttonStyle(PlainButtonStyle())
             List {
+                Text("Test")
+                    .padding(.horizontal)
+                    .onTapGesture {
+                        requestTimetable(clubID: "04")
+                    }
+                
                 NavigationLink(
                     destination: TimetableView(title: "Sun 15/02")) {
                     Text("Sun 15 Feb")

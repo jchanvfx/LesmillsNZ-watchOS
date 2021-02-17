@@ -27,6 +27,7 @@
 		85AC5BCB25D7CC910014D4F3 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 85AC5BCA25D7CC910014D4F3 /* Preview Assets.xcassets */; };
 		85AE6F1A25DB8ACE002D9F28 /* Locations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85AE6F1925DB8ACE002D9F28 /* Locations.swift */; };
 		85AE6F2525DB8D70002D9F28 /* locations.json in Resources */ = {isa = PBXBuildFile; fileRef = 85AE6F2425DB8D70002D9F28 /* locations.json */; };
+		85E4A2A825DD232800D90DCE /* FitnessClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85E4A2A325DD232400D90DCE /* FitnessClass.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -96,6 +97,7 @@
 		85AC5BCC25D7CC910014D4F3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		85AE6F1925DB8ACE002D9F28 /* Locations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Locations.swift; sourceTree = "<group>"; };
 		85AE6F2425DB8D70002D9F28 /* locations.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = locations.json; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.json; };
+		85E4A2A325DD232400D90DCE /* FitnessClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FitnessClass.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -180,8 +182,9 @@
 				85440DCF25D7D1AB003567D9 /* WorkoutInfoView.swift */,
 				85440DD425D7D1BF003567D9 /* WorkoutRowView.swift */,
 				85AE6F1925DB8ACE002D9F28 /* Locations.swift */,
-				8584EFFE25DA696B00311A2F /* FitnessClasses.swift */,
 				851096F525DB4B850002295E /* TimetableRequest.swift */,
+				85E4A2A325DD232400D90DCE /* FitnessClass.swift */,
+				8584EFFE25DA696B00311A2F /* FitnessClasses.swift */,
 			);
 			path = "LesmillsNZ WatchKit Extension";
 			sourceTree = "<group>";
@@ -337,6 +340,7 @@
 				85AC5BC425D7CC8F0014D4F3 /* LesmillsNZApp.swift in Sources */,
 				85440DD525D7D1BF003567D9 /* WorkoutRowView.swift in Sources */,
 				85AC5BC225D7CC8F0014D4F3 /* TimetableView.swift in Sources */,
+				85E4A2A825DD232800D90DCE /* FitnessClass.swift in Sources */,
 				8584EFFF25DA696B00311A2F /* FitnessClasses.swift in Sources */,
 				85AE6F1A25DB8ACE002D9F28 /* Locations.swift in Sources */,
 				85440DDD25D92B00003567D9 /* DaysMenuView.swift in Sources */,

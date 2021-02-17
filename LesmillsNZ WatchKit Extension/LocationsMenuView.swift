@@ -29,7 +29,7 @@ struct LocationsView: View {
                 LocationButton(location: location)
             }
         }
-        .navigationTitle("Set Club")
+        .navigationTitle("Location")
     }
 }
 

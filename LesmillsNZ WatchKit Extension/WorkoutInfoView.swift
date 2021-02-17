@@ -16,7 +16,7 @@ struct WorkoutInfoView: View {
             Text("with")
                 .font(.system(size: 10))
                 .foregroundColor(.gray)
-            Text(info.instructor1)
+            Text(info.instructors)
                 .font(.system(size: 12))
             RoundedRectangle(cornerRadius: 3)
                 .fill(Color(hex:info.color))
@@ -36,8 +36,7 @@ struct WorkoutInfoView: View {
             Text("minutes")
                 .font(.system(size: 12))
                 .foregroundColor(.green)
-                
-        }.navigationTitle("Classes")
+        }.navigationTitle("Info")
     }
 }
 
