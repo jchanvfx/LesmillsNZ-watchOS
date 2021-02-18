@@ -7,6 +7,14 @@
 
 import Foundation
 
+func formatDate(timeStamp:String, dateFormat:String) -> String {
+    let formatter = DateFormatter()
+    formatter.dateFormat = "yyyy-MM-dd-HH:mm"
+    let date = formatter.date(from: timeStamp)!
+    formatter.dateFormat = dateFormat
+    return "\(formatter.string(from: date))"
+}
+
 struct FitnessClass {
     let name: String
     let color: String
@@ -14,26 +22,18 @@ struct FitnessClass {
     let instructor2: String
     let duration: Int
     let location: String
-    let dateObject: Date
+    let timeStamp: String
     var day: String {
-        let formatter = DateFormatter()
-        formatter.dateFormat = "E"
-        return "\(formatter.string(from: dateObject))"
+        return formatDate(timeStamp: timeStamp, dateFormat: "E")
     }
     var date: String {
-        let formatter = DateFormatter()
-        formatter.dateFormat = "dd"
-        return "\(formatter.string(from: dateObject))"
+        return formatDate(timeStamp: timeStamp, dateFormat: "dd")
     }
     var month: String {
-        let formatter = DateFormatter()
-        formatter.dateFormat = "MMM"
-        return "\(formatter.string(from: dateObject))"
+        return formatDate(timeStamp: timeStamp, dateFormat: "MMM")
     }
     var time: String {
-        let formatter = DateFormatter()
-        formatter.dateFormat = "h:mm a"
-        return "\(formatter.string(from: dateObject))"
+        return formatDate(timeStamp: timeStamp, dateFormat: "h:mm a")
     }
     var instructors: String {
         if instructor2 != "" {
@@ -49,6 +49,6 @@ struct FitnessClass {
         instructor2: "Mana Williams",
         duration: 45,
         location: "Studio 1",
-        dateObject: Date()
+        timeStamp: "2021-02-17-04:27"
     )
 }

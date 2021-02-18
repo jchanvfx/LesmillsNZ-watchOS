@@ -23,7 +23,10 @@ func getDate(dateStr: String) -> Date? {
     return Date()
 }
 
-func requestTimetable(clubID:String) {
+func createTimetableRequest(clubID:String, completionBlock: @escaping ([String: [FitnessClass]]) -> Void) {
+    let exclColors = ["#000", "#000000", "black"]
+    var fitnessClasses = [String: [FitnessClass]]()
+
     let bodyData = try? JSONSerialization.data(withJSONObject: ["club": clubID])
     let url = URL(string: "https://www.lesmills.co.nz/api/timetable/get-timetable-epi")!
     var request = URLRequest(url: url)
@@ -36,19 +39,23 @@ func requestTimetable(clubID:String) {
     URLSession.shared.dataTask(with: request) {
         data, response, error in
 
-        // Handle the request here.
+        // Handle the request.
         guard let data = data else {
             print("No data in response:\(error?.localizedDescription ?? "Unknown Error").")
             return
         }
         
         let responseJSON = try? JSONSerialization.jsonObject(with: data, options: [])
+        // sort the data.
         if let responseJSON = responseJSON as? [String: Any] {
             if let clsData = responseJSON["Classes"] as? [Dictionary<String, Any>] {
                 for cls in clsData {
                     let name: String = cls["ClassName"] as? String ?? ""
-                    let color: String = cls["Colour"] as? String ?? "#848484"
                     let duration: Int = cls["Duration"] as? Int ?? 0
+                    var color: String = cls["Colour"] as? String ?? "#848484"
+                    if exclColors.contains(color) {
+                        color = "#848484"
+                    }
                     var instructor1:String = ""
                     if let instr1 = cls["MainInstructor"] as? [String: Any] {
                         instructor1 = instr1["Name"] as? String ?? ""
@@ -63,6 +70,14 @@ func requestTimetable(clubID:String) {
                     }
                     let dateStr: String = cls["StartDateTime"] as? String ?? ""
                     let date = getDate(dateStr:dateStr)!
+
+                    let dateFormatter = DateFormatter()
+                    dateFormatter.dateFormat = "yyMMdd"
+                    let clsKey = dateFormatter.string(from: date)
+                    
+                    dateFormatter.dateFormat = "yyyy-MM-dd-HH:mm"
+                    let timeStamp = dateFormatter.string(from: date)
+                    
                     let fitnessCls = FitnessClass(
                         name: name,
                         color: color,
@@ -70,11 +85,17 @@ func requestTimetable(clubID:String) {
                         instructor2: instructor2,
                         duration: duration,
                         location: siteName,
-                        dateObject: date)
+                        timeStamp: timeStamp)
+
+                    fitnessClasses[clsKey, default: []].append(fitnessCls)
                 }
             }
         }
-     
+        // sort fitness classes by time stamp.
+        for key in Array(fitnessClasses.keys) {
+            fitnessClasses[key] = fitnessClasses[key]!.sorted(
+                by: {$0.timeStamp < $1.timeStamp})
+        }
+        completionBlock(fitnessClasses)
     }.resume()
-    
 }
