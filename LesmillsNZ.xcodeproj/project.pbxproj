@@ -28,6 +28,7 @@
 		85AE6F1A25DB8ACE002D9F28 /* Locations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85AE6F1925DB8ACE002D9F28 /* Locations.swift */; };
 		85AE6F2525DB8D70002D9F28 /* locations.json in Resources */ = {isa = PBXBuildFile; fileRef = 85AE6F2425DB8D70002D9F28 /* locations.json */; };
 		85E4A2A825DD232800D90DCE /* FitnessClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85E4A2A325DD232400D90DCE /* FitnessClass.swift */; };
+		85E4A2B025DE6F2A00D90DCE /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85E4A2AF25DE6F2A00D90DCE /* LoadingView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -98,6 +99,7 @@
 		85AE6F1925DB8ACE002D9F28 /* Locations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Locations.swift; sourceTree = "<group>"; };
 		85AE6F2425DB8D70002D9F28 /* locations.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = locations.json; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.json; };
 		85E4A2A325DD232400D90DCE /* FitnessClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FitnessClass.swift; sourceTree = "<group>"; };
+		85E4A2AF25DE6F2A00D90DCE /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -176,6 +178,7 @@
 				85AC5BCC25D7CC910014D4F3 /* Info.plist */,
 				85AC5BC925D7CC910014D4F3 /* Preview Content */,
 				85AE6F2425DB8D70002D9F28 /* locations.json */,
+				85E4A2AF25DE6F2A00D90DCE /* LoadingView.swift */,
 				8510970025DB89650002295E /* LocationsMenuView.swift */,
 				85440DDC25D92B00003567D9 /* DaysMenuView.swift */,
 				85AC5BC125D7CC8F0014D4F3 /* TimetableView.swift */,
@@ -342,6 +345,7 @@
 				85AC5BC225D7CC8F0014D4F3 /* TimetableView.swift in Sources */,
 				85E4A2A825DD232800D90DCE /* FitnessClass.swift in Sources */,
 				8584EFFF25DA696B00311A2F /* FitnessClasses.swift in Sources */,
+				85E4A2B025DE6F2A00D90DCE /* LoadingView.swift in Sources */,
 				85AE6F1A25DB8ACE002D9F28 /* Locations.swift in Sources */,
 				85440DDD25D92B00003567D9 /* DaysMenuView.swift in Sources */,
 				85440DD025D7D1AB003567D9 /* WorkoutInfoView.swift in Sources */,
