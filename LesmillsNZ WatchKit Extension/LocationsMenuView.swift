@@ -27,6 +27,9 @@ struct LocationsView: View {
             ForEach(0 ..< clubLocations.count) { idx in
                 let location = self.clubLocations.locations[idx]
                 LocationButton(location: location)
+                    .onTapGesture {
+                        print("Selected: \(location.id) - \(location.name)")
+                    }
             }
         }
         .navigationTitle("Location")

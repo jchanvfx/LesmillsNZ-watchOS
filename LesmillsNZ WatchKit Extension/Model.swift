@@ -9,11 +9,10 @@ import Foundation
 
 
 class UserSettings: ObservableObject {
-
-    var selectedClub:String
+    @Published var selectedClubId:String
     
     init() {
         // note to self read the app settings file here
-        selectedClub = "04"
+        selectedClubId = "04"
     }
 }

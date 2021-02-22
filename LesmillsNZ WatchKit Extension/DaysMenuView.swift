@@ -25,6 +25,7 @@ struct CurrentClubView: View {
 
 struct DaysMenuView: View {
     @EnvironmentObject var fitnessClasses: FitnessClasses
+    @EnvironmentObject var settings: UserSettings
     
     var body: some View {
         VStack (alignment: .leading) {
@@ -34,15 +35,16 @@ struct DaysMenuView: View {
                 CurrentClubView(name: clubs.selected.name)
             }.buttonStyle(PlainButtonStyle())
             List {
-                ForEach(0 ..< fitnessClasses.ids.count) { idx in
-                    let id = fitnessClasses.ids[idx]
-                    let text = fitnessClasses.getDayText(id:id)
-                    let title = fitnessClasses.getDayTitle(id: id)
-                    let workouts = fitnessClasses.allWorkouts[id]
+                let allWorkouts = fitnessClasses.allWorkouts
+                let ids = Array(allWorkouts.keys).sorted(by: {$0 < $1})
+                ForEach(0 ..< ids.count) { idx in
+                    let id = ids[idx]
                     NavigationLink(
                         destination: TimetableView(
-                            title: title, workouts: workouts!)) {
-                        Text(text)
+                            title: fitnessClasses.getDayTitle(id: id),
+                            workouts: allWorkouts[id]!)
+                    ) {
+                        Text(fitnessClasses.getDayText(id:id))
                             .padding(.horizontal)
                     }
                 }

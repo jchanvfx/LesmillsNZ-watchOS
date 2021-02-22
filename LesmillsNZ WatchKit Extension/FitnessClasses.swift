@@ -8,11 +8,9 @@
 import Foundation
 
 class FitnessClasses: ObservableObject {
-    @Published var ids: [String]
     @Published var allWorkouts: [String: [FitnessClass]]
 
     init() {
-        self.ids = []
         self.allWorkouts = [:]
     }
 

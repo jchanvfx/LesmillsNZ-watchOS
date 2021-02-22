@@ -29,7 +29,7 @@
 		85E4A2A825DD232800D90DCE /* FitnessClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85E4A2A325DD232400D90DCE /* FitnessClass.swift */; };
 		85E4A2B025DE6F2A00D90DCE /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85E4A2AF25DE6F2A00D90DCE /* LoadingView.swift */; };
 		85E4A2BB25DF1FD800D90DCE /* FitnessClasses.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85E4A2BA25DF1FD800D90DCE /* FitnessClasses.swift */; };
-		85E4A2C025DFA35000D90DCE /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85E4A2BF25DFA35000D90DCE /* Settings.swift */; };
+		85E4A2C025DFA35000D90DCE /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85E4A2BF25DFA35000D90DCE /* Model.swift */; };
 		85E4A2C825DFC53B00D90DCE /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85E4A2C725DFC53B00D90DCE /* MainView.swift */; };
 /* End PBXBuildFile section */
 
@@ -102,7 +102,7 @@
 		85E4A2A325DD232400D90DCE /* FitnessClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FitnessClass.swift; sourceTree = "<group>"; };
 		85E4A2AF25DE6F2A00D90DCE /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		85E4A2BA25DF1FD800D90DCE /* FitnessClasses.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FitnessClasses.swift; sourceTree = "<group>"; };
-		85E4A2BF25DFA35000D90DCE /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
+		85E4A2BF25DFA35000D90DCE /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		85E4A2C725DFC53B00D90DCE /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -176,7 +176,6 @@
 		85AC5BC025D7CC8F0014D4F3 /* LesmillsNZ WatchKit Extension */ = {
 			isa = PBXGroup;
 			children = (
-				85E4A2BF25DFA35000D90DCE /* Settings.swift */,
 				85AC5BC325D7CC8F0014D4F3 /* LesmillsNZApp.swift */,
 				85AC5BC525D7CC8F0014D4F3 /* ComplicationController.swift */,
 				85AC5BC725D7CC910014D4F3 /* Assets.xcassets */,
@@ -184,10 +183,11 @@
 				85AC5BC925D7CC910014D4F3 /* Preview Content */,
 				85AE6F2425DB8D70002D9F28 /* locations.json */,
 				85AE6F1925DB8ACE002D9F28 /* Locations.swift */,
-				85E4A2C725DFC53B00D90DCE /* MainView.swift */,
+				851096F525DB4B850002295E /* TimetableRequest.swift */,
+				85E4A2BF25DFA35000D90DCE /* Model.swift */,
 				85E4A2A325DD232400D90DCE /* FitnessClass.swift */,
 				85E4A2BA25DF1FD800D90DCE /* FitnessClasses.swift */,
-				851096F525DB4B850002295E /* TimetableRequest.swift */,
+				85E4A2C725DFC53B00D90DCE /* MainView.swift */,
 				85E4A2AF25DE6F2A00D90DCE /* LoadingView.swift */,
 				8510970025DB89650002295E /* LocationsMenuView.swift */,
 				85440DDC25D92B00003567D9 /* DaysMenuView.swift */,
@@ -349,7 +349,7 @@
 				85AC5BC425D7CC8F0014D4F3 /* LesmillsNZApp.swift in Sources */,
 				85E4A2C825DFC53B00D90DCE /* MainView.swift in Sources */,
 				85440DD525D7D1BF003567D9 /* WorkoutRowView.swift in Sources */,
-				85E4A2C025DFA35000D90DCE /* Settings.swift in Sources */,
+				85E4A2C025DFA35000D90DCE /* Model.swift in Sources */,
 				85AC5BC225D7CC8F0014D4F3 /* TimetableView.swift in Sources */,
 				85E4A2A825DD232800D90DCE /* FitnessClass.swift in Sources */,
 				85E4A2B025DE6F2A00D90DCE /* LoadingView.swift in Sources */,
