@@ -8,12 +8,12 @@
 import SwiftUI
 
 struct CurrentClubView: View {
-    let name: String
+    let location: ClubLocation
     var body: some View {
         HStack(spacing: 4) {
             Image(systemName: "location.fill")
                 .foregroundColor(.blue)
-            Text(name)
+            Text(location.name)
                 .fontWeight(.semibold)
                 .foregroundColor(.gray)
         }
@@ -25,20 +25,19 @@ struct CurrentClubView: View {
 
 struct DaysMenuView: View {
     @EnvironmentObject var fitnessClasses: FitnessClasses
+    @EnvironmentObject var clubLocations: ClubLocations
     @EnvironmentObject var settings: UserSettings
     
     var body: some View {
         VStack (alignment: .leading) {
-            let clubs = ClubLocations()
             NavigationLink(
-                destination: LocationsView(clubLocations: clubs)) {
-                CurrentClubView(name: clubs.selected.name)
+                destination: LocationsView(clubLocations: clubLocations)) {
+                CurrentClubView(location: clubLocations.selected)
             }.buttonStyle(PlainButtonStyle())
             List {
                 let allWorkouts = fitnessClasses.allWorkouts
                 let ids = Array(allWorkouts.keys).sorted(by: {$0 < $1})
-                ForEach(0 ..< ids.count) { idx in
-                    let id = ids[idx]
+                ForEach(ids, id: \.self) { id in
                     NavigationLink(
                         destination: TimetableView(
                             title: fitnessClasses.getDayTitle(id: id),

@@ -9,6 +9,7 @@ import SwiftUI
 
 struct MainView: View {
     @StateObject var settings = UserSettings()
+    @StateObject var clubLocations = ClubLocations()
     @StateObject var fitnessClasses = FitnessClasses()
     @State var isLoadingVisible = true
     
@@ -23,19 +24,23 @@ struct MainView: View {
                 DaysMenuView()
             }
             .environmentObject(fitnessClasses)
+            .environmentObject(clubLocations)
             .environmentObject(settings)
             .transition(.move(edge: .bottom))
         }
     }
     
     func loadTimetable() {
+        let selectedClub = clubLocations.selected
         createTimetableRequest(
-            clubID: settings.selectedClubId,
+            clubID: selectedClub.id,
             completionBlock: processTimtableData)
     }
 
     func processTimtableData(requestData:[String: [FitnessClass]]) {
-        fitnessClasses.allWorkouts = requestData
+        DispatchQueue.main.async {
+            fitnessClasses.allWorkouts = requestData
+        }
         withAnimation {
             isLoadingVisible.toggle()
         }
