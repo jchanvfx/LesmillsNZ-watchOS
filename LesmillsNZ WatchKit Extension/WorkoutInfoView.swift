@@ -11,8 +11,8 @@ struct WorkoutInfoView: View {
     let info: FitnessClass
     var body: some View {
         VStack {
-            Text(info.name.uppercased())
-                .font(.title3)
+            Text(info.name)
+                .font(.system(size: 14))
             Text("with")
                 .font(.system(size: 10))
                 .foregroundColor(.gray)

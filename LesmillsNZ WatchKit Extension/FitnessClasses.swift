@@ -8,12 +8,33 @@
 import Foundation
 
 class FitnessClasses: ObservableObject {
-    let workoutsClasses: [FitnessClass]
-    var today: FitnessClass {
-        workoutsClasses[0]
+    @Published var ids: [String]
+    @Published var allWorkouts: [String: [FitnessClass]]
+
+    init() {
+        self.ids = []
+        self.allWorkouts = [:]
+    }
+
+    func getDayText(id:String) -> String {
+        let formatter = DateFormatter()
+        formatter.timeZone = TimeZone.current
+        formatter.locale = Locale.current
+        formatter.dateFormat = "yyMMdd"
+        let date = formatter.date(from: id)
+        formatter.dateFormat = "E dd MMM"
+        return "\(formatter.string(from: date!))"
+        
     }
     
-    init() {
-        workoutsClasses = [FitnessClass.example]
+    func getDayTitle(id:String) -> String {
+        let formatter = DateFormatter()
+        formatter.timeZone = TimeZone.current
+        formatter.locale = Locale.current
+        formatter.dateFormat = "yyMMdd"
+        let date = formatter.date(from: id)
+        formatter.dateFormat = "E dd/MM"
+        return "\(formatter.string(from: date!))"
+        
     }
 }

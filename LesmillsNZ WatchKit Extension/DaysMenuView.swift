@@ -24,6 +24,7 @@ struct CurrentClubView: View {
 }
 
 struct DaysMenuView: View {
+    @EnvironmentObject var fitnessClasses: FitnessClasses
     
     var body: some View {
         VStack (alignment: .leading) {
@@ -33,40 +34,17 @@ struct DaysMenuView: View {
                 CurrentClubView(name: clubs.selected.name)
             }.buttonStyle(PlainButtonStyle())
             List {
-                NavigationLink(
-                    destination: TimetableView(title: "Sun 15/02")) {
-                    Text("Sun 15 Feb")
-                        .padding(.horizontal)
-                }
-                NavigationLink(
-                    destination: TimetableView(title: "Mon 16/02")) {
-                    Text("Mon 16 Feb")
-                        .padding(.horizontal)
-                }
-                NavigationLink(
-                    destination: TimetableView(title: "Tue 17/02")) {
-                    Text("Tue 17 Feb")
-                        .padding(.horizontal)
-                }
-                NavigationLink(
-                    destination: TimetableView(title: "Wed 18/02")) {
-                    Text("Wed 18 Feb")
-                        .padding(.horizontal)
-                }
-                NavigationLink(
-                    destination: TimetableView(title: "Thur 19/02")) {
-                    Text("Thu 19 Feb")
-                        .padding(.leading, 10)
-                }
-                NavigationLink(
-                    destination: TimetableView(title: "Fri 20/02")) {
-                    Text("Fri 20 Feb")
-                        .padding(.leading, 10)
-                }
-                NavigationLink(
-                    destination: TimetableView(title: "Sat 21/02")) {
-                    Text("Sat 21 Feb")
-                        .padding(.leading, 10)
+                ForEach(0 ..< fitnessClasses.ids.count) { idx in
+                    let id = fitnessClasses.ids[idx]
+                    let text = fitnessClasses.getDayText(id:id)
+                    let title = fitnessClasses.getDayTitle(id: id)
+                    let workouts = fitnessClasses.allWorkouts[id]
+                    NavigationLink(
+                        destination: TimetableView(
+                            title: title, workouts: workouts!)) {
+                        Text(text)
+                            .padding(.horizontal)
+                    }
                 }
             }.navigationTitle("Lesmills NZ")
         }

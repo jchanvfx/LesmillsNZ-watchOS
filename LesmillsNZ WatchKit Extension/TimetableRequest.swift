@@ -23,8 +23,25 @@ func getDate(dateStr: String) -> Date? {
     return Date()
 }
 
-func createTimetableRequest(clubID:String, completionBlock: @escaping ([String: [FitnessClass]]) -> Void) {
+func createTimetableRequest(
+    clubID:String, completionBlock: @escaping ([String: [FitnessClass]]) -> Void) {
+
+    //color overrides
+//    let defaultColors = [
+//        "BODYATTACK"  : "#FFB81C",
+//        "BODYBALANCE" : "#C5E86C",
+//        "BODYCOMBAT"  : "#787121",
+//        "BODYJAM"     : "#FEDD00",
+//        "BODYPUMP"    : "#E4002B",
+//        "BODYSTEP"    : "#008C95",
+//        "CXWORX"      : "#E35205",
+//        "RPM"         : "#00A9E0",
+//        "SH'BAM"      : "#D0006F",
+//        "SPRINT"      : "#FEDD00",
+//        "TONE"        : "#8246AF"
+//    ]
     let exclColors = ["#000", "#000000", "black"]
+
     var fitnessClasses = [String: [FitnessClass]]()
 
     let bodyData = try? JSONSerialization.data(withJSONObject: ["club": clubID])
@@ -50,12 +67,21 @@ func createTimetableRequest(clubID:String, completionBlock: @escaping ([String: 
         if let responseJSON = responseJSON as? [String: Any] {
             if let clsData = responseJSON["Classes"] as? [Dictionary<String, Any>] {
                 for cls in clsData {
-                    let name: String = cls["ClassName"] as? String ?? ""
                     let duration: Int = cls["Duration"] as? Int ?? 0
+                    let name: String = (cls["ClassName"] as? String ?? "").uppercased()
+                    
+                    // class color check
                     var color: String = cls["Colour"] as? String ?? "#848484"
+//                    for (k, v) in defaultColors {
+//                        if color.contains(k) {
+//                            color = v
+//                            break
+//                        }
+//                    }
                     if exclColors.contains(color) {
                         color = "#848484"
                     }
+
                     var instructor1:String = ""
                     if let instr1 = cls["MainInstructor"] as? [String: Any] {
                         instructor1 = instr1["Name"] as? String ?? ""

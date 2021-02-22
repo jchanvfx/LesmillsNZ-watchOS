@@ -8,13 +8,16 @@
 import SwiftUI
 
 struct LoadingView: View {
-    let style = StrokeStyle(lineWidth: 8, lineCap: .round)
+    let style = StrokeStyle(lineWidth: 6, lineCap: .round)
     let color = Color.blue
-    @State var animate = false
+    @State private var animate = false
 
     var body: some View {
         VStack(spacing: 2) {
             ZStack {
+                Circle()
+                    .stroke(
+                        AngularGradient(gradient: .init(colors: [Color(hex:"#262626")]), center: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/), style: style)
                 Circle()
                     .trim(from: 0.0, to: 0.3)
                     .stroke(
@@ -26,12 +29,12 @@ struct LoadingView: View {
                     .trim(from: 0.5, to: 0.8)
                     .stroke(
                         AngularGradient(gradient: .init(colors: [Color.green]), center: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/), style: style)
-                    .rotationEffect(Angle(degrees: animate ? 360 : 0))
-                    .animation(Animation.linear(duration: 0.7).repeatForever(autoreverses: false))
+                    .rotationEffect(Angle(degrees: !animate ? 360 : 0))
+                    .animation(Animation.linear(duration: 1.0).repeatForever(autoreverses: false))
             }
             .frame(width: 80, height: 80)
             .onAppear() {
-                self.animate.toggle()
+                animate.toggle()
             }
             Spacer()
                 .frame(height: 20)

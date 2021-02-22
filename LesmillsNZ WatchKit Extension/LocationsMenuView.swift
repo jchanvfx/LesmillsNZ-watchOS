@@ -24,8 +24,8 @@ struct LocationsView: View {
     let clubLocations: ClubLocations
     var body: some View {
         List {
-            ForEach(0 ..< clubLocations.count) {
-                let location = self.clubLocations.locations[$0]
+            ForEach(0 ..< clubLocations.count) { idx in
+                let location = self.clubLocations.locations[idx]
                 LocationButton(location: location)
             }
         }

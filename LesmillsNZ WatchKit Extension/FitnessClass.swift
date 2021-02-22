@@ -43,10 +43,10 @@ struct FitnessClass {
     }
     
     static let example = FitnessClass(
-        name: "BodyAttack",
+        name: "TEST CLASS",
         color: "#FFB81C",
-        instructor1: "Zak Feng",
-        instructor2: "Mana Williams",
+        instructor1: "Username 1",
+        instructor2: "Username 2",
         duration: 45,
         location: "Studio 1",
         timeStamp: "2021-02-17-04:27"

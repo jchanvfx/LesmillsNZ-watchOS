@@ -11,8 +11,8 @@ struct WorkoutRowView: View {
     let info: FitnessClass
     var body: some View {
         VStack {
-            Text(info.name.uppercased())
-                .font(.system(size: 14))
+            Text(info.name)
+                .font(.system(size: 12))
                 .fontWeight(.semibold)
             Text(info.location)
                 .font(.system(size: 12))
