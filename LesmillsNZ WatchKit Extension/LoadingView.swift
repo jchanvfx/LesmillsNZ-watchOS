@@ -27,7 +27,7 @@ struct LoadingView: View {
                             gradient: .init(colors: [color]), center: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/),
                         style: style)
                     .rotationEffect(Angle(degrees: animate ? 360 : 0))
-                    .animation(Animation.linear(duration: 0.5).repeatForever(autoreverses: false))
+                    .animation(Animation.linear(duration: 0.8).repeatForever(autoreverses: false))
                 
                 Circle()
                     .trim(from: 0.6, to: 0.9)
@@ -35,8 +35,8 @@ struct LoadingView: View {
                         AngularGradient(
                             gradient: .init(colors: [color]), center: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/),
                         style: style)
-                    .rotationEffect(Angle(degrees: !animate ? 360 : 0))
-                    .animation(Animation.linear(duration: 1.0).repeatForever(autoreverses: false))
+                    .rotationEffect(Angle(degrees: animate ? 360 : 0))
+                    .animation(Animation.linear(duration: 0.8).repeatForever(autoreverses: false))
             }
             .frame(width: 80, height: 80)
             .onAppear() {
