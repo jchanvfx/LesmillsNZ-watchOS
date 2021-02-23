@@ -18,9 +18,6 @@ class ClubLocations: ObservableObject {
     var count: Int {
         locations.count
     }
-    var selected: ClubLocation {
-        locations[0]
-    }
 
     init() {
         let url = Bundle.main.url(
@@ -28,5 +25,14 @@ class ClubLocations: ObservableObject {
         let data = try! Data(contentsOf: url)
         locations = try! JSONDecoder().decode(
             [ClubLocation].self, from: data)
+    }
+    
+    func getClubById(id:String) -> ClubLocation? {
+        for club in self.locations {
+            if club.id == id {
+                return club
+            }
+        }
+        return nil
     }
 }

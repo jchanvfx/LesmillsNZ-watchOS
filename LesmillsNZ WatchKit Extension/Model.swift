@@ -9,10 +9,14 @@ import Foundation
 
 
 class UserSettings: ObservableObject {
-    @Published var selectedClubId:String
+    @Published var clubId:String
     
     init() {
         // note to self read the app settings file here
-        selectedClubId = "04"
+        clubId = "04"
+    }
+
+    func setClubId(id:String) {
+        self.clubId = id
     }
 }

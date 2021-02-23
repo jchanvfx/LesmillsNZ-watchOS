@@ -20,22 +20,21 @@ struct LocationButton: View {
     }
 }
 
-struct LocationsView: View {
-    let clubLocations: ClubLocations
-
+struct LocationsMenuView: View {
+    @EnvironmentObject var clubLocations: ClubLocations
+    @EnvironmentObject var settings: UserSettings
     @Environment(\.presentationMode) var presentationMode
 
     var body: some View {
         List {
             ForEach(0 ..< clubLocations.count) { idx in
-                let location = self.clubLocations.locations[idx]
+                let location = clubLocations.locations[idx]
                 LocationButton(location: location)
                     .onTapGesture {
-                        // need to set club and reload the timetable request
-                        print("Selected: \(location.id) - \(location.name)")
-                        
+                        // update selected club id in settings.
+                        settings.setClubId(id:location.id)
                         // pop the current view.
-                        self.presentationMode.wrappedValue.dismiss()
+                        presentationMode.wrappedValue.dismiss()
                     }
             }
         }
@@ -45,6 +44,6 @@ struct LocationsView: View {
 
 struct LocationsView_Previews: PreviewProvider {
     static var previews: some View {
-        LocationsView(clubLocations:ClubLocations())
+        LocationsMenuView()
     }
 }

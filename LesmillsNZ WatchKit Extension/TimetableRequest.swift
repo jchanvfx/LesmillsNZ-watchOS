@@ -11,8 +11,10 @@ func getDate(dateStr: String) -> Date? {
     let dateFormatter = DateFormatter()
     dateFormatter.timeZone = TimeZone.current
     dateFormatter.locale = Locale.current
-    let formatTypes = ["yyyy-MM-dd'T'HH:mm:ssZ",
-                       "yyyy-MM-dd HH:mm:ss Z"]
+    let formatTypes = [
+        "yyyy-MM-dd'T'HH:mm:ssZ",
+        "yyyy-MM-dd HH:mm:ss Z"
+    ]
     for fmt in formatTypes {
         dateFormatter.dateFormat = fmt
         let date = dateFormatter.date(from: dateStr)
@@ -72,13 +74,14 @@ func createTimetableRequest(
                     let name: String = (cls["ClassName"] as? String ?? "").uppercased()
                     
                     var color: String = cls["Colour"] as? String ?? "#848484"
-                    // check the name for default class color
+                    // get default colors by the class name.
                     for (k, v) in defaultColors {
                         if name.contains(k) {
                             color = v
                             break
                         }
                     }
+                    // set grey since the default bg is black.
                     if exclColors.contains(color) {
                         color = "#848484"
                     }
@@ -118,7 +121,7 @@ func createTimetableRequest(
                 }
             }
         }
-        // sort fitness classes by time stamp.
+        // sort class data by time stamp key.
         for key in Array(fitnessClasses.keys) {
             fitnessClasses[key] = fitnessClasses[key]!.sorted(
                 by: {$0.timeStamp < $1.timeStamp})

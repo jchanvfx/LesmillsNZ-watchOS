@@ -17,18 +17,24 @@ struct LoadingView: View {
             ZStack {
                 Circle()
                     .stroke(
-                        AngularGradient(gradient: .init(colors: [Color(hex:"#262626")]), center: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/), style: style)
+                        AngularGradient(
+                            gradient: .init(colors: [Color(hex:"#262626")]), center: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/),
+                        style: style)
                 Circle()
-                    .trim(from: 0.0, to: 0.3)
+                    .trim(from: 0.1, to: 0.4)
                     .stroke(
-                        AngularGradient(gradient: .init(colors: [color]), center: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/), style: style)
+                        AngularGradient(
+                            gradient: .init(colors: [color]), center: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/),
+                        style: style)
                     .rotationEffect(Angle(degrees: animate ? 360 : 0))
-                    .animation(Animation.linear(duration: 1.0).repeatForever(autoreverses: false))
+                    .animation(Animation.linear(duration: 0.5).repeatForever(autoreverses: false))
                 
                 Circle()
-                    .trim(from: 0.5, to: 0.8)
+                    .trim(from: 0.6, to: 0.9)
                     .stroke(
-                        AngularGradient(gradient: .init(colors: [color]), center: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/), style: style)
+                        AngularGradient(
+                            gradient: .init(colors: [color]), center: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/),
+                        style: style)
                     .rotationEffect(Angle(degrees: !animate ? 360 : 0))
                     .animation(Animation.linear(duration: 1.0).repeatForever(autoreverses: false))
             }

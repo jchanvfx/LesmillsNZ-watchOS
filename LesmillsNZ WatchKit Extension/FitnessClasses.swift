@@ -8,13 +8,13 @@
 import Foundation
 
 class FitnessClasses: ObservableObject {
-    @Published var allWorkouts: [String: [FitnessClass]]
+    @Published var allClasses: [String: [FitnessClass]]
 
     init() {
-        self.allWorkouts = [:]
+        self.allClasses = [:]
     }
 
-    func getDayText(id:String) -> String {
+    func formatDayText(id:String) -> String {
         let formatter = DateFormatter()
         formatter.timeZone = TimeZone.current
         formatter.locale = Locale.current
@@ -25,7 +25,7 @@ class FitnessClasses: ObservableObject {
         
     }
     
-    func getDayTitle(id:String) -> String {
+    func formatDateTitle(id:String) -> String {
         let formatter = DateFormatter()
         formatter.timeZone = TimeZone.current
         formatter.locale = Locale.current

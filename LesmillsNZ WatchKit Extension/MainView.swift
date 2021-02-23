@@ -31,15 +31,14 @@ struct MainView: View {
     }
     
     func loadTimetable() {
-        let selectedClub = clubLocations.selected
         createTimetableRequest(
-            clubID: selectedClub.id,
+            clubID: settings.clubId,
             completionBlock: processTimtableData)
     }
 
     func processTimtableData(requestData:[String: [FitnessClass]]) {
         DispatchQueue.main.async {
-            fitnessClasses.allWorkouts = requestData
+            fitnessClasses.allClasses = requestData
         }
         withAnimation {
             isLoadingVisible.toggle()

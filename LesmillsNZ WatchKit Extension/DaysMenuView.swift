@@ -31,19 +31,26 @@ struct DaysMenuView: View {
     var body: some View {
         VStack (alignment: .leading) {
             NavigationLink(
-                destination: LocationsView(clubLocations: clubLocations)) {
-                CurrentClubView(location: clubLocations.selected)
-            }.buttonStyle(PlainButtonStyle())
+                destination:LocationsMenuView()
+                    .environmentObject(clubLocations)
+                    .environmentObject(settings)
+            ) {
+                CurrentClubView(
+                    location: clubLocations.getClubById(
+                        id: settings.clubId)!)
+            }
+            .buttonStyle(PlainButtonStyle())
+
             List {
-                let allWorkouts = fitnessClasses.allWorkouts
-                let ids = Array(allWorkouts.keys).sorted(by: {$0 < $1})
+                let allClasses = fitnessClasses.allClasses
+                let ids = Array(allClasses.keys).sorted(by: {$0 < $1})
                 ForEach(ids, id: \.self) { id in
                     NavigationLink(
                         destination: TimetableView(
-                            title: fitnessClasses.getDayTitle(id: id),
-                            workouts: allWorkouts[id]!)
+                            title: fitnessClasses.formatDateTitle(id: id),
+                            workouts: allClasses[id]!)
                     ) {
-                        Text(fitnessClasses.getDayText(id:id))
+                        Text(fitnessClasses.formatDayText(id:id))
                             .padding(.horizontal)
                     }
                 }

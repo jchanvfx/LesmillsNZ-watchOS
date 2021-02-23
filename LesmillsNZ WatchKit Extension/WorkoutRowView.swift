@@ -18,7 +18,7 @@ struct WorkoutRowView: View {
                 .font(.system(size: 12))
             RoundedRectangle(cornerRadius: 3)
                 .fill(Color(hex:info.color))
-                .frame(height: 1)
+                .frame(height: 2)
             HStack {
                 Text(info.time)
                     .padding(.leading, 2)

@@ -9,7 +9,7 @@ import SwiftUI
 
 struct TimetableView: View {
     let title: String
-    var workouts: [FitnessClass]
+    let workouts: [FitnessClass]
     var body: some View {
         List {
             ForEach (0 ..< workouts.count) { idx in
