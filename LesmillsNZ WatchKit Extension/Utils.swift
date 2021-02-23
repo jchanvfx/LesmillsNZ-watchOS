@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+// extend Color object to support hex string.
 extension Color {
     init(hex: String) {
         let hex = hex.trimmingCharacters(in: CharacterSet.alphanumerics.inverted)
@@ -31,4 +32,43 @@ extension Color {
             opacity: Double(a) / 255
         )
     }
+}
+
+// date time utils
+func getDateFromString(dateStr: String) -> Date? {
+    let dateFormatter = DateFormatter()
+    dateFormatter.timeZone = TimeZone.current
+    dateFormatter.locale = Locale.current
+    let formatTypes = [
+        "yyyy-MM-dd'T'HH:mm:ssZ",
+        "yyyy-MM-dd HH:mm:ss Z"
+    ]
+    for fmt in formatTypes {
+        dateFormatter.dateFormat = fmt
+        let date = dateFormatter.date(from: dateStr)
+        if date != nil {
+            return date
+        }
+    }
+    return Date()
+}
+
+func formatDayTextFromId(id:String) -> String {
+    let formatter = DateFormatter()
+    formatter.timeZone = TimeZone.current
+    formatter.locale = Locale.current
+    formatter.dateFormat = "yyMMdd"
+    let date = formatter.date(from: id)
+    formatter.dateFormat = "E dd MMM"
+    return "\(formatter.string(from: date!))"
+}
+
+func formatDateTitleFromId(id:String) -> String {
+    let formatter = DateFormatter()
+    formatter.timeZone = TimeZone.current
+    formatter.locale = Locale.current
+    formatter.dateFormat = "yyMMdd"
+    let date = formatter.date(from: id)
+    formatter.dateFormat = "E dd/MM"
+    return "\(formatter.string(from: date!))"
 }

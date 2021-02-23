@@ -21,8 +21,9 @@ struct LocationButton: View {
 }
 
 struct LocationsMenuView: View {
-    @EnvironmentObject var clubLocations: ClubLocations
     @EnvironmentObject var settings: UserSettings
+    @EnvironmentObject var clubLocations: ClubLocations
+    @EnvironmentObject var fitnessClasses: FitnessClasses
     @Environment(\.presentationMode) var presentationMode
 
     var body: some View {
@@ -32,7 +33,10 @@ struct LocationsMenuView: View {
                 LocationButton(location: location)
                     .onTapGesture {
                         // update selected club id in settings.
-                        settings.setClubId(id:location.id)
+                        settings.setClubId(id: location.id)
+                        // make new timetable request.
+                        fitnessClasses.clubId = location.id
+                        fitnessClasses.createRequest()
                         // pop the current view.
                         presentationMode.wrappedValue.dismiss()
                     }

@@ -24,38 +24,32 @@ struct CurrentClubView: View {
 }
 
 struct DaysMenuView: View {
+    @EnvironmentObject var settings: UserSettings
     @EnvironmentObject var fitnessClasses: FitnessClasses
     @EnvironmentObject var clubLocations: ClubLocations
-    @EnvironmentObject var settings: UserSettings
     
     var body: some View {
         VStack (alignment: .leading) {
-            NavigationLink(
-                destination:LocationsMenuView()
-                    .environmentObject(clubLocations)
-                    .environmentObject(settings)
-            ) {
+            NavigationLink(destination:LocationsMenuView()) {
                 CurrentClubView(
-                    location: clubLocations.getClubById(
-                        id: settings.clubId)!)
+                    location: clubLocations.getClubById(id: settings.clubId)!)
             }
             .buttonStyle(PlainButtonStyle())
-
             List {
                 let allClasses = fitnessClasses.allClasses
                 let ids = Array(allClasses.keys).sorted(by: {$0 < $1})
                 ForEach(ids, id: \.self) { id in
                     NavigationLink(
                         destination: TimetableView(
-                            title: fitnessClasses.formatDateTitle(id: id),
+                            title: formatDateTitleFromId(id: id),
                             workouts: allClasses[id]!)
                     ) {
-                        Text(fitnessClasses.formatDayText(id:id))
+                        Text(formatDayTextFromId(id:id))
                             .padding(.horizontal)
                     }
                 }
-            }.navigationTitle("Lesmills NZ")
-        }
+            }
+        }.navigationTitle("Lesmills NZ")
     }
 }
 

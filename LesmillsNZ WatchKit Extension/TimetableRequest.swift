@@ -7,28 +7,10 @@
 
 import Foundation
 
-func getDate(dateStr: String) -> Date? {
-    let dateFormatter = DateFormatter()
-    dateFormatter.timeZone = TimeZone.current
-    dateFormatter.locale = Locale.current
-    let formatTypes = [
-        "yyyy-MM-dd'T'HH:mm:ssZ",
-        "yyyy-MM-dd HH:mm:ss Z"
-    ]
-    for fmt in formatTypes {
-        dateFormatter.dateFormat = fmt
-        let date = dateFormatter.date(from: dateStr)
-        if date != nil {
-            return date
-        }
-    }
-    return Date()
-}
-
 func createTimetableRequest(
     clubID:String, completionBlock: @escaping ([String: [FitnessClass]]) -> Void) {
 
-    // default color overrides
+    // fitness class color overrides.
     let defaultColors = [
         "BODYATTACK"  : "#FFB81C",
         "BODYBALANCE" : "#C5E86C",
@@ -42,7 +24,7 @@ func createTimetableRequest(
         "SPRINT"      : "#FEDD00",
         "TONE"        : "#8246AF"
     ]
-    // exculde black color for a gray.
+    // exculde black color for a gray since bg is black.
     let exclColors = ["#000", "#000000", "black"]
 
     var fitnessClasses = [String: [FitnessClass]]()
@@ -81,7 +63,7 @@ func createTimetableRequest(
                             break
                         }
                     }
-                    // set grey since the default bg is black.
+                    // check for color black.
                     if exclColors.contains(color) {
                         color = "#848484"
                     }
@@ -99,7 +81,7 @@ func createTimetableRequest(
                         siteName = site["SiteName"] as? String ?? ""
                     }
                     let dateStr: String = cls["StartDateTime"] as? String ?? ""
-                    let date = getDate(dateStr:dateStr)!
+                    let date = getDateFromString(dateStr:dateStr)!
 
                     let dateFormatter = DateFormatter()
                     dateFormatter.dateFormat = "yyMMdd"

@@ -8,31 +8,30 @@
 import Foundation
 
 class FitnessClasses: ObservableObject {
+    @Published var clubId: String
     @Published var allClasses: [String: [FitnessClass]]
+    @Published var isLoading: Bool
 
     init() {
+        self.clubId = ""
         self.allClasses = [:]
+        self.isLoading = false
     }
 
-    func formatDayText(id:String) -> String {
-        let formatter = DateFormatter()
-        formatter.timeZone = TimeZone.current
-        formatter.locale = Locale.current
-        formatter.dateFormat = "yyMMdd"
-        let date = formatter.date(from: id)
-        formatter.dateFormat = "E dd MMM"
-        return "\(formatter.string(from: date!))"
-        
+    func createRequest() {
+        if self.clubId == "" {
+            return
+        }
+        self.isLoading = true
+        createTimetableRequest(
+            clubID: clubId,
+            completionBlock: self.onRequestRecieved)
     }
     
-    func formatDateTitle(id:String) -> String {
-        let formatter = DateFormatter()
-        formatter.timeZone = TimeZone.current
-        formatter.locale = Locale.current
-        formatter.dateFormat = "yyMMdd"
-        let date = formatter.date(from: id)
-        formatter.dateFormat = "E dd/MM"
-        return "\(formatter.string(from: date!))"
-        
+    func onRequestRecieved(requestData:[String: [FitnessClass]]) {
+        DispatchQueue.main.async {
+            self.isLoading = false
+            self.allClasses = requestData
+        }
     }
 }

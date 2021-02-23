@@ -8,40 +8,15 @@
 import SwiftUI
 
 struct MainView: View {
-    @StateObject var settings = UserSettings()
-    @StateObject var clubLocations = ClubLocations()
-    @StateObject var fitnessClasses = FitnessClasses()
-    @State var isLoadingVisible = true
+    @EnvironmentObject var fitnessClasses: FitnessClasses
     
     var body: some View {
-        if isLoadingVisible {
+        if fitnessClasses.isLoading {
             LoadingView()
-                .onAppear {
-                    loadTimetable()
-                }
         } else {
             NavigationView {
                 DaysMenuView()
-            }
-            .environmentObject(fitnessClasses)
-            .environmentObject(clubLocations)
-            .environmentObject(settings)
-            .transition(.move(edge: .bottom))
-        }
-    }
-    
-    func loadTimetable() {
-        createTimetableRequest(
-            clubID: settings.clubId,
-            completionBlock: processTimtableData)
-    }
-
-    func processTimtableData(requestData:[String: [FitnessClass]]) {
-        DispatchQueue.main.async {
-            fitnessClasses.allClasses = requestData
-        }
-        withAnimation {
-            isLoadingVisible.toggle()
+            }.transition(.move(edge: .bottom))
         }
     }
 }
