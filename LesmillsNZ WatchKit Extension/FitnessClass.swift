@@ -45,6 +45,7 @@ struct FitnessClass: Hashable {
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyy-MM-dd-HH:mm"
         var date = formatter.date(from: timeStamp)!
+        // 5 mins offset.
         date.addTimeInterval(300)
         return date < Date()
     }

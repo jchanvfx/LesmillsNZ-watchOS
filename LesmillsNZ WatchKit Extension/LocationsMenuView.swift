@@ -42,7 +42,7 @@ struct LocationsMenuView: View {
                     }
             }
         }
-        .navigationTitle("Location")
+        .navigationTitle("Locations")
     }
 }
 
