@@ -17,12 +17,17 @@ struct WorkoutRowView: View {
             Text(info.location)
                 .font(.system(size: 12))
             RoundedRectangle(cornerRadius: 3)
-                .fill(Color(hex:info.color))
+                .fill(Color(hex: info.color))
                 .frame(height: 2)
             HStack {
                 Text(info.time)
                     .padding(.leading, 2)
                 Spacer()
+                if info.isFinished {
+                    Image(systemName: "flag.slash")
+                        .foregroundColor(.gray)
+                    Spacer()
+                }
                 Text("\(info.duration) mins")
                     .padding(.trailing, 2)
             }.font(.system(size: 12))

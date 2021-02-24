@@ -48,15 +48,16 @@ func createTimetableRequest(
         }
         
         let responseJSON = try? JSONSerialization.jsonObject(with: data, options: [])
-        // sort the data.
+        // sort data.
         if let responseJSON = responseJSON as? [String: Any] {
             if let clsData = responseJSON["Classes"] as? [Dictionary<String, Any>] {
+                // sort the classes into dictionary eg. ["yyMMdd": [FitnessClass]]
                 for cls in clsData {
                     let duration: Int = cls["Duration"] as? Int ?? 0
                     let name: String = (cls["ClassName"] as? String ?? "").uppercased()
                     
                     var color: String = cls["Colour"] as? String ?? "#848484"
-                    // get default colors by the class name.
+                    // override default color by the class name.
                     for (k, v) in defaultColors {
                         if name.contains(k) {
                             color = v

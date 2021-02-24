@@ -34,7 +34,7 @@ extension Color {
     }
 }
 
-// date time utils
+// date utils
 func getDateFromString(dateStr: String) -> Date? {
     let dateFormatter = DateFormatter()
     dateFormatter.timeZone = TimeZone.current

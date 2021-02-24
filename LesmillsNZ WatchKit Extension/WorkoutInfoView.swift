@@ -27,15 +27,19 @@ struct WorkoutInfoView: View {
                 .font(.system(.caption))
             Text("\(info.day) \(info.date) \(info.month)")
                 .font(.system(.caption))
-            HStack(spacing: 1) {
-                Image(systemName: "timer")
-                Text("\(info.duration)")
+            if !info.isFinished {
+                Image(systemName: "stopwatch")
+                    .foregroundColor(.green)
+                    .padding(.top, 2)
+            } else {
+                Image(systemName: "flag.slash")
+                    .foregroundColor(.gray)
+                    .padding(.top, 2)
             }
-            .font(.system(.caption))
-            .foregroundColor(.green)
-            Text("minutes")
-                .font(.system(size: 12))
+            Text("\(info.duration) Minutes")
+                .font(.system(size: 14))
                 .foregroundColor(.green)
+            
         }.navigationTitle("Info")
     }
 }

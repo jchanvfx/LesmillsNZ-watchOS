@@ -20,6 +20,7 @@ struct LesmillsNZApp: App {
                 .environmentObject(clubLocations)
                 .environmentObject(settings)
                 .onAppear {
+                    // make initial timetable request.
                     fitnessClasses.clubId = settings.clubId
                     fitnessClasses.createRequest()
                 }

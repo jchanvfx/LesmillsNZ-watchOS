@@ -16,14 +16,14 @@ struct ClubLocation: Decodable {
 class ClubLocations: ObservableObject {
     let locations: [ClubLocation]
     var count: Int {
-        locations.count
+        self.locations.count
     }
 
     init() {
         let url = Bundle.main.url(
             forResource: "locations", withExtension: "json")!
         let data = try! Data(contentsOf: url)
-        locations = try! JSONDecoder().decode(
+        self.locations = try! JSONDecoder().decode(
             [ClubLocation].self, from: data)
     }
     

@@ -17,7 +17,6 @@ struct MainView: View {
             NavigationView {
                 DaysMenuView()
             }
-//            .transition(.move(edge: .bottom))
         }
     }
 }

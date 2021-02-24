@@ -8,22 +8,41 @@
 import SwiftUI
 
 struct TimetableView: View {
-    let title: String
+    let id: String
     let workouts: [FitnessClass]
+
+    @EnvironmentObject var fitnessClasses: FitnessClasses
+    
     var body: some View {
-        List {
-            ForEach (0 ..< workouts.count) { idx in
-                NavigationLink(destination: WorkoutInfoView(
-                    info: workouts[idx]
-                )){WorkoutRowView(info: workouts[idx])}
-            }  
-        }.navigationTitle(title)
+        ScrollViewReader { proxy in
+            List {
+                ForEach(workouts, id: \.self) { cls in
+                    NavigationLink(destination: WorkoutInfoView(info: cls)) {
+                        WorkoutRowView(info: cls)
+                    }
+                }
+            }.onAppear {
+                let nextClass = fitnessClasses.getNextClass(id: id)
+                if nextClass != nil {
+                    withAnimation {
+                        proxy.scrollTo(nextClass!, anchor: .top)
+                    }
+                }
+            }
+        }
+        .navigationTitle(formatDateTitleFromId(id: id))
     }
 }
 
 struct TimetableView_Previews: PreviewProvider {
     static var previews: some View {
-        TimetableView(title: "Day dd/mm",
-                      workouts: [FitnessClass.example])
+        TimetableView(
+            id: "170221",
+            workouts: [
+                FitnessClass.example,
+                FitnessClass.example,
+                FitnessClass.example,
+                FitnessClass.example,
+            ])
     }
 }

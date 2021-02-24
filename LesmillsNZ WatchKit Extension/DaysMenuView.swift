@@ -8,18 +8,23 @@
 import SwiftUI
 
 struct CurrentClubView: View {
-    let location: ClubLocation
+    let text: String
     var body: some View {
-        HStack(spacing: 4) {
-            Image(systemName: "location.fill")
-                .foregroundColor(.blue)
-            Text(location.name)
-                .fontWeight(.semibold)
+        VStack(alignment: .leading, spacing: 2) {
+            HStack(spacing: 4) {
+                Image(systemName: "location.fill")
+                    .foregroundColor(.blue)
+                Text(text)
+                    .fontWeight(.semibold)
+                    .foregroundColor(.blue)
+            }
+            Text("change location")
                 .foregroundColor(.gray)
+                .padding(.leading, 18)
         }
         .font(.system(size: 12))
         .padding(.leading, 5)
-        .padding(.bottom, 5)
+        .padding(.bottom, 1)
     }
 }
 
@@ -30,24 +35,35 @@ struct DaysMenuView: View {
     
     var body: some View {
         VStack (alignment: .leading) {
-            NavigationLink(destination:LocationsMenuView()) {
-                CurrentClubView(
-                    location: clubLocations.getClubById(id: settings.clubId)!)
-            }
-            .buttonStyle(PlainButtonStyle())
-            List {
-                let allClasses = fitnessClasses.allClasses
-                let ids = Array(allClasses.keys).sorted(by: {$0 < $1})
-                ForEach(ids, id: \.self) { id in
-                    NavigationLink(
-                        destination: TimetableView(
-                            title: formatDateTitleFromId(id: id),
-                            workouts: allClasses[id]!)
-                    ) {
-                        Text(formatDayTextFromId(id:id))
-                            .padding(.horizontal)
+            if (settings.clubId != "") {
+                NavigationLink(destination:LocationsMenuView()) {
+                    let location = clubLocations.getClubById(
+                        id: settings.clubId)!
+                    CurrentClubView(text: location.name)
+                }
+                .buttonStyle(PlainButtonStyle())
+                List {
+                    let allClasses = fitnessClasses.allClasses
+                    let ids = Array(allClasses.keys).sorted(by: {$0 < $1})
+                    ForEach(ids, id: \.self) { id in
+                        NavigationLink(
+                            destination: TimetableView(
+                                id: id, workouts: allClasses[id]!)
+                        ) {
+                            Text(formatDayTextFromId(id:id))
+                                .padding(.horizontal)
+                        }
                     }
                 }
+            } else {
+                NavigationLink(destination:LocationsMenuView()) {
+                    CurrentClubView(text: "No Club Selected")
+                }
+                .buttonStyle(PlainButtonStyle())
+                Text("Please set a club location to display timetable.")
+                    .font(.caption2)
+                    .padding(.top, 20)
+                Spacer()
             }
         }.navigationTitle("Lesmills NZ")
     }
