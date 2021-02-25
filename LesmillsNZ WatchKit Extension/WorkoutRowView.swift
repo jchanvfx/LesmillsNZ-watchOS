@@ -23,7 +23,7 @@ struct WorkoutRowView: View {
                 Text(info.time)
                     .padding(.leading, 2)
                 Spacer()
-                if info.isFinished {
+                if info.isStarted {
                     Image(systemName: "flag.slash")
                         .foregroundColor(.gray)
                     Spacer()

@@ -27,7 +27,7 @@ struct WorkoutInfoView: View {
                 .font(.system(.caption))
             Text("\(info.day) \(info.date) \(info.month)")
                 .font(.system(.caption))
-            if !info.isFinished {
+            if !info.isStarted {
                 Image(systemName: "stopwatch")
                     .foregroundColor(.green)
                     .padding(.top, 2)

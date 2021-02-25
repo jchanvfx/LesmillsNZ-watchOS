@@ -32,7 +32,7 @@ struct DaysMenuView: View {
     @EnvironmentObject var settings: UserSettings
     @EnvironmentObject var fitnessClasses: FitnessClasses
     @EnvironmentObject var clubLocations: ClubLocations
-    
+
     var body: some View {
         VStack (alignment: .leading) {
             if (settings.clubId != "") {
@@ -46,11 +46,11 @@ struct DaysMenuView: View {
                     let allClasses = fitnessClasses.allClasses
                     let ids = Array(allClasses.keys).sorted(by: {$0 < $1})
                     ForEach(ids, id: \.self) { id in
+                        let classes = allClasses[id]!
                         NavigationLink(
-                            destination: TimetableView(
-                                id: id, workouts: allClasses[id]!)
+                            destination: TimetableView(dateId: id, classes: classes)
                         ) {
-                            Text(formatDayTextFromId(id:id))
+                            Text(formatDayTextFromId(id: id))
                                 .padding(.horizontal)
                         }
                     }

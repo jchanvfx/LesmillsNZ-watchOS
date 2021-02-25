@@ -8,37 +8,56 @@
 import SwiftUI
 
 struct TimetableView: View {
-    let id: String
-    let workouts: [FitnessClass]
+    let dateId: String
+    let classes: [FitnessClass]
 
-    @EnvironmentObject var fitnessClasses: FitnessClasses
-    
+    @State private var jumpTo = true
+
     var body: some View {
-        ScrollViewReader { proxy in
-            List {
-                ForEach(workouts, id: \.self) { cls in
-                    NavigationLink(destination: WorkoutInfoView(info: cls)) {
-                        WorkoutRowView(info: cls)
+        ScrollView {
+            ScrollViewReader { proxy in
+                ForEach(0 ..< classes.count) { idx in
+                    NavigationLink(destination: WorkoutInfoView(info: classes[idx])) {
+                        WorkoutRowView(info: classes[idx])
                     }
+                    .frame(height: 58)
+                    .id(idx)
                 }
-            }.onAppear {
-                let nextClass = fitnessClasses.getNextClass(id: id)
-                if nextClass != nil {
-                    withAnimation {
-                        proxy.scrollTo(nextClass!, anchor: .top)
+                .onAppear {
+                    if getCurrentDateId() == dateId {
+                        if !jumpTo {
+                            return
+                        }
+                        var scrollToIdx = 0
+                        for (idx, cls) in classes.enumerated() {
+                            if !cls.isStarted {
+                                scrollToIdx = idx
+                                break
+                            }
+                        }
+                        // minor scrolling animation :P.
+                        if scrollToIdx > 3 {
+                            proxy.scrollTo(scrollToIdx - 2, anchor: .top)
+                        }
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+                            withAnimation {
+                                proxy.scrollTo(scrollToIdx, anchor: .top)
+                            }
+                            jumpTo.toggle()
+                        }
                     }
                 }
             }
         }
-        .navigationTitle(formatDateTitleFromId(id: id))
+        .navigationTitle(formatDateTitleFromId(id: dateId))
     }
 }
 
 struct TimetableView_Previews: PreviewProvider {
     static var previews: some View {
         TimetableView(
-            id: "170221",
-            workouts: [
+            dateId: "170221",
+            classes: [
                 FitnessClass.example,
                 FitnessClass.example,
                 FitnessClass.example,

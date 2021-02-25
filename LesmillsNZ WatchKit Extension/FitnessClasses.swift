@@ -37,14 +37,5 @@ class FitnessClasses: ObservableObject {
             self.allClasses = requestData
         }
     }
-    
-    // gets the next avaliable class from the closest time.
-    func getNextClass(id: String) -> FitnessClass? {
-        for cls in self.allClasses[id]! {
-            if !cls.isFinished {
-                return cls
-            }
-        }
-        return nil
-    }
+
 }

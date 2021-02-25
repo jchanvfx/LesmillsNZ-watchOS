@@ -15,7 +15,7 @@ func formatDate(timeStamp:String, dateFormat:String) -> String {
     return "\(formatter.string(from: date))"
 }
 
-struct FitnessClass: Hashable {
+struct FitnessClass {
     let name: String
     let color: String
     let instructor1: String
@@ -41,7 +41,7 @@ struct FitnessClass: Hashable {
         }
         return instructor1
     }
-    var isFinished: Bool {
+    var isStarted: Bool {
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyy-MM-dd-HH:mm"
         var date = formatter.date(from: timeStamp)!

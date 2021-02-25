@@ -35,6 +35,14 @@ extension Color {
 }
 
 // date utils
+func getCurrentDateId() -> String {
+    let formatter = DateFormatter()
+    formatter.timeZone = TimeZone.current
+    formatter.locale = Locale.current
+    formatter.dateFormat = "yyMMdd"
+    return "\(formatter.string(from: Date()))"
+}
+
 func getDateFromString(dateStr: String) -> Date? {
     let dateFormatter = DateFormatter()
     dateFormatter.timeZone = TimeZone.current
