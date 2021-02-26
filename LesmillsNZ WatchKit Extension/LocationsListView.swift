@@ -20,7 +20,7 @@ struct LocationButton: View {
     }
 }
 
-struct LocationsMenuView: View {
+struct LocationsListView: View {
     @EnvironmentObject var settings: UserSettings
     @EnvironmentObject var clubLocations: ClubLocations
     @EnvironmentObject var fitnessClasses: FitnessClasses
@@ -46,8 +46,8 @@ struct LocationsMenuView: View {
     }
 }
 
-struct LocationsView_Previews: PreviewProvider {
+struct LocationsListView_Previews: PreviewProvider {
     static var previews: some View {
-        LocationsMenuView()
+        LocationsListView()
     }
 }

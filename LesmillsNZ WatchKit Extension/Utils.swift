@@ -61,6 +61,14 @@ func getDateFromString(dateStr: String) -> Date? {
     return Date()
 }
 
+func formatTimeStamp(timeStamp:String, formatStr:String) -> String {
+    let formatter = DateFormatter()
+    formatter.dateFormat = "yyyy-MM-dd-HH:mm"
+    let date = formatter.date(from: timeStamp)!
+    formatter.dateFormat = formatStr
+    return "\(formatter.string(from: date))"
+}
+
 func formatDayTextFromId(id:String) -> String {
     let formatter = DateFormatter()
     formatter.timeZone = TimeZone.current

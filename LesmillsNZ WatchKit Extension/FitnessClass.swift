@@ -7,14 +7,6 @@
 
 import Foundation
 
-func formatDate(timeStamp:String, dateFormat:String) -> String {
-    let formatter = DateFormatter()
-    formatter.dateFormat = "yyyy-MM-dd-HH:mm"
-    let date = formatter.date(from: timeStamp)!
-    formatter.dateFormat = dateFormat
-    return "\(formatter.string(from: date))"
-}
-
 struct FitnessClass {
     let name: String
     let color: String
@@ -24,16 +16,20 @@ struct FitnessClass {
     let location: String
     let timeStamp: String
     var day: String {
-        return formatDate(timeStamp: timeStamp, dateFormat: "E")
+        return formatTimeStamp(timeStamp: timeStamp,
+                               formatStr: "E")
     }
     var date: String {
-        return formatDate(timeStamp: timeStamp, dateFormat: "dd")
+        return formatTimeStamp(timeStamp: timeStamp,
+                               formatStr: "dd")
     }
     var month: String {
-        return formatDate(timeStamp: timeStamp, dateFormat: "MMM")
+        return formatTimeStamp(timeStamp: timeStamp,
+                               formatStr: "MMM")
     }
     var time: String {
-        return formatDate(timeStamp: timeStamp, dateFormat: "h:mm a")
+        return formatTimeStamp(timeStamp: timeStamp,
+                               formatStr: "h:mm a")
     }
     var instructors: String {
         if instructor2 != "" {

@@ -15,7 +15,7 @@ struct MainView: View {
             LoadingView()
         } else {
             NavigationView {
-                DaysMenuView()
+                ScheduleListView()
             }
         }
     }

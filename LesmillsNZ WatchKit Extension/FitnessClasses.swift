@@ -11,6 +11,7 @@ class FitnessClasses: ObservableObject {
     @Published var clubId: String
     @Published var allClasses: [String: [FitnessClass]]
     @Published var isLoading: Bool
+    @Published var lastSynced: String? = nil
 
     init() {
         self.clubId = ""
@@ -35,6 +36,10 @@ class FitnessClasses: ObservableObject {
         DispatchQueue.main.async {
             self.isLoading = false
             self.allClasses = requestData
+
+            let formatter = DateFormatter()
+            formatter.dateFormat = "E dd/MM - h:mm a"
+            self.lastSynced = formatter.string(from: Date())
         }
     }
 

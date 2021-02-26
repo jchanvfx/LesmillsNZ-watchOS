@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct TimetableView: View {
+struct TimetableListView: View {
     let dateId: String
     let classes: [FitnessClass]
 
@@ -53,9 +53,9 @@ struct TimetableView: View {
     }
 }
 
-struct TimetableView_Previews: PreviewProvider {
+struct TimetableListView_Previews: PreviewProvider {
     static var previews: some View {
-        TimetableView(
+        TimetableListView(
             dateId: "170221",
             classes: [
                 FitnessClass.example,

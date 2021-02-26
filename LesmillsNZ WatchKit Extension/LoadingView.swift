@@ -9,7 +9,7 @@ import SwiftUI
 
 struct LoadingView: View {
     let style = StrokeStyle(lineWidth: 6, lineCap: .round)
-    let color = Color.blue
+    let color = Color(hex: "#00d6d3")
     @State private var animate = false
 
     var body: some View {
@@ -28,7 +28,6 @@ struct LoadingView: View {
                         style: style)
                     .rotationEffect(Angle(degrees: animate ? 360 : 0))
                     .animation(Animation.linear(duration: 0.8).repeatForever(autoreverses: false))
-                
                 Circle()
                     .trim(from: 0.6, to: 0.9)
                     .stroke(
@@ -37,16 +36,20 @@ struct LoadingView: View {
                         style: style)
                     .rotationEffect(Angle(degrees: animate ? 360 : 0))
                     .animation(Animation.linear(duration: 0.8).repeatForever(autoreverses: false))
+                Image("LmLogo")
+                    .resizable()
+                    .scaledToFit()
+                    .frame(width: 65)
             }
-            .frame(width: 80, height: 80)
+            .frame(width: 90, height: 90)
             .onAppear() {
                 animate.toggle()
             }
             Spacer()
                 .frame(height: 20)
-            Text("loading timetable...")
+            Text("requesting data...")
                 .font(.caption)
-                .foregroundColor(color)
+                .foregroundColor(Color.blue)
             Text("www.lesmills.co.nz")
                 .font(.footnote)
                 .foregroundColor(.gray)
