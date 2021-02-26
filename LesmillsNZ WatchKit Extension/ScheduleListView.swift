@@ -10,10 +10,11 @@ import SwiftUI
 struct ClubButtonView: View {
     let text: String
     let subText: String
+    let systemIcon: String
     var body: some View {
         VStack(spacing: 2) {
             HStack(spacing: 4) {
-                Image(systemName: "location.fill")
+                Image(systemName: systemIcon)
                     .foregroundColor(.blue)
                 Text(text)
                     .fontWeight(.semibold)
@@ -40,17 +41,20 @@ struct ScheduleListView: View {
         VStack {
             if (settings.clubId != "") {
                 List {
-                    // club location.
-                    NavigationLink(destination: LocationsListView()) {
-                        let location = clubLocations.getClubById(
-                            id: settings.clubId)!
-                        HStack{
-                            Spacer()
-                            ClubButtonView(text: location.name,
-                                           subText: "change location")
-                            Spacer()
-                        }
+                    let location = clubLocations.getClubById(
+                        id: settings.clubId)!
+                    // reload timetable button
+                    HStack {
+                        Spacer()
+                        ClubButtonView(text: "Reload Timetable",
+                                       subText: location.name,
+                                       systemIcon: "repeat.circle")
+                        Spacer()
                     }
+                    .onTapGesture {
+                        fitnessClasses.createRequest()
+                    }
+
                     // days
                     let allClasses = fitnessClasses.allClasses
                     let ids = Array(allClasses.keys).sorted(by: {$0 < $1})
@@ -76,40 +80,69 @@ struct ScheduleListView: View {
                         RoundedRectangle(cornerRadius: 3)
                             .fill(Color.accentColor)
                             .frame(height: 1)
+                    }.listRowBackground(Color.black)
+                    
+                    // change club location.
+                    NavigationLink(destination: LocationsListView()) {
+                        HStack{
+                            Spacer()
+                            ClubButtonView(text: location.name,
+                                           subText: "change location",
+                                           systemIcon: "location.fill")
+                            Spacer()
+                        }
+                    }
+                    
+                    // disclaimer info.
+                    VStack {
+                        RoundedRectangle(cornerRadius: 3)
+                            .fill(Color.gray)
+                            .frame(height: 1)
+                            .padding(.bottom, 5)
+                        Text(disclaimerNote)
+                            .multilineTextAlignment(.leading)
+                            .foregroundColor(Color.gray)
+                            .font(.system(size: 12))
                         if fitnessClasses.lastSynced != nil {
+                            RoundedRectangle(cornerRadius: 3)
+                                .fill(Color.gray)
+                                .frame(height: 1)
+                                .padding(.vertical, 5)
                             Text("Timetable Last Synced:\n\(fitnessClasses.lastSynced!)")
                                 .multilineTextAlignment(.center)
                                 .foregroundColor(Color(hex: "#00d6d3"))
                                 .font(.system(size: 12))
                         }
                     }.listRowBackground(Color.black)
-                    // data reload
-                    Button(action: {fitnessClasses.createRequest()}) {
-                        HStack {
-                            Spacer()
-                            Text("Reload")
-                            Spacer()
-                        }
-                    }
                 }
             } else {
-                // no club set.
-                Spacer()
-                Image("LmTextLogo")
-                    .resizable()
-                    .scaledToFit()
-                    .frame(width:150)
-                RoundedRectangle(cornerRadius: 3)
-                    .fill(Color.accentColor)
-                    .frame(height: 1)
-                    .padding(.top, 5)
-                    .padding(.bottom, 10)
-                NavigationLink(destination: LocationsListView()) {
-                    ClubButtonView(text: "Club Not Set!",
-                                   subText: "select location")
-//                        .buttonStyle(PlainButtonStyle())
+                // club note set view.
+                ScrollView(.vertical) {
+                    Image("LmTextLogo")
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width:150)
+                    RoundedRectangle(cornerRadius: 3)
+                        .fill(Color.accentColor)
+                        .frame(height: 1)
+                        .padding(.vertical, 5)
+                    NavigationLink(destination: LocationsListView()) {
+                        ClubButtonView(text: "Club Not Set!",
+                                       subText: "select location",
+                                       systemIcon: "location.fill")
+//                            .buttonStyle(PlainButtonStyle())
+                    }
+                    // disclaimer info.
+                    VStack {
+                        RoundedRectangle(cornerRadius: 3)
+                            .fill(Color.gray)
+                            .frame(height: 1)
+                        Text(disclaimerNote)
+                            .multilineTextAlignment(.leading)
+                            .foregroundColor(Color.gray)
+                            .font(.system(size: 12))
+                    }.padding(.top, 5)
                 }
-                Spacer()
             }
         }.navigationTitle("Lesmills NZ")
     }

@@ -47,7 +47,7 @@ struct LoadingView: View {
             }
             Spacer()
                 .frame(height: 20)
-            Text("requesting data...")
+            Text("Requesting Data...")
                 .font(.caption)
                 .foregroundColor(Color.blue)
             Text("www.lesmills.co.nz")
