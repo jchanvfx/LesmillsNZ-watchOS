@@ -7,7 +7,7 @@
 
 import Foundation
 
-let disclaimerNote = "Disclaimer:\nThis watch app is not officially part of Les Mills I made this app so I can conveniently display class times without the need of taking out my phone at the gym."
+let disclaimerText = "This app is not officially part of Les Mills I made this app so I could conveniently display class timetable without the need of my iPhone."
 
 class UserSettings: ObservableObject {
     @Published var clubId: String

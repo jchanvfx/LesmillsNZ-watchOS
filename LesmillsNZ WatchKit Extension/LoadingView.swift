@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct LoadingView: View {
-    let style = StrokeStyle(lineWidth: 6, lineCap: .round)
+    let style = StrokeStyle(lineWidth: 4, lineCap: .round)
     let color = Color(hex: "#00d6d3")
     @State private var animate = false
 

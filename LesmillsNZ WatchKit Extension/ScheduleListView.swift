@@ -7,6 +7,25 @@
 
 import SwiftUI
 
+struct DisclaimerInfoView: View {
+    var body: some View {
+        VStack {
+            HStack {
+                Image(systemName: "exclamationmark.triangle.fill")
+                Text("Disclaimer")
+                    .fontWeight(.semibold)
+            }
+            .padding(.bottom, 2)
+            .foregroundColor(Color.gray)
+            .font(.system(size: 12))
+            Text(disclaimerText)
+                .multilineTextAlignment(.center)
+                .foregroundColor(Color.gray)
+                .font(.system(size: 12))
+        }
+    }
+}
+
 struct ClubButtonView: View {
     let text: String
     let subText: String
@@ -77,6 +96,7 @@ struct ScheduleListView: View {
                             .resizable()
                             .scaledToFit()
                             .frame(width:150)
+                            .padding(.top, 5)
                         RoundedRectangle(cornerRadius: 3)
                             .fill(Color.accentColor)
                             .frame(height: 1)
@@ -96,13 +116,10 @@ struct ScheduleListView: View {
                     // disclaimer info.
                     VStack {
                         RoundedRectangle(cornerRadius: 3)
-                            .fill(Color.gray)
+                            .fill(Color.accentColor)
                             .frame(height: 1)
                             .padding(.bottom, 5)
-                        Text(disclaimerNote)
-                            .multilineTextAlignment(.leading)
-                            .foregroundColor(Color.gray)
-                            .font(.system(size: 12))
+                        DisclaimerInfoView()
                         if fitnessClasses.lastSynced != nil {
                             RoundedRectangle(cornerRadius: 3)
                                 .fill(Color.gray)
@@ -122,6 +139,7 @@ struct ScheduleListView: View {
                         .resizable()
                         .scaledToFit()
                         .frame(width:150)
+                        .padding(.top, 5)
                     RoundedRectangle(cornerRadius: 3)
                         .fill(Color.accentColor)
                         .frame(height: 1)
@@ -135,12 +153,10 @@ struct ScheduleListView: View {
                     // disclaimer info.
                     VStack {
                         RoundedRectangle(cornerRadius: 3)
-                            .fill(Color.gray)
+                            .fill(Color.accentColor)
                             .frame(height: 1)
-                        Text(disclaimerNote)
-                            .multilineTextAlignment(.leading)
-                            .foregroundColor(Color.gray)
-                            .font(.system(size: 12))
+                            .padding(.bottom, 5)
+                        DisclaimerInfoView()
                     }.padding(.top, 5)
                 }
             }
