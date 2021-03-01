@@ -49,7 +49,7 @@ struct LoadingView: View {
                 .frame(height: 20)
             Text("Requesting Data...")
                 .font(.caption)
-                .foregroundColor(Color.blue)
+                .foregroundColor(color)
             Text("www.lesmills.co.nz")
                 .font(.footnote)
                 .foregroundColor(.gray)

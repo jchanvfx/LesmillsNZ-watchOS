@@ -11,12 +11,12 @@ struct DisclaimerInfoView: View {
     var body: some View {
         VStack {
             HStack {
-                Image(systemName: "exclamationmark.triangle.fill")
+                Image(systemName: "exclamationmark.triangle")
                 Text("Disclaimer")
                     .fontWeight(.semibold)
             }
             .padding(.bottom, 2)
-            .foregroundColor(Color.gray)
+            .foregroundColor(Color.yellow)
             .font(.system(size: 12))
             Text(disclaimerText)
                 .multilineTextAlignment(.center)
@@ -30,14 +30,15 @@ struct ClubButtonView: View {
     let text: String
     let subText: String
     let systemIcon: String
+    let color: Color
     var body: some View {
         VStack(spacing: 2) {
             HStack(spacing: 4) {
                 Image(systemName: systemIcon)
-                    .foregroundColor(.blue)
+                    .foregroundColor(color)
                 Text(text)
                     .fontWeight(.semibold)
-                    .foregroundColor(.blue)
+                    .foregroundColor(color)
             }
             .padding(.leading, -16)
             Text(subText)
@@ -53,7 +54,7 @@ struct ScheduleListView: View {
     @EnvironmentObject var fitnessClasses: FitnessClasses
     @EnvironmentObject var clubLocations: ClubLocations
     
-    // default timetable when initialized.
+    // default view to navigate to when initialized.
     @State private var pushToView: Int? = 0
 
     var body: some View {
@@ -65,42 +66,46 @@ struct ScheduleListView: View {
                     // reload timetable button
                     HStack {
                         Spacer()
-                        ClubButtonView(text: "Reload Timetable",
-                                       subText: location.name,
-                                       systemIcon: "repeat.circle")
+                        ClubButtonView(text: location.name,
+                                       subText: "Reload Timetable",
+                                       systemIcon: "arrow.clockwise",
+                                       color: Color.orange
+                        )
                         Spacer()
                     }
                     .onTapGesture {
                         fitnessClasses.createRequest()
                     }
 
-                    // days
+                    // fitness classes by day
                     let allClasses = fitnessClasses.allClasses
                     let ids = Array(allClasses.keys).sorted(by: {$0 < $1})
-                    ForEach(Array(zip(ids.indices, ids)), id: \.0) { x, id in
-                        let classes = allClasses[id]!
-                        NavigationLink(
-                            destination: TimetableListView(dateId: id, classes: classes),
-                            tag: x, selection: $pushToView
-                        ) {
-                            HStack {
-                                Spacer()
-                                Text(formatDayTextFromId(id: id))
-                                Spacer()
+                    if ids.count == 0 {
+                        ZStack {
+                            RoundedRectangle(cornerRadius: 6)
+                                .fill(Color(hex: "#380b17"))
+                            Text(noClassesText)
+                                .foregroundColor(Color(hex: "#f44874"))
+                                .font(.system(size: 12))
+                                .padding(10)
+                        }
+                        .padding(.vertical, 10)
+                        .listRowBackground(Color.black)
+                    } else {
+                        ForEach(Array(zip(ids.indices, ids)), id: \.0) { x, id in
+                            let classes = allClasses[id]!
+                            NavigationLink(
+                                destination: TimetableListView(dateId: id, classes: classes),
+                                tag: x, selection: $pushToView
+                            ) {
+                                HStack {
+                                    Spacer()
+                                    Text(formatDayTextFromId(id: id))
+                                    Spacer()
+                                }
                             }
                         }
                     }
-                    // logo image
-                    VStack {
-                        Image("LmTextLogo")
-                            .resizable()
-                            .scaledToFit()
-                            .frame(width:150)
-                            .padding(.top, 5)
-                        RoundedRectangle(cornerRadius: 3)
-                            .fill(Color.accentColor)
-                            .frame(height: 1)
-                    }.listRowBackground(Color.black)
                     
                     // change club location.
                     NavigationLink(destination: LocationsListView()) {
@@ -108,17 +113,27 @@ struct ScheduleListView: View {
                             Spacer()
                             ClubButtonView(text: location.name,
                                            subText: "change location",
-                                           systemIcon: "location.fill")
+                                           systemIcon: "location.fill",
+                                           color: Color.blue)
                             Spacer()
                         }
                     }
-                    
-                    // disclaimer info.
+
+                    // logo image
                     VStack {
+                        Image("LmTextLogo")
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width:150)
+                            .padding(.top, 5)
+                            .listRowBackground(Color.black)
                         RoundedRectangle(cornerRadius: 3)
                             .fill(Color.accentColor)
                             .frame(height: 1)
-                            .padding(.bottom, 5)
+                    }.listRowBackground(Color.black)
+                    
+                    // disclaimer info.
+                    VStack {
                         DisclaimerInfoView()
                         if fitnessClasses.lastSynced != nil {
                             RoundedRectangle(cornerRadius: 3)
@@ -147,7 +162,8 @@ struct ScheduleListView: View {
                     NavigationLink(destination: LocationsListView()) {
                         ClubButtonView(text: "Club Not Set!",
                                        subText: "select location",
-                                       systemIcon: "location.fill")
+                                       systemIcon: "location.fill",
+                                       color: Color.blue)
 //                            .buttonStyle(PlainButtonStyle())
                     }
                     // disclaimer info.

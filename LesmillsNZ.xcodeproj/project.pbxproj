@@ -13,6 +13,7 @@
 		85440DD025D7D1AB003567D9 /* WorkoutInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85440DCF25D7D1AB003567D9 /* WorkoutInfoView.swift */; };
 		85440DD525D7D1BF003567D9 /* WorkoutRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85440DD425D7D1BF003567D9 /* WorkoutRowView.swift */; };
 		85440DDD25D92B00003567D9 /* ScheduleListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85440DDC25D92B00003567D9 /* ScheduleListView.swift */; };
+		8589D0BA25EC397C00006C53 /* ComplicationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8589D0B925EC397C00006C53 /* ComplicationController.swift */; };
 		85AC5BA525D7CC890014D4F3 /* LesmillsNZApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85AC5BA425D7CC890014D4F3 /* LesmillsNZApp.swift */; };
 		85AC5BA725D7CC890014D4F3 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85AC5BA625D7CC890014D4F3 /* ContentView.swift */; };
 		85AC5BA925D7CC8C0014D4F3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 85AC5BA825D7CC8C0014D4F3 /* Assets.xcassets */; };
@@ -22,7 +23,6 @@
 		85AC5BBD25D7CC8F0014D4F3 /* LesmillsNZ WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 85AC5BBC25D7CC8F0014D4F3 /* LesmillsNZ WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		85AC5BC225D7CC8F0014D4F3 /* TimetableListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85AC5BC125D7CC8F0014D4F3 /* TimetableListView.swift */; };
 		85AC5BC425D7CC8F0014D4F3 /* LesmillsNZApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85AC5BC325D7CC8F0014D4F3 /* LesmillsNZApp.swift */; };
-		85AC5BC625D7CC8F0014D4F3 /* ComplicationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85AC5BC525D7CC8F0014D4F3 /* ComplicationController.swift */; };
 		85AC5BC825D7CC910014D4F3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 85AC5BC725D7CC910014D4F3 /* Assets.xcassets */; };
 		85AC5BCB25D7CC910014D4F3 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 85AC5BCA25D7CC910014D4F3 /* Preview Assets.xcassets */; };
 		85AE6F1A25DB8ACE002D9F28 /* Locations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85AE6F1925DB8ACE002D9F28 /* Locations.swift */; };
@@ -83,6 +83,7 @@
 		85440DCF25D7D1AB003567D9 /* WorkoutInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutInfoView.swift; sourceTree = "<group>"; };
 		85440DD425D7D1BF003567D9 /* WorkoutRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutRowView.swift; sourceTree = "<group>"; };
 		85440DDC25D92B00003567D9 /* ScheduleListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleListView.swift; sourceTree = "<group>"; };
+		8589D0B925EC397C00006C53 /* ComplicationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComplicationController.swift; sourceTree = "<group>"; };
 		85AC5BA125D7CC890014D4F3 /* LesmillsNZ.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LesmillsNZ.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		85AC5BA425D7CC890014D4F3 /* LesmillsNZApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LesmillsNZApp.swift; sourceTree = "<group>"; };
 		85AC5BA625D7CC890014D4F3 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -95,7 +96,6 @@
 		85AC5BBC25D7CC8F0014D4F3 /* LesmillsNZ WatchKit Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "LesmillsNZ WatchKit Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
 		85AC5BC125D7CC8F0014D4F3 /* TimetableListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimetableListView.swift; sourceTree = "<group>"; };
 		85AC5BC325D7CC8F0014D4F3 /* LesmillsNZApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LesmillsNZApp.swift; sourceTree = "<group>"; };
-		85AC5BC525D7CC8F0014D4F3 /* ComplicationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplicationController.swift; sourceTree = "<group>"; };
 		85AC5BC725D7CC910014D4F3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		85AC5BCA25D7CC910014D4F3 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		85AC5BCC25D7CC910014D4F3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -179,7 +179,7 @@
 			isa = PBXGroup;
 			children = (
 				85AC5BC325D7CC8F0014D4F3 /* LesmillsNZApp.swift */,
-				85AC5BC525D7CC8F0014D4F3 /* ComplicationController.swift */,
+				8589D0B925EC397C00006C53 /* ComplicationController.swift */,
 				8534476525E389D500FF167C /* Utils.swift */,
 				85AC5BC725D7CC910014D4F3 /* Assets.xcassets */,
 				85AE6F2425DB8D70002D9F28 /* locations.json */,
@@ -361,9 +361,9 @@
 				85AE6F1A25DB8ACE002D9F28 /* Locations.swift in Sources */,
 				85440DDD25D92B00003567D9 /* ScheduleListView.swift in Sources */,
 				85440DD025D7D1AB003567D9 /* WorkoutInfoView.swift in Sources */,
+				8589D0BA25EC397C00006C53 /* ComplicationController.swift in Sources */,
 				8510970125DB89650002295E /* LocationsListView.swift in Sources */,
 				851096F625DB4B850002295E /* TimetableRequest.swift in Sources */,
-				85AC5BC625D7CC8F0014D4F3 /* ComplicationController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

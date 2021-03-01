@@ -31,14 +31,17 @@ struct WorkoutInfoView: View {
                 Image(systemName: "stopwatch")
                     .foregroundColor(.green)
                     .padding(.top, 2)
+                Text("\(info.duration) Minutes")
+                    .font(.system(size: 14))
+                    .foregroundColor(.green)
             } else {
                 Image(systemName: "flag.slash")
-                    .foregroundColor(.gray)
+                    .foregroundColor(.orange)
                     .padding(.top, 2)
+                Text("\(info.duration) Minutes")
+                    .font(.system(size: 14))
+                    .foregroundColor(.orange)
             }
-            Text("\(info.duration) Minutes")
-                .font(.system(size: 14))
-                .foregroundColor(.green)
             
         }.navigationTitle("Info")
     }
