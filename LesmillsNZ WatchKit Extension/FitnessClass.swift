@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct FitnessClass {
+struct FitnessClass: Codable {
     let name: String
     let color: String
     let instructor1: String

@@ -37,8 +37,12 @@ func createTimetableRequest(
     request.httpMethod = "POST"
     request.httpBody = bodyData
     
+    let config = URLSessionConfiguration.default
+    config.waitsForConnectivity = true
+    config.timeoutIntervalForResource = 60
+    
     // Create the HTTP request
-    URLSession.shared.dataTask(with: request) {
+    URLSession(configuration: config).dataTask(with: request) {
         data, response, error in
 
         // Handle the request.

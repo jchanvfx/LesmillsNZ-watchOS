@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		851096F625DB4B850002295E /* TimetableRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 851096F525DB4B850002295E /* TimetableRequest.swift */; };
 		8510970125DB89650002295E /* LocationsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8510970025DB89650002295E /* LocationsListView.swift */; };
-		8534476625E389D500FF167C /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8534476525E389D500FF167C /* Utils.swift */; };
+		8534476625E389D500FF167C /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8534476525E389D500FF167C /* Utilities.swift */; };
 		85440DD025D7D1AB003567D9 /* WorkoutInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85440DCF25D7D1AB003567D9 /* WorkoutInfoView.swift */; };
 		85440DD525D7D1BF003567D9 /* WorkoutRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85440DD425D7D1BF003567D9 /* WorkoutRowView.swift */; };
 		85440DDD25D92B00003567D9 /* ScheduleListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85440DDC25D92B00003567D9 /* ScheduleListView.swift */; };
@@ -79,7 +79,7 @@
 /* Begin PBXFileReference section */
 		851096F525DB4B850002295E /* TimetableRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimetableRequest.swift; sourceTree = "<group>"; };
 		8510970025DB89650002295E /* LocationsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationsListView.swift; sourceTree = "<group>"; };
-		8534476525E389D500FF167C /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
+		8534476525E389D500FF167C /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 		85440DCF25D7D1AB003567D9 /* WorkoutInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutInfoView.swift; sourceTree = "<group>"; };
 		85440DD425D7D1BF003567D9 /* WorkoutRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutRowView.swift; sourceTree = "<group>"; };
 		85440DDC25D92B00003567D9 /* ScheduleListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleListView.swift; sourceTree = "<group>"; };
@@ -180,11 +180,11 @@
 			children = (
 				85AC5BC325D7CC8F0014D4F3 /* LesmillsNZApp.swift */,
 				8589D0B925EC397C00006C53 /* ComplicationController.swift */,
-				8534476525E389D500FF167C /* Utils.swift */,
 				85AC5BC725D7CC910014D4F3 /* Assets.xcassets */,
 				85AE6F2425DB8D70002D9F28 /* locations.json */,
 				85AC5BCC25D7CC910014D4F3 /* Info.plist */,
 				85AC5BC925D7CC910014D4F3 /* Preview Content */,
+				8534476525E389D500FF167C /* Utilities.swift */,
 				85E4A2BF25DFA35000D90DCE /* Model.swift */,
 				85AE6F1925DB8ACE002D9F28 /* Locations.swift */,
 				851096F525DB4B850002295E /* TimetableRequest.swift */,
@@ -349,7 +349,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8534476625E389D500FF167C /* Utils.swift in Sources */,
+				8534476625E389D500FF167C /* Utilities.swift in Sources */,
 				85AC5BC425D7CC8F0014D4F3 /* LesmillsNZApp.swift in Sources */,
 				85E4A2C825DFC53B00D90DCE /* MainView.swift in Sources */,
 				85440DD525D7D1BF003567D9 /* WorkoutRowView.swift in Sources */,

@@ -125,27 +125,31 @@ struct ScheduleListView: View {
                             .resizable()
                             .scaledToFit()
                             .frame(width:150)
-                            .padding(.top, 5)
+                            .padding(.top, 8)
                             .listRowBackground(Color.black)
                         RoundedRectangle(cornerRadius: 3)
                             .fill(Color.accentColor)
                             .frame(height: 1)
                     }.listRowBackground(Color.black)
                     
-                    // disclaimer info.
-                    VStack {
-                        DisclaimerInfoView()
-                        if fitnessClasses.lastSynced != nil {
-                            RoundedRectangle(cornerRadius: 3)
-                                .fill(Color.gray)
-                                .frame(height: 1)
-                                .padding(.vertical, 5)
+                    // sync info.
+                    if fitnessClasses.lastSynced != nil {
+                        VStack {
                             Text("Timetable Last Synced:\n\(fitnessClasses.lastSynced!)")
                                 .multilineTextAlignment(.center)
                                 .foregroundColor(Color(hex: "#00d6d3"))
                                 .font(.system(size: 12))
-                        }
-                    }.listRowBackground(Color.black)
+                            RoundedRectangle(cornerRadius: 3)
+                                .fill(Color(hex: "#525252"))
+                                .frame(height: 1)
+                                .padding(.vertical, 5)
+                        }.listRowBackground(Color.black)
+                    }
+
+                    // disclaimer info.
+                    DisclaimerInfoView()
+                        .padding(.top, 10)
+                        .listRowBackground(Color.black)
                 }
             } else {
                 // club note set view.

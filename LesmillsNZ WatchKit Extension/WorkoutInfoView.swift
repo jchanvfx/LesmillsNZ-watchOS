@@ -13,6 +13,7 @@ struct WorkoutInfoView: View {
         VStack {
             Text(info.name)
                 .font(.system(size: 14))
+                .fontWeight(.semibold)
             Text("with")
                 .font(.system(size: 10))
                 .foregroundColor(.gray)
