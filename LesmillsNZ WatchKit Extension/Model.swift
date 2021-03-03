@@ -8,10 +8,10 @@
 import Foundation
 
 let disclaimerText = """
-This app is NOT officially part of Les Mills I made this app \
-to conveniently display the timetable on my watch and for the \
-love of group fitness\n
-\u{2665} #lesmillsnz
+This app is NOT officially part of Les Mills I just made it \
+to conveniently display the timetable on my watch without using \
+the iPhone app.\n
+\u{2665} Group Fitness\n#LesMillsNZ
 """
 
 let noClassesText = """
