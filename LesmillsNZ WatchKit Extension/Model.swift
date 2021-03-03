@@ -9,13 +9,14 @@ import Foundation
 
 let disclaimerText = """
 This app is NOT officially part of Les Mills I made this app \
-to help conveniently display class timetable without my iPhone \
-and for the love of the group fitness classes.
+to conveniently display the timetable on my watch and for the \
+love of group fitness\n
+\u{2665} #lesmillsnz
 """
 
 let noClassesText = """
-No classes avaliable for the selected club please try reloading \
-timetable (\u{2191}) above or change club location (\u{2193}) below.
+No data avaliable for the selected club please try reloading \
+(\u{2191}) or change club location (\u{2193}).
 """
 
 class UserSettings: ObservableObject {

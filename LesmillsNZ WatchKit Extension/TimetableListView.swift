@@ -49,7 +49,7 @@ struct TimetableListView: View {
                 }
             }
         }
-        .navigationTitle(formatDateTitleFromId(id: dateId))
+        .navigationTitle(formatDateId(dateId, "E dd"))
     }
 }
 

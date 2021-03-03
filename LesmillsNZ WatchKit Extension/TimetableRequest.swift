@@ -8,7 +8,7 @@
 import Foundation
 
 func createTimetableRequest(
-    clubID:String, completionBlock: @escaping ([String: [FitnessClass]]) -> Void) {
+    clubID:String, completionBlock: @escaping ([String: [FitnessClass]], String?) -> Void) {
 
     // fitness class color overrides.
     let defaultColors = [
@@ -39,7 +39,7 @@ func createTimetableRequest(
     
     let config = URLSessionConfiguration.default
     config.waitsForConnectivity = true
-    config.timeoutIntervalForResource = 60
+    config.timeoutIntervalForResource = 30
     
     // Create the HTTP request
     URLSession(configuration: config).dataTask(with: request) {
@@ -47,7 +47,8 @@ func createTimetableRequest(
 
         // Handle the request.
         guard let data = data else {
-            print("No data in response:\(error?.localizedDescription ?? "Unknown Error").")
+            let errMessage = "\u{2297} \(error?.localizedDescription ?? "Unknown Error")"
+            completionBlock([:], errMessage)
             return
         }
         
@@ -86,7 +87,7 @@ func createTimetableRequest(
                         siteName = site["SiteName"] as? String ?? ""
                     }
                     let dateStr: String = cls["StartDateTime"] as? String ?? ""
-                    let date = getDateFromString(dateStr:dateStr)!
+                    let date = getDateFromString(dateStr)!
 
                     let dateFormatter = DateFormatter()
                     dateFormatter.dateFormat = "yyMMdd"
@@ -113,6 +114,6 @@ func createTimetableRequest(
             fitnessClasses[key] = fitnessClasses[key]!.sorted(
                 by: {$0.timeStamp < $1.timeStamp})
         }
-        completionBlock(fitnessClasses)
+        completionBlock(fitnessClasses, nil)
     }.resume()
 }

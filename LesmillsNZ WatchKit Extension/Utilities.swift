@@ -43,7 +43,7 @@ func getCurrentDateId() -> String {
     return "\(formatter.string(from: Date()))"
 }
 
-func getDateFromString(dateStr: String) -> Date? {
+func getDateFromString(_ dateStr: String) -> Date? {
     let dateFormatter = DateFormatter()
     dateFormatter.timeZone = TimeZone.current
     dateFormatter.locale = Locale.current
@@ -61,7 +61,7 @@ func getDateFromString(dateStr: String) -> Date? {
     return Date()
 }
 
-func formatTimeStamp(timeStamp:String, formatStr:String) -> String {
+func formatTimeStamp(_ timeStamp:String, _ formatStr:String) -> String {
     let formatter = DateFormatter()
     formatter.dateFormat = "yyyy-MM-dd-HH:mm"
     let date = formatter.date(from: timeStamp)!
@@ -69,22 +69,12 @@ func formatTimeStamp(timeStamp:String, formatStr:String) -> String {
     return "\(formatter.string(from: date))"
 }
 
-func formatDayTextFromId(id:String) -> String {
+func formatDateId(_ id:String, _ dateFormat:String) -> String {
     let formatter = DateFormatter()
     formatter.timeZone = TimeZone.current
     formatter.locale = Locale.current
     formatter.dateFormat = "yyMMdd"
     let date = formatter.date(from: id)
-    formatter.dateFormat = "E dd MMM"
-    return "\(formatter.string(from: date!))"
-}
-
-func formatDateTitleFromId(id:String) -> String {
-    let formatter = DateFormatter()
-    formatter.timeZone = TimeZone.current
-    formatter.locale = Locale.current
-    formatter.dateFormat = "yyMMdd"
-    let date = formatter.date(from: id)
-    formatter.dateFormat = "E dd/MM"
+    formatter.dateFormat = dateFormat
     return "\(formatter.string(from: date!))"
 }

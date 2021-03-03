@@ -16,20 +16,16 @@ struct FitnessClass {
     let location: String
     let timeStamp: String
     var day: String {
-        return formatTimeStamp(timeStamp: timeStamp,
-                               formatStr: "E")
+        return formatTimeStamp(timeStamp, "E")
     }
     var date: String {
-        return formatTimeStamp(timeStamp: timeStamp,
-                               formatStr: "dd")
+        return formatTimeStamp(timeStamp, "dd")
     }
     var month: String {
-        return formatTimeStamp(timeStamp: timeStamp,
-                               formatStr: "MMM")
+        return formatTimeStamp(timeStamp, "MMM")
     }
     var time: String {
-        return formatTimeStamp(timeStamp: timeStamp,
-                               formatStr: "h:mm a")
+        return formatTimeStamp(timeStamp, "h:mm a")
     }
     var instructors: String {
         if instructor2 != "" {
