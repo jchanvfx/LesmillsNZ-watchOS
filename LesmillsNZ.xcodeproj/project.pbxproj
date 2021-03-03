@@ -126,6 +126,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		857F6F8D25EF9F0500BF7E71 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				85E4A2C725DFC53B00D90DCE /* MainView.swift */,
+				85E4A2AF25DE6F2A00D90DCE /* LoadingView.swift */,
+				8510970025DB89650002295E /* LocationsListView.swift */,
+				85440DDC25D92B00003567D9 /* ScheduleListView.swift */,
+				85AC5BC125D7CC8F0014D4F3 /* TimetableListView.swift */,
+				85440DCF25D7D1AB003567D9 /* WorkoutInfoView.swift */,
+				85440DD425D7D1BF003567D9 /* WorkoutRowView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		85AC5B9825D7CC890014D4F3 = {
 			isa = PBXGroup;
 			children = (
@@ -184,19 +198,13 @@
 				85AE6F2425DB8D70002D9F28 /* locations.json */,
 				85AC5BCC25D7CC910014D4F3 /* Info.plist */,
 				85AC5BC925D7CC910014D4F3 /* Preview Content */,
+				857F6F8D25EF9F0500BF7E71 /* Views */,
 				8534476525E389D500FF167C /* Utilities.swift */,
 				85E4A2BF25DFA35000D90DCE /* Model.swift */,
 				85AE6F1925DB8ACE002D9F28 /* Locations.swift */,
 				851096F525DB4B850002295E /* TimetableRequest.swift */,
 				85E4A2A325DD232400D90DCE /* FitnessClass.swift */,
 				85E4A2BA25DF1FD800D90DCE /* FitnessClasses.swift */,
-				85E4A2C725DFC53B00D90DCE /* MainView.swift */,
-				85E4A2AF25DE6F2A00D90DCE /* LoadingView.swift */,
-				8510970025DB89650002295E /* LocationsListView.swift */,
-				85440DDC25D92B00003567D9 /* ScheduleListView.swift */,
-				85AC5BC125D7CC8F0014D4F3 /* TimetableListView.swift */,
-				85440DCF25D7D1AB003567D9 /* WorkoutInfoView.swift */,
-				85440DD425D7D1BF003567D9 /* WorkoutRowView.swift */,
 			);
 			path = "LesmillsNZ WatchKit Extension";
 			sourceTree = "<group>";
