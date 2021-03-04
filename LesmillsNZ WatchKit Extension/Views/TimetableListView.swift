@@ -63,7 +63,8 @@ struct TimetableListView: View {
             if self.isVisible && dateId < getCurrentDateId() {
                 // navigate back if view is outdated when pushed to the foreground.
                 presentationMode.wrappedValue.dismiss()
-                // note: previous view doesn't seem to update with "onAppear".
+                // note: previous view doesn't seem to update with "onAppear"
+                //       must look into this issue..
             }
         }
     }

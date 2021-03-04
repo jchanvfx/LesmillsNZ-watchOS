@@ -22,26 +22,46 @@ struct DisclaimerInfoView: View {
     }
 }
 
-struct ClubButtonView: View {
+struct LocationButtonView: View {
     let text: String
     let subText: String
     let systemIcon: String
     let color: Color
     var body: some View {
-        VStack(spacing: 2) {
-            HStack(spacing: 4) {
-                Image(systemName: systemIcon)
-                    .foregroundColor(color)
-                Text(text)
+        HStack {
+            Spacer()
+            Image(systemName: systemIcon)
+                .foregroundColor(color)
+            VStack (alignment: .leading) {
+                Text(subText)
                     .fontWeight(.semibold)
-                    .foregroundColor(color)
+                Text(text)
+                    .foregroundColor(Color.gray)
             }
-            .padding(.leading, -16)
-            Text(subText)
-                .foregroundColor(.gray)
+            .font(.system(size: 12))
+            Spacer()
         }
-        .font(.system(size: 12))
-        .padding(.bottom, 1)
+    }
+}
+    
+struct ReloadButtonView: View {
+    let text: String
+    let subText: String
+    let systemIcon: String
+    let color: Color
+    var body: some View {
+        HStack {
+            Spacer()
+            Image(systemName: systemIcon)
+                .foregroundColor(color)
+            VStack (alignment: .leading) {
+                Text(text)
+                Text(subText)
+                    .foregroundColor(Color.gray)
+            }
+            .font(.system(size: 12))
+            Spacer()
+        }
     }
 }
 
@@ -60,18 +80,19 @@ struct ScheduleListView: View {
                 List {
                     let location = clubLocations.getClubById(
                         id: settings.clubId)!
-                    // reload button
-                    HStack {
-                        Spacer()
-                        ClubButtonView(text: "Reload",
-                                       subText: location.name,
-                                       systemIcon: "arrow.clockwise",
-                                       color: Color.orange
-                        )
-                        Spacer()
-                    }
-                    .onTapGesture {
-                        fitnessClasses.createRequest()
+                    
+                    // location display
+                    Button(action: {fitnessClasses.createRequest()}) {
+                        HStack {
+                            Spacer()
+                            ReloadButtonView(
+                                text: "Reload",
+                                subText: location.name,
+                                systemIcon: "arrow.clockwise",
+                                color: Color(hex: "#00d6d3")
+                            )
+                            Spacer()
+                        }
                     }
 
                     // fitness classes by day
@@ -117,10 +138,12 @@ struct ScheduleListView: View {
                     NavigationLink(destination: LocationsListView()) {
                         HStack{
                             Spacer()
-                            ClubButtonView(text: location.name,
-                                           subText: "change location",
-                                           systemIcon: "location.fill",
-                                           color: Color.blue)
+                            LocationButtonView(
+                                text: location.name,
+                                subText: "Set Location",
+                                systemIcon: "location.fill.viewfinder",
+                                color: Color.blue
+                            )
                             Spacer()
                         }
                     }
@@ -131,16 +154,14 @@ struct ScheduleListView: View {
                             .scaledToFit()
                             .frame(width:150)
                             .padding(.top, 8)
-                            .listRowBackground(Color.black)
                         RoundedRectangle(cornerRadius: 3)
                             .fill(Color.accentColor)
                             .frame(height: 1)
-
                         // sync info.
                         if fitnessClasses.lastSynced != nil {
                             Text("Data Last Synced:\n\(fitnessClasses.lastSynced!)")
                                 .multilineTextAlignment(.center)
-                                .foregroundColor(Color(hex: "#00d6d3"))
+                                .foregroundColor(Color.gray)
                                 .font(.system(size: 12))
                         }
                     }.listRowBackground(Color.black)
@@ -162,19 +183,19 @@ struct ScheduleListView: View {
                         .frame(height: 1)
                         .padding(.vertical, 5)
                     NavigationLink(destination: LocationsListView()) {
-                        ClubButtonView(text: "Club Not Set!",
-                                       subText: "select location",
-                                       systemIcon: "location.fill",
-                                       color: Color.blue)
+                        HStack {
+                            Spacer()
+                            Image(systemName: "location.fill.viewfinder")
+                                .foregroundColor(Color.blue)
+                            Text("Set Location")
+                                .font(.caption2)
+                            Spacer()
+                        }
                     }
                     // disclaimer info.
-                    VStack {
-                        RoundedRectangle(cornerRadius: 3)
-                            .fill(Color.accentColor)
-                            .frame(height: 1)
-                            .padding(.bottom, 5)
-                        DisclaimerInfoView()
-                    }.padding(.top, 5)
+                    DisclaimerInfoView()
+                        .padding(.top, 5)
+                    
                 }
             }
         }
