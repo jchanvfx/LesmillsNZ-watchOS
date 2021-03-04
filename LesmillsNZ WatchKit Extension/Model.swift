@@ -15,8 +15,8 @@ the iPhone app.\n
 """
 
 let noClassesText = """
-No data avaliable for the selected club please try reloading \
-(\u{2191}) or change club location (\u{2193}).
+No data avaliable please try reloading (\u{2191}) or change \
+club location (\u{2193}).
 """
 
 class UserSettings: ObservableObject {

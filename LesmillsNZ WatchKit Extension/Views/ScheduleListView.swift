@@ -50,7 +50,8 @@ struct ScheduleListView: View {
     @EnvironmentObject var fitnessClasses: FitnessClasses
     @EnvironmentObject var clubLocations: ClubLocations
     
-    // default view to navigate to when initialized.
+    @State private var dateIds: [String] = []
+    @State private var isVisible: Bool = true
     @State private var pushToView: Int? = 0
 
     var body: some View {
@@ -59,7 +60,7 @@ struct ScheduleListView: View {
                 List {
                     let location = clubLocations.getClubById(
                         id: settings.clubId)!
-                    // reload timetable button
+                    // reload button
                     HStack {
                         Spacer()
                         ClubButtonView(text: "Reload",
@@ -75,8 +76,7 @@ struct ScheduleListView: View {
 
                     // fitness classes by day
                     let allClasses = fitnessClasses.allClasses
-                    let ids = Array(allClasses.keys).sorted(by: {$0 < $1})
-                    if ids.count == 0 {
+                    if dateIds.count == 0 {
                         VStack {
                             if fitnessClasses.requestError != nil {
                                 Text(fitnessClasses.requestError!)
@@ -98,7 +98,7 @@ struct ScheduleListView: View {
                         .padding(.vertical, 10)
                         .listRowBackground(Color.black)
                     } else {
-                        ForEach(Array(zip(ids.indices, ids)), id: \.0) { x, id in
+                        ForEach(Array(zip(dateIds.indices, dateIds)), id: \.0) { x, id in
                             let classes = allClasses[id]!
                             NavigationLink(
                                 destination: TimetableListView(dateId: id, classes: classes),
@@ -113,7 +113,7 @@ struct ScheduleListView: View {
                         }
                     }
                     
-                    // change club location.
+                    // change location.
                     NavigationLink(destination: LocationsListView()) {
                         HStack{
                             Spacer()
@@ -138,16 +138,16 @@ struct ScheduleListView: View {
 
                         // sync info.
                         if fitnessClasses.lastSynced != nil {
-                            Text("Timetable Last Synced:\n\(fitnessClasses.lastSynced!)")
+                            Text("Data Last Synced:\n\(fitnessClasses.lastSynced!)")
                                 .multilineTextAlignment(.center)
                                 .foregroundColor(Color(hex: "#00d6d3"))
                                 .font(.system(size: 12))
                         }
                     }.listRowBackground(Color.black)
-                    // disclaimer info.
-                    DisclaimerInfoView()
-                        .padding(.top, 10)
-                        .listRowBackground(Color.black)
+//                    // disclaimer info.
+//                    DisclaimerInfoView()
+//                        .padding(.top, 10)
+//                        .listRowBackground(Color.black)
                 }
             } else {
                 // club note set view.
@@ -177,7 +177,31 @@ struct ScheduleListView: View {
                     }.padding(.top, 5)
                 }
             }
-        }.navigationTitle("Lesmills NZ")
+        }
+        .navigationTitle("Lesmills NZ")
+        .onAppear {
+            self.isVisible = true
+            // update date id list when viewed.
+            self.dateIds = fitnessClasses.dateIds
+        }
+        .onDisappear {
+            self.isVisible = false
+        }
+        .onReceive(
+            NotificationCenter.default.publisher(
+                for: WKExtension.applicationWillEnterForegroundNotification)) { _ in
+            if self.isVisible {
+                // update date id list when pushed to the foreground.
+                self.dateIds = fitnessClasses.dateIds
+            }
+        }
+//        .onReceive(
+//            NotificationCenter.default.publisher(
+//                for: WKExtension.applicationWillResignActiveNotification)) { _ in
+//            if self.isVisible {
+//
+//            }
+//        }
     }
 }
 

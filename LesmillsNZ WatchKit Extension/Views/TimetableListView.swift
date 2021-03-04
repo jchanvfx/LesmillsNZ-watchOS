@@ -11,7 +11,10 @@ struct TimetableListView: View {
     let dateId: String
     let classes: [FitnessClass]
 
-    @State private var jumpTo = true
+    @Environment(\.presentationMode) var presentationMode
+
+    @State private var isVisible: Bool = true
+    @State private var scrollToNext: Bool = true
 
     var body: some View {
         ScrollView {
@@ -24,8 +27,9 @@ struct TimetableListView: View {
                     .id(idx)
                 }
                 .onAppear {
+                    self.isVisible = true
                     if getCurrentDateId() == dateId {
-                        if !jumpTo {
+                        if !self.scrollToNext {
                             return
                         }
                         var scrollToIdx = 0
@@ -35,7 +39,7 @@ struct TimetableListView: View {
                                 break
                             }
                         }
-                        // minor scrolling animation :P.
+                        // intentional scroll animation here.
                         if scrollToIdx > 3 {
                             proxy.scrollTo(scrollToIdx - 2, anchor: .top)
                         }
@@ -43,13 +47,25 @@ struct TimetableListView: View {
                             withAnimation {
                                 proxy.scrollTo(scrollToIdx, anchor: .top)
                             }
-                            jumpTo.toggle()
+                            self.scrollToNext = false
                         }
                     }
+                }
+                .onDisappear {
+                    self.isVisible = false
                 }
             }
         }
         .navigationTitle(formatDateId(dateId, "E dd"))
+        .onReceive(
+            NotificationCenter.default.publisher(
+                for: WKExtension.applicationWillEnterForegroundNotification)) { _ in
+            if self.isVisible && dateId < getCurrentDateId() {
+                // navigate back if view is outdated when pushed to the foreground.
+                presentationMode.wrappedValue.dismiss()
+                // note: previous view doesn't seem to update with "onAppear".
+            }
+        }
     }
 }
 

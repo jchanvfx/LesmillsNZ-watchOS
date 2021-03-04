@@ -13,6 +13,18 @@ class FitnessClasses: ObservableObject {
     @Published var isLoading: Bool = false
     @Published var requestError: String? = nil
     @Published var lastSynced: String? = nil
+    
+    // date ids in sorted order.
+    var dateIds: [String] {
+        let currentId = getCurrentDateId()
+        var ids = [String]()
+        for id in Array(self.allClasses.keys).sorted(by: {$0 < $1}) {
+            if currentId <= id {
+                ids.append(id)
+            }
+        }
+        return ids
+    }
 
     // creates the time table request when the current club id.
     func createRequest() {
