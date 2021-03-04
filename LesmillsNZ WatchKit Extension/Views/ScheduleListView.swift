@@ -86,9 +86,9 @@ struct ScheduleListView: View {
                         HStack {
                             Spacer()
                             ReloadButtonView(
-                                text: "Reload",
+                                text: "Reload Timetable",
                                 subText: location.name,
-                                systemIcon: "arrow.clockwise",
+                                systemIcon: "arrow.clockwise.circle",
                                 color: Color(hex: "#00d6d3")
                             )
                             Spacer()
