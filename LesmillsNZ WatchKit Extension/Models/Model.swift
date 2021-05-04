@@ -9,18 +9,18 @@ import Foundation
 
 class Model: ObservableObject {
     @Published var previewMode: Bool
-    @Published var selectedClub: String
+    @Published var selectedClub: String = ""
     @Published var isLoading: Bool = false
-    @Published var requestError: String?
     @Published var allClasses: [String: [FitnessClass]] = [:]
+    @Published var requestError: String?
 
     // functions
 
-    init(preview:Bool=true) {
+    init(preview:Bool=false) {
         self.previewMode = preview
         if preview {
             self.selectedClub = "04"
-            self.allClasses = ["210503": [FitnessClass.example]]
+            self.allClasses = ["210505": [FitnessClass.example]]
             return
         }
         // read user app settings.
@@ -77,5 +77,5 @@ class Model: ObservableObject {
         guard self.allClasses[dateKey] != nil else {return []}
         return self.allClasses[dateKey]!
     }
- 
+
 }

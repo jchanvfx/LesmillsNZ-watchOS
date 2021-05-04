@@ -48,7 +48,7 @@ struct LoadingScreenView: View {
                 .frame(height: 1)
                 .padding([.top, .bottom], 5)
             Spacer()
-            Text("loading timetable...")
+            Text("loading classes...")
                 .font(.system(size: 12))
                 .foregroundColor(Color.gray)
             SlidingBarAnimView()

@@ -68,16 +68,22 @@ struct WeekListView: View {
                         }
                         .id(idx)
                     }
-    
                     // Reload button
                     Button(action: model.makeDataRequest) {
                         ReloadView()
+                    }
+                    // no data message.
+                    if (keyLabels.count == 0) {
+                        Text("No timetable data avaliable please try reloading.")
+                            .foregroundColor(Color.gray)
+                            .font(.system(size: 12))
+                            .padding()
                     }
                 } else {
                     Text("Select a club location to display the timetable.")
                         .foregroundColor(Color.gray)
                         .font(.system(size: 14))
-                        .padding(5)
+                        .padding()
                 }
                 Text("www.lesmills.co.nz")
                     .foregroundColor(Color(hex:"#aa8161"))

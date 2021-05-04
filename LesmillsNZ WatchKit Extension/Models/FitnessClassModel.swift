@@ -22,7 +22,7 @@ let defaultColors = [
     "TONE"           : "#8246AF"
 ]
 // exculde black color for since background is black.
-let excludeColors = ["#000", "#000000", "black"]
+let excludeColors = ["#", "#000", "#000000", "black"]
 
 struct FitnessClass: Codable {
     
@@ -95,8 +95,9 @@ struct FitnessClass: Codable {
     }
     var instructor2Text: String {
         guard secondaryInstructorName != nil else {return ""}
-        // TEMP FIX: sanitize secondary name because lesmills database
-        //           is returning the name with a "  + " prefix.
+        // TEMP: work around fix we sanitize secondary instructor name
+        //       because the lesmills database is returning the name
+        //       with a leading "  + " prefix for some reason.
         let regex = try! NSRegularExpression(pattern: "^\\s++\\+\\s")
         let name = regex.replaceMatch(secondaryInstructorName!, "")
         return name
@@ -133,13 +134,13 @@ struct FitnessClass: Codable {
     
     // example test data for preview.
     static let example = FitnessClass(
-        className: "BodyAttack",
+        className: "BODYATTACK",
         colorHexCode: "#FFB81C",
-        mainInstructorName: "Name 1",
-        secondaryInstructorName: "Name 2",
+        mainInstructorName: "Text 1",
+        secondaryInstructorName: "Text 2",
         durationMins: 45,
         siteName: "Studio 1",
-        startDate: "03 May 2021",
-        startTime: "05:40"
+        startDate: "05 May 2021",
+        startTime: "18:45"
     )
 }
