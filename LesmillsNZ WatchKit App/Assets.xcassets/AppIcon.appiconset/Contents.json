@@ -15,14 +15,12 @@
       "subtype" : "42mm"
     },
     {
-      "filename" : "58x58.png",
       "idiom" : "watch",
       "role" : "companionSettings",
       "scale" : "2x",
       "size" : "29x29"
     },
     {
-      "filename" : "87x87.png",
       "idiom" : "watch",
       "role" : "companionSettings",
       "scale" : "3x",

@@ -1,8 +1,8 @@
 //
-//  extensions.swift
+//  Extensions.swift
 //  LesmillsNZ WatchKit Extension
 //
-//  Created by Johnny Chan on 4/03/21.
+//  Created by Johnny Chan on 27/04/21.
 //
 
 import Foundation
@@ -32,5 +32,14 @@ extension Color {
             blue:  Double(b) / 255,
             opacity: Double(a) / 255
         )
+    }
+}
+
+// extend NSRegularExpression object for friendlier usage.
+extension NSRegularExpression {
+    func replaceMatch(_ string:String, _ replaceWith:String) -> String {
+        let range = NSRange(location: 0, length: string.utf16.count)
+        return stringByReplacingMatches(
+            in: string, options: [], range: range, withTemplate: replaceWith)
     }
 }
