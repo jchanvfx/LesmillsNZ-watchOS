@@ -7,70 +7,67 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		8501B41925F0946F00663303 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8501B41825F0946F00663303 /* Extensions.swift */; };
-		851096F625DB4B850002295E /* TimetableRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 851096F525DB4B850002295E /* TimetableRequest.swift */; };
-		8510970125DB89650002295E /* LocationsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8510970025DB89650002295E /* LocationsListView.swift */; };
-		8534476625E389D500FF167C /* DateUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8534476525E389D500FF167C /* DateUtils.swift */; };
-		85440DD025D7D1AB003567D9 /* WorkoutInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85440DCF25D7D1AB003567D9 /* WorkoutInfoView.swift */; };
-		85440DD525D7D1BF003567D9 /* WorkoutRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85440DD425D7D1BF003567D9 /* WorkoutRowView.swift */; };
-		85440DDD25D92B00003567D9 /* ScheduleListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85440DDC25D92B00003567D9 /* ScheduleListView.swift */; };
-		857F6F8925EF4F7700BF7E71 /* ComplicationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8589D0B925EC397C00006C53 /* ComplicationController.swift */; };
-		85AC5BA525D7CC890014D4F3 /* LesmillsNZApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85AC5BA425D7CC890014D4F3 /* LesmillsNZApp.swift */; };
-		85AC5BA725D7CC890014D4F3 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85AC5BA625D7CC890014D4F3 /* ContentView.swift */; };
-		85AC5BA925D7CC8C0014D4F3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 85AC5BA825D7CC8C0014D4F3 /* Assets.xcassets */; };
-		85AC5BAC25D7CC8C0014D4F3 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 85AC5BAB25D7CC8C0014D4F3 /* Preview Assets.xcassets */; };
-		85AC5BB125D7CC8C0014D4F3 /* LesmillsNZ WatchKit App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 85AC5BB025D7CC8C0014D4F3 /* LesmillsNZ WatchKit App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		85AC5BB625D7CC8E0014D4F3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 85AC5BB525D7CC8E0014D4F3 /* Assets.xcassets */; };
-		85AC5BBD25D7CC8F0014D4F3 /* LesmillsNZ WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 85AC5BBC25D7CC8F0014D4F3 /* LesmillsNZ WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		85AC5BC225D7CC8F0014D4F3 /* TimetableListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85AC5BC125D7CC8F0014D4F3 /* TimetableListView.swift */; };
-		85AC5BC425D7CC8F0014D4F3 /* LesmillsNZApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85AC5BC325D7CC8F0014D4F3 /* LesmillsNZApp.swift */; };
-		85AC5BC825D7CC910014D4F3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 85AC5BC725D7CC910014D4F3 /* Assets.xcassets */; };
-		85AC5BCB25D7CC910014D4F3 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 85AC5BCA25D7CC910014D4F3 /* Preview Assets.xcassets */; };
-		85AE6F1A25DB8ACE002D9F28 /* Locations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85AE6F1925DB8ACE002D9F28 /* Locations.swift */; };
-		85AE6F2525DB8D70002D9F28 /* locations.json in Resources */ = {isa = PBXBuildFile; fileRef = 85AE6F2425DB8D70002D9F28 /* locations.json */; };
-		85E4A2A825DD232800D90DCE /* FitnessClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85E4A2A325DD232400D90DCE /* FitnessClass.swift */; };
-		85E4A2B025DE6F2A00D90DCE /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85E4A2AF25DE6F2A00D90DCE /* LoadingView.swift */; };
-		85E4A2BB25DF1FD800D90DCE /* FitnessClasses.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85E4A2BA25DF1FD800D90DCE /* FitnessClasses.swift */; };
-		85E4A2C025DFA35000D90DCE /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85E4A2BF25DFA35000D90DCE /* Model.swift */; };
-		85E4A2C825DFC53B00D90DCE /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85E4A2C725DFC53B00D90DCE /* MainView.swift */; };
+		85196F61263E2F790071997A /* FitnessClassModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85196F60263E2F790071997A /* FitnessClassModel.swift */; };
+		853E7850263C0CE5004E92F2 /* TimetableRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 853E784B263C0CE0004E92F2 /* TimetableRequest.swift */; };
+		8592127626396667006260D9 /* LoadingScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8592127526396667006260D9 /* LoadingScreenView.swift */; };
+		8592128126396D76006260D9 /* LocationsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8592128026396D76006260D9 /* LocationsModel.swift */; };
+		859B73D32639053B00AC82C4 /* ClubLocationsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 859B73D22639053B00AC82C4 /* ClubLocationsView.swift */; };
+		85CCE26B263A05B900698EEF /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85CCE266263A05B100698EEF /* Model.swift */; };
+		85E53634263790C30072BC0C /* LesmillsNZApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85E53633263790C30072BC0C /* LesmillsNZApp.swift */; };
+		85E53636263790C30072BC0C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85E53635263790C30072BC0C /* ContentView.swift */; };
+		85E53638263790C60072BC0C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 85E53637263790C60072BC0C /* Assets.xcassets */; };
+		85E5363B263790C60072BC0C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 85E5363A263790C60072BC0C /* Preview Assets.xcassets */; };
+		85E53640263790C60072BC0C /* LesmillsNZ WatchKit App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 85E5363F263790C60072BC0C /* LesmillsNZ WatchKit App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		85E53645263790C70072BC0C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 85E53644263790C70072BC0C /* Assets.xcassets */; };
+		85E5364C263790C70072BC0C /* LesmillsNZ WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 85E5364B263790C70072BC0C /* LesmillsNZ WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		85E53651263790C70072BC0C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85E53650263790C70072BC0C /* ContentView.swift */; };
+		85E53653263790C70072BC0C /* LesmillsNZApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85E53652263790C70072BC0C /* LesmillsNZApp.swift */; };
+		85E53655263790C70072BC0C /* ComplicationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85E53654263790C70072BC0C /* ComplicationController.swift */; };
+		85E53657263790C90072BC0C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 85E53656263790C90072BC0C /* Assets.xcassets */; };
+		85E5365A263790C90072BC0C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 85E53659263790C90072BC0C /* Preview Assets.xcassets */; };
+		85E536712637923E0072BC0C /* TimetableListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85E536702637923E0072BC0C /* TimetableListView.swift */; };
+		85E5367E2638176F0072BC0C /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85E5367D2638176F0072BC0C /* Extensions.swift */; };
+		85E5368326381A8C0072BC0C /* ClassInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85E5368226381A8C0072BC0C /* ClassInfoView.swift */; };
+		85E5368826381DA20072BC0C /* locations.json in Resources */ = {isa = PBXBuildFile; fileRef = 85E5368726381DA20072BC0C /* locations.json */; };
+		85E5368D26381EA70072BC0C /* WeekListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85E5368C26381EA70072BC0C /* WeekListView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		85AC5BB225D7CC8C0014D4F3 /* PBXContainerItemProxy */ = {
+		85E53641263790C60072BC0C /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 85AC5B9925D7CC890014D4F3 /* Project object */;
+			containerPortal = 85E53628263790C20072BC0C /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 85AC5BAF25D7CC8C0014D4F3;
+			remoteGlobalIDString = 85E5363E263790C60072BC0C;
 			remoteInfo = "LesmillsNZ WatchKit App";
 		};
-		85AC5BBE25D7CC8F0014D4F3 /* PBXContainerItemProxy */ = {
+		85E5364D263790C70072BC0C /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 85AC5B9925D7CC890014D4F3 /* Project object */;
+			containerPortal = 85E53628263790C20072BC0C /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 85AC5BBB25D7CC8F0014D4F3;
+			remoteGlobalIDString = 85E5364A263790C70072BC0C;
 			remoteInfo = "LesmillsNZ WatchKit Extension";
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		85AC5BD225D7CC910014D4F3 /* Embed App Extensions */ = {
+		85E53661263790C90072BC0C /* Embed App Extensions */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
-				85AC5BBD25D7CC8F0014D4F3 /* LesmillsNZ WatchKit Extension.appex in Embed App Extensions */,
+				85E5364C263790C70072BC0C /* LesmillsNZ WatchKit Extension.appex in Embed App Extensions */,
 			);
 			name = "Embed App Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		85AC5BD625D7CC910014D4F3 /* Embed Watch Content */ = {
+		85E53665263790C90072BC0C /* Embed Watch Content */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
 			dstSubfolderSpec = 16;
 			files = (
-				85AC5BB125D7CC8C0014D4F3 /* LesmillsNZ WatchKit App.app in Embed Watch Content */,
+				85E53640263790C60072BC0C /* LesmillsNZ WatchKit App.app in Embed Watch Content */,
 			);
 			name = "Embed Watch Content";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -78,47 +75,44 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		8501B41825F0946F00663303 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
-		851096F525DB4B850002295E /* TimetableRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimetableRequest.swift; sourceTree = "<group>"; };
-		8510970025DB89650002295E /* LocationsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationsListView.swift; sourceTree = "<group>"; };
-		8534476525E389D500FF167C /* DateUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateUtils.swift; sourceTree = "<group>"; };
-		85440DCF25D7D1AB003567D9 /* WorkoutInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutInfoView.swift; sourceTree = "<group>"; };
-		85440DD425D7D1BF003567D9 /* WorkoutRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutRowView.swift; sourceTree = "<group>"; };
-		85440DDC25D92B00003567D9 /* ScheduleListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleListView.swift; sourceTree = "<group>"; };
-		8589D0B925EC397C00006C53 /* ComplicationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComplicationController.swift; sourceTree = "<group>"; };
-		85AC5BA125D7CC890014D4F3 /* LesmillsNZ.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LesmillsNZ.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		85AC5BA425D7CC890014D4F3 /* LesmillsNZApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LesmillsNZApp.swift; sourceTree = "<group>"; };
-		85AC5BA625D7CC890014D4F3 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		85AC5BA825D7CC8C0014D4F3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		85AC5BAB25D7CC8C0014D4F3 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		85AC5BAD25D7CC8C0014D4F3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		85AC5BB025D7CC8C0014D4F3 /* LesmillsNZ WatchKit App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "LesmillsNZ WatchKit App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		85AC5BB525D7CC8E0014D4F3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		85AC5BB725D7CC8E0014D4F3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		85AC5BBC25D7CC8F0014D4F3 /* LesmillsNZ WatchKit Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "LesmillsNZ WatchKit Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
-		85AC5BC125D7CC8F0014D4F3 /* TimetableListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimetableListView.swift; sourceTree = "<group>"; };
-		85AC5BC325D7CC8F0014D4F3 /* LesmillsNZApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LesmillsNZApp.swift; sourceTree = "<group>"; };
-		85AC5BC725D7CC910014D4F3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		85AC5BCA25D7CC910014D4F3 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		85AC5BCC25D7CC910014D4F3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		85AE6F1925DB8ACE002D9F28 /* Locations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Locations.swift; sourceTree = "<group>"; };
-		85AE6F2425DB8D70002D9F28 /* locations.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = locations.json; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.json; };
-		85E4A2A325DD232400D90DCE /* FitnessClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FitnessClass.swift; sourceTree = "<group>"; };
-		85E4A2AF25DE6F2A00D90DCE /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
-		85E4A2BA25DF1FD800D90DCE /* FitnessClasses.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FitnessClasses.swift; sourceTree = "<group>"; };
-		85E4A2BF25DFA35000D90DCE /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
-		85E4A2C725DFC53B00D90DCE /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		85196F60263E2F790071997A /* FitnessClassModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FitnessClassModel.swift; sourceTree = "<group>"; };
+		853E784B263C0CE0004E92F2 /* TimetableRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimetableRequest.swift; sourceTree = "<group>"; };
+		8592127526396667006260D9 /* LoadingScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingScreenView.swift; sourceTree = "<group>"; };
+		8592128026396D76006260D9 /* LocationsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationsModel.swift; sourceTree = "<group>"; };
+		859B73D22639053B00AC82C4 /* ClubLocationsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClubLocationsView.swift; sourceTree = "<group>"; };
+		85CCE266263A05B100698EEF /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		85E53630263790C30072BC0C /* LesmillsNZ.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LesmillsNZ.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		85E53633263790C30072BC0C /* LesmillsNZApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LesmillsNZApp.swift; sourceTree = "<group>"; };
+		85E53635263790C30072BC0C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		85E53637263790C60072BC0C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		85E5363A263790C60072BC0C /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		85E5363C263790C60072BC0C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		85E5363F263790C60072BC0C /* LesmillsNZ WatchKit App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "LesmillsNZ WatchKit App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		85E53644263790C70072BC0C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		85E53646263790C70072BC0C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		85E5364B263790C70072BC0C /* LesmillsNZ WatchKit Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "LesmillsNZ WatchKit Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		85E53650263790C70072BC0C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		85E53652263790C70072BC0C /* LesmillsNZApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LesmillsNZApp.swift; sourceTree = "<group>"; };
+		85E53654263790C70072BC0C /* ComplicationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplicationController.swift; sourceTree = "<group>"; };
+		85E53656263790C90072BC0C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		85E53659263790C90072BC0C /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		85E5365B263790C90072BC0C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		85E536702637923E0072BC0C /* TimetableListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimetableListView.swift; sourceTree = "<group>"; };
+		85E5367D2638176F0072BC0C /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		85E5368226381A8C0072BC0C /* ClassInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassInfoView.swift; sourceTree = "<group>"; };
+		85E5368726381DA20072BC0C /* locations.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = locations.json; sourceTree = "<group>"; };
+		85E5368C26381EA70072BC0C /* WeekListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekListView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		85AC5B9E25D7CC890014D4F3 /* Frameworks */ = {
+		85E5362D263790C30072BC0C /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		85AC5BB925D7CC8F0014D4F3 /* Frameworks */ = {
+		85E53648263790C70072BC0C /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -128,144 +122,149 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		857F6F8D25EF9F0500BF7E71 /* Views */ = {
+		85196F65263E2F860071997A /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				85E4A2C725DFC53B00D90DCE /* MainView.swift */,
-				85E4A2AF25DE6F2A00D90DCE /* LoadingView.swift */,
-				8510970025DB89650002295E /* LocationsListView.swift */,
-				85440DDC25D92B00003567D9 /* ScheduleListView.swift */,
-				85AC5BC125D7CC8F0014D4F3 /* TimetableListView.swift */,
-				85440DCF25D7D1AB003567D9 /* WorkoutInfoView.swift */,
-				85440DD425D7D1BF003567D9 /* WorkoutRowView.swift */,
+				8592128026396D76006260D9 /* LocationsModel.swift */,
+				85196F60263E2F790071997A /* FitnessClassModel.swift */,
+				85CCE266263A05B100698EEF /* Model.swift */,
 			);
-			path = Views;
+			path = Models;
 			sourceTree = "<group>";
 		};
-		85AC5B9825D7CC890014D4F3 = {
+		85E53627263790C20072BC0C = {
 			isa = PBXGroup;
 			children = (
-				85AC5BA325D7CC890014D4F3 /* LesmillsNZ */,
-				85AC5BB425D7CC8D0014D4F3 /* LesmillsNZ WatchKit App */,
-				85AC5BC025D7CC8F0014D4F3 /* LesmillsNZ WatchKit Extension */,
-				85AC5BA225D7CC890014D4F3 /* Products */,
+				85E53632263790C30072BC0C /* LesmillsNZ */,
+				85E53643263790C60072BC0C /* LesmillsNZ WatchKit App */,
+				85E5364F263790C70072BC0C /* LesmillsNZ WatchKit Extension */,
+				85E53631263790C30072BC0C /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		85AC5BA225D7CC890014D4F3 /* Products */ = {
+		85E53631263790C30072BC0C /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				85AC5BA125D7CC890014D4F3 /* LesmillsNZ.app */,
-				85AC5BB025D7CC8C0014D4F3 /* LesmillsNZ WatchKit App.app */,
-				85AC5BBC25D7CC8F0014D4F3 /* LesmillsNZ WatchKit Extension.appex */,
+				85E53630263790C30072BC0C /* LesmillsNZ.app */,
+				85E5363F263790C60072BC0C /* LesmillsNZ WatchKit App.app */,
+				85E5364B263790C70072BC0C /* LesmillsNZ WatchKit Extension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		85AC5BA325D7CC890014D4F3 /* LesmillsNZ */ = {
+		85E53632263790C30072BC0C /* LesmillsNZ */ = {
 			isa = PBXGroup;
 			children = (
-				85AC5BA425D7CC890014D4F3 /* LesmillsNZApp.swift */,
-				85AC5BA625D7CC890014D4F3 /* ContentView.swift */,
-				85AC5BA825D7CC8C0014D4F3 /* Assets.xcassets */,
-				85AC5BAD25D7CC8C0014D4F3 /* Info.plist */,
-				85AC5BAA25D7CC8C0014D4F3 /* Preview Content */,
+				85E53637263790C60072BC0C /* Assets.xcassets */,
+				85E53633263790C30072BC0C /* LesmillsNZApp.swift */,
+				85E53635263790C30072BC0C /* ContentView.swift */,
+				85E5363C263790C60072BC0C /* Info.plist */,
+				85E53639263790C60072BC0C /* Preview Content */,
 			);
 			path = LesmillsNZ;
 			sourceTree = "<group>";
 		};
-		85AC5BAA25D7CC8C0014D4F3 /* Preview Content */ = {
+		85E53639263790C60072BC0C /* Preview Content */ = {
 			isa = PBXGroup;
 			children = (
-				85AC5BAB25D7CC8C0014D4F3 /* Preview Assets.xcassets */,
+				85E5363A263790C60072BC0C /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
-		85AC5BB425D7CC8D0014D4F3 /* LesmillsNZ WatchKit App */ = {
+		85E53643263790C60072BC0C /* LesmillsNZ WatchKit App */ = {
 			isa = PBXGroup;
 			children = (
-				85AC5BB525D7CC8E0014D4F3 /* Assets.xcassets */,
-				85AC5BB725D7CC8E0014D4F3 /* Info.plist */,
+				85E53644263790C70072BC0C /* Assets.xcassets */,
+				85E53646263790C70072BC0C /* Info.plist */,
 			);
 			path = "LesmillsNZ WatchKit App";
 			sourceTree = "<group>";
 		};
-		85AC5BC025D7CC8F0014D4F3 /* LesmillsNZ WatchKit Extension */ = {
+		85E5364F263790C70072BC0C /* LesmillsNZ WatchKit Extension */ = {
 			isa = PBXGroup;
 			children = (
-				85AC5BC325D7CC8F0014D4F3 /* LesmillsNZApp.swift */,
-				8589D0B925EC397C00006C53 /* ComplicationController.swift */,
-				85AC5BC725D7CC910014D4F3 /* Assets.xcassets */,
-				85AE6F2425DB8D70002D9F28 /* locations.json */,
-				85AC5BCC25D7CC910014D4F3 /* Info.plist */,
-				85AC5BC925D7CC910014D4F3 /* Preview Content */,
-				857F6F8D25EF9F0500BF7E71 /* Views */,
-				8501B41825F0946F00663303 /* Extensions.swift */,
-				8534476525E389D500FF167C /* DateUtils.swift */,
-				85E4A2BF25DFA35000D90DCE /* Model.swift */,
-				85AE6F1925DB8ACE002D9F28 /* Locations.swift */,
-				851096F525DB4B850002295E /* TimetableRequest.swift */,
-				85E4A2A325DD232400D90DCE /* FitnessClass.swift */,
-				85E4A2BA25DF1FD800D90DCE /* FitnessClasses.swift */,
+				85E53656263790C90072BC0C /* Assets.xcassets */,
+				85E5368726381DA20072BC0C /* locations.json */,
+				85E53654263790C70072BC0C /* ComplicationController.swift */,
+				85E53652263790C70072BC0C /* LesmillsNZApp.swift */,
+				85E5367D2638176F0072BC0C /* Extensions.swift */,
+				853E784B263C0CE0004E92F2 /* TimetableRequest.swift */,
+				85196F65263E2F860071997A /* Models */,
+				85E5366F263791FE0072BC0C /* Views */,
+				85E5365B263790C90072BC0C /* Info.plist */,
+				85E53658263790C90072BC0C /* Preview Content */,
 			);
 			path = "LesmillsNZ WatchKit Extension";
 			sourceTree = "<group>";
 		};
-		85AC5BC925D7CC910014D4F3 /* Preview Content */ = {
+		85E53658263790C90072BC0C /* Preview Content */ = {
 			isa = PBXGroup;
 			children = (
-				85AC5BCA25D7CC910014D4F3 /* Preview Assets.xcassets */,
+				85E53659263790C90072BC0C /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		85E5366F263791FE0072BC0C /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				85E53650263790C70072BC0C /* ContentView.swift */,
+				85E5368C26381EA70072BC0C /* WeekListView.swift */,
+				859B73D22639053B00AC82C4 /* ClubLocationsView.swift */,
+				85E536702637923E0072BC0C /* TimetableListView.swift */,
+				85E5368226381A8C0072BC0C /* ClassInfoView.swift */,
+				8592127526396667006260D9 /* LoadingScreenView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		85AC5BA025D7CC890014D4F3 /* LesmillsNZ */ = {
+		85E5362F263790C30072BC0C /* LesmillsNZ */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 85AC5BD725D7CC910014D4F3 /* Build configuration list for PBXNativeTarget "LesmillsNZ" */;
+			buildConfigurationList = 85E53666263790C90072BC0C /* Build configuration list for PBXNativeTarget "LesmillsNZ" */;
 			buildPhases = (
-				85AC5B9D25D7CC890014D4F3 /* Sources */,
-				85AC5B9E25D7CC890014D4F3 /* Frameworks */,
-				85AC5B9F25D7CC890014D4F3 /* Resources */,
-				85AC5BD625D7CC910014D4F3 /* Embed Watch Content */,
+				85E5362C263790C30072BC0C /* Sources */,
+				85E5362D263790C30072BC0C /* Frameworks */,
+				85E5362E263790C30072BC0C /* Resources */,
+				85E53665263790C90072BC0C /* Embed Watch Content */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				85AC5BB325D7CC8C0014D4F3 /* PBXTargetDependency */,
+				85E53642263790C60072BC0C /* PBXTargetDependency */,
 			);
 			name = LesmillsNZ;
 			productName = LesmillsNZ;
-			productReference = 85AC5BA125D7CC890014D4F3 /* LesmillsNZ.app */;
+			productReference = 85E53630263790C30072BC0C /* LesmillsNZ.app */;
 			productType = "com.apple.product-type.application";
 		};
-		85AC5BAF25D7CC8C0014D4F3 /* LesmillsNZ WatchKit App */ = {
+		85E5363E263790C60072BC0C /* LesmillsNZ WatchKit App */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 85AC5BD325D7CC910014D4F3 /* Build configuration list for PBXNativeTarget "LesmillsNZ WatchKit App" */;
+			buildConfigurationList = 85E53662263790C90072BC0C /* Build configuration list for PBXNativeTarget "LesmillsNZ WatchKit App" */;
 			buildPhases = (
-				85AC5BAE25D7CC8C0014D4F3 /* Resources */,
-				85AC5BD225D7CC910014D4F3 /* Embed App Extensions */,
+				85E5363D263790C60072BC0C /* Resources */,
+				85E53661263790C90072BC0C /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				85AC5BBF25D7CC8F0014D4F3 /* PBXTargetDependency */,
+				85E5364E263790C70072BC0C /* PBXTargetDependency */,
 			);
 			name = "LesmillsNZ WatchKit App";
 			productName = "LesmillsNZ WatchKit App";
-			productReference = 85AC5BB025D7CC8C0014D4F3 /* LesmillsNZ WatchKit App.app */;
+			productReference = 85E5363F263790C60072BC0C /* LesmillsNZ WatchKit App.app */;
 			productType = "com.apple.product-type.application.watchapp2";
 		};
-		85AC5BBB25D7CC8F0014D4F3 /* LesmillsNZ WatchKit Extension */ = {
+		85E5364A263790C70072BC0C /* LesmillsNZ WatchKit Extension */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 85AC5BCF25D7CC910014D4F3 /* Build configuration list for PBXNativeTarget "LesmillsNZ WatchKit Extension" */;
+			buildConfigurationList = 85E5365E263790C90072BC0C /* Build configuration list for PBXNativeTarget "LesmillsNZ WatchKit Extension" */;
 			buildPhases = (
-				85AC5BB825D7CC8F0014D4F3 /* Sources */,
-				85AC5BB925D7CC8F0014D4F3 /* Frameworks */,
-				85AC5BBA25D7CC8F0014D4F3 /* Resources */,
+				85E53647263790C70072BC0C /* Sources */,
+				85E53648263790C70072BC0C /* Frameworks */,
+				85E53649263790C70072BC0C /* Resources */,
 			);
 			buildRules = (
 			);
@@ -273,30 +272,30 @@
 			);
 			name = "LesmillsNZ WatchKit Extension";
 			productName = "LesmillsNZ WatchKit Extension";
-			productReference = 85AC5BBC25D7CC8F0014D4F3 /* LesmillsNZ WatchKit Extension.appex */;
+			productReference = 85E5364B263790C70072BC0C /* LesmillsNZ WatchKit Extension.appex */;
 			productType = "com.apple.product-type.watchkit2-extension";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		85AC5B9925D7CC890014D4F3 /* Project object */ = {
+		85E53628263790C20072BC0C /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1240;
 				LastUpgradeCheck = 1240;
 				TargetAttributes = {
-					85AC5BA025D7CC890014D4F3 = {
+					85E5362F263790C30072BC0C = {
 						CreatedOnToolsVersion = 12.4;
 					};
-					85AC5BAF25D7CC8C0014D4F3 = {
+					85E5363E263790C60072BC0C = {
 						CreatedOnToolsVersion = 12.4;
 					};
-					85AC5BBB25D7CC8F0014D4F3 = {
+					85E5364A263790C70072BC0C = {
 						CreatedOnToolsVersion = 12.4;
 					};
 				};
 			};
-			buildConfigurationList = 85AC5B9C25D7CC890014D4F3 /* Build configuration list for PBXProject "LesmillsNZ" */;
+			buildConfigurationList = 85E5362B263790C20072BC0C /* Build configuration list for PBXProject "LesmillsNZ" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -304,98 +303,95 @@
 				en,
 				Base,
 			);
-			mainGroup = 85AC5B9825D7CC890014D4F3;
-			productRefGroup = 85AC5BA225D7CC890014D4F3 /* Products */;
+			mainGroup = 85E53627263790C20072BC0C;
+			productRefGroup = 85E53631263790C30072BC0C /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				85AC5BA025D7CC890014D4F3 /* LesmillsNZ */,
-				85AC5BAF25D7CC8C0014D4F3 /* LesmillsNZ WatchKit App */,
-				85AC5BBB25D7CC8F0014D4F3 /* LesmillsNZ WatchKit Extension */,
+				85E5362F263790C30072BC0C /* LesmillsNZ */,
+				85E5363E263790C60072BC0C /* LesmillsNZ WatchKit App */,
+				85E5364A263790C70072BC0C /* LesmillsNZ WatchKit Extension */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		85AC5B9F25D7CC890014D4F3 /* Resources */ = {
+		85E5362E263790C30072BC0C /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				85AC5BAC25D7CC8C0014D4F3 /* Preview Assets.xcassets in Resources */,
-				85AC5BA925D7CC8C0014D4F3 /* Assets.xcassets in Resources */,
+				85E5363B263790C60072BC0C /* Preview Assets.xcassets in Resources */,
+				85E53638263790C60072BC0C /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		85AC5BAE25D7CC8C0014D4F3 /* Resources */ = {
+		85E5363D263790C60072BC0C /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				85AC5BB625D7CC8E0014D4F3 /* Assets.xcassets in Resources */,
+				85E53645263790C70072BC0C /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		85AC5BBA25D7CC8F0014D4F3 /* Resources */ = {
+		85E53649263790C70072BC0C /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				85AC5BCB25D7CC910014D4F3 /* Preview Assets.xcassets in Resources */,
-				85AE6F2525DB8D70002D9F28 /* locations.json in Resources */,
-				85AC5BC825D7CC910014D4F3 /* Assets.xcassets in Resources */,
+				85E5365A263790C90072BC0C /* Preview Assets.xcassets in Resources */,
+				85E5368826381DA20072BC0C /* locations.json in Resources */,
+				85E53657263790C90072BC0C /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		85AC5B9D25D7CC890014D4F3 /* Sources */ = {
+		85E5362C263790C30072BC0C /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				85AC5BA725D7CC890014D4F3 /* ContentView.swift in Sources */,
-				85AC5BA525D7CC890014D4F3 /* LesmillsNZApp.swift in Sources */,
+				85E53636263790C30072BC0C /* ContentView.swift in Sources */,
+				85E53634263790C30072BC0C /* LesmillsNZApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		85AC5BB825D7CC8F0014D4F3 /* Sources */ = {
+		85E53647263790C70072BC0C /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8534476625E389D500FF167C /* DateUtils.swift in Sources */,
-				85AC5BC425D7CC8F0014D4F3 /* LesmillsNZApp.swift in Sources */,
-				857F6F8925EF4F7700BF7E71 /* ComplicationController.swift in Sources */,
-				85E4A2C825DFC53B00D90DCE /* MainView.swift in Sources */,
-				85440DD525D7D1BF003567D9 /* WorkoutRowView.swift in Sources */,
-				85E4A2C025DFA35000D90DCE /* Model.swift in Sources */,
-				85AC5BC225D7CC8F0014D4F3 /* TimetableListView.swift in Sources */,
-				85E4A2A825DD232800D90DCE /* FitnessClass.swift in Sources */,
-				85E4A2B025DE6F2A00D90DCE /* LoadingView.swift in Sources */,
-				85E4A2BB25DF1FD800D90DCE /* FitnessClasses.swift in Sources */,
-				85AE6F1A25DB8ACE002D9F28 /* Locations.swift in Sources */,
-				8501B41925F0946F00663303 /* Extensions.swift in Sources */,
-				85440DDD25D92B00003567D9 /* ScheduleListView.swift in Sources */,
-				85440DD025D7D1AB003567D9 /* WorkoutInfoView.swift in Sources */,
-				8510970125DB89650002295E /* LocationsListView.swift in Sources */,
-				851096F625DB4B850002295E /* TimetableRequest.swift in Sources */,
+				859B73D32639053B00AC82C4 /* ClubLocationsView.swift in Sources */,
+				8592127626396667006260D9 /* LoadingScreenView.swift in Sources */,
+				85E5368D26381EA70072BC0C /* WeekListView.swift in Sources */,
+				85E536712637923E0072BC0C /* TimetableListView.swift in Sources */,
+				85196F61263E2F790071997A /* FitnessClassModel.swift in Sources */,
+				85E5368326381A8C0072BC0C /* ClassInfoView.swift in Sources */,
+				853E7850263C0CE5004E92F2 /* TimetableRequest.swift in Sources */,
+				85E5367E2638176F0072BC0C /* Extensions.swift in Sources */,
+				85E53653263790C70072BC0C /* LesmillsNZApp.swift in Sources */,
+				85E53651263790C70072BC0C /* ContentView.swift in Sources */,
+				85CCE26B263A05B900698EEF /* Model.swift in Sources */,
+				8592128126396D76006260D9 /* LocationsModel.swift in Sources */,
+				85E53655263790C70072BC0C /* ComplicationController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		85AC5BB325D7CC8C0014D4F3 /* PBXTargetDependency */ = {
+		85E53642263790C60072BC0C /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 85AC5BAF25D7CC8C0014D4F3 /* LesmillsNZ WatchKit App */;
-			targetProxy = 85AC5BB225D7CC8C0014D4F3 /* PBXContainerItemProxy */;
+			target = 85E5363E263790C60072BC0C /* LesmillsNZ WatchKit App */;
+			targetProxy = 85E53641263790C60072BC0C /* PBXContainerItemProxy */;
 		};
-		85AC5BBF25D7CC8F0014D4F3 /* PBXTargetDependency */ = {
+		85E5364E263790C70072BC0C /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 85AC5BBB25D7CC8F0014D4F3 /* LesmillsNZ WatchKit Extension */;
-			targetProxy = 85AC5BBE25D7CC8F0014D4F3 /* PBXContainerItemProxy */;
+			target = 85E5364A263790C70072BC0C /* LesmillsNZ WatchKit Extension */;
+			targetProxy = 85E5364D263790C70072BC0C /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		85AC5BCD25D7CC910014D4F3 /* Debug */ = {
+		85E5365C263790C90072BC0C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -454,7 +450,7 @@
 			};
 			name = Debug;
 		};
-		85AC5BCE25D7CC910014D4F3 /* Release */ = {
+		85E5365D263790C90072BC0C /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -506,7 +502,7 @@
 			};
 			name = Release;
 		};
-		85AC5BD025D7CC910014D4F3 /* Debug */ = {
+		85E5365F263790C90072BC0C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
@@ -520,7 +516,8 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.johnnyChan.LesmillsNZ.watchkitapp.watchkitextension;
+				MARKETING_VERSION = 1.1;
+				PRODUCT_BUNDLE_IDENTIFIER = nz.co.lesmillsNZ.LesmillsNZ.watchkitapp.watchkitextension;
 				PRODUCT_NAME = "${TARGET_NAME}";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
@@ -530,7 +527,7 @@
 			};
 			name = Debug;
 		};
-		85AC5BD125D7CC910014D4F3 /* Release */ = {
+		85E53660263790C90072BC0C /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
@@ -544,7 +541,8 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.johnnyChan.LesmillsNZ.watchkitapp.watchkitextension;
+				MARKETING_VERSION = 1.1;
+				PRODUCT_BUNDLE_IDENTIFIER = nz.co.lesmillsNZ.LesmillsNZ.watchkitapp.watchkitextension;
 				PRODUCT_NAME = "${TARGET_NAME}";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
@@ -555,7 +553,7 @@
 			};
 			name = Release;
 		};
-		85AC5BD425D7CC910014D4F3 /* Debug */ = {
+		85E53663263790C90072BC0C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
@@ -565,7 +563,8 @@
 				DEVELOPMENT_TEAM = GT3U58M9W4;
 				IBSC_MODULE = LesmillsNZ_WatchKit_Extension;
 				INFOPLIST_FILE = "LesmillsNZ WatchKit App/Info.plist";
-				PRODUCT_BUNDLE_IDENTIFIER = com.johnnyChan.LesmillsNZ.watchkitapp;
+				MARKETING_VERSION = 1.1;
+				PRODUCT_BUNDLE_IDENTIFIER = nz.co.lesmillsNZ.LesmillsNZ.watchkitapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
@@ -575,7 +574,7 @@
 			};
 			name = Debug;
 		};
-		85AC5BD525D7CC910014D4F3 /* Release */ = {
+		85E53664263790C90072BC0C /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
@@ -585,7 +584,8 @@
 				DEVELOPMENT_TEAM = GT3U58M9W4;
 				IBSC_MODULE = LesmillsNZ_WatchKit_Extension;
 				INFOPLIST_FILE = "LesmillsNZ WatchKit App/Info.plist";
-				PRODUCT_BUNDLE_IDENTIFIER = com.johnnyChan.LesmillsNZ.watchkitapp;
+				MARKETING_VERSION = 1.1;
+				PRODUCT_BUNDLE_IDENTIFIER = nz.co.lesmillsNZ.LesmillsNZ.watchkitapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
@@ -596,7 +596,7 @@
 			};
 			name = Release;
 		};
-		85AC5BD825D7CC910014D4F3 /* Debug */ = {
+		85E53667263790C90072BC0C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -611,7 +611,8 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.johnnyChan.LesmillsNZ;
+				MARKETING_VERSION = 1.1;
+				PRODUCT_BUNDLE_IDENTIFIER = nz.co.lesmillsNZ.LesmillsNZ;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
 				SWIFT_VERSION = 5.0;
@@ -619,7 +620,7 @@
 			};
 			name = Debug;
 		};
-		85AC5BD925D7CC910014D4F3 /* Release */ = {
+		85E53668263790C90072BC0C /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -634,7 +635,8 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.johnnyChan.LesmillsNZ;
+				MARKETING_VERSION = 1.1;
+				PRODUCT_BUNDLE_IDENTIFIER = nz.co.lesmillsNZ.LesmillsNZ;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
 				SWIFT_VERSION = 5.0;
@@ -646,43 +648,43 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		85AC5B9C25D7CC890014D4F3 /* Build configuration list for PBXProject "LesmillsNZ" */ = {
+		85E5362B263790C20072BC0C /* Build configuration list for PBXProject "LesmillsNZ" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				85AC5BCD25D7CC910014D4F3 /* Debug */,
-				85AC5BCE25D7CC910014D4F3 /* Release */,
+				85E5365C263790C90072BC0C /* Debug */,
+				85E5365D263790C90072BC0C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		85AC5BCF25D7CC910014D4F3 /* Build configuration list for PBXNativeTarget "LesmillsNZ WatchKit Extension" */ = {
+		85E5365E263790C90072BC0C /* Build configuration list for PBXNativeTarget "LesmillsNZ WatchKit Extension" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				85AC5BD025D7CC910014D4F3 /* Debug */,
-				85AC5BD125D7CC910014D4F3 /* Release */,
+				85E5365F263790C90072BC0C /* Debug */,
+				85E53660263790C90072BC0C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		85AC5BD325D7CC910014D4F3 /* Build configuration list for PBXNativeTarget "LesmillsNZ WatchKit App" */ = {
+		85E53662263790C90072BC0C /* Build configuration list for PBXNativeTarget "LesmillsNZ WatchKit App" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				85AC5BD425D7CC910014D4F3 /* Debug */,
-				85AC5BD525D7CC910014D4F3 /* Release */,
+				85E53663263790C90072BC0C /* Debug */,
+				85E53664263790C90072BC0C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		85AC5BD725D7CC910014D4F3 /* Build configuration list for PBXNativeTarget "LesmillsNZ" */ = {
+		85E53666263790C90072BC0C /* Build configuration list for PBXNativeTarget "LesmillsNZ" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				85AC5BD825D7CC910014D4F3 /* Debug */,
-				85AC5BD925D7CC910014D4F3 /* Release */,
+				85E53667263790C90072BC0C /* Debug */,
+				85E53668263790C90072BC0C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 85AC5B9925D7CC890014D4F3 /* Project object */;
+	rootObject = 85E53628263790C20072BC0C /* Project object */;
 }

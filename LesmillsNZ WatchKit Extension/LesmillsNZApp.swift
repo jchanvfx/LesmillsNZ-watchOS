@@ -2,27 +2,24 @@
 //  LesmillsNZApp.swift
 //  LesmillsNZ WatchKit Extension
 //
-//  Created by Johnny Chan on 13/02/21.
+//  Created by Johnny Chan on 27/04/21.
 //
 
 import SwiftUI
 
 @main
 struct LesmillsNZApp: App {
-    @StateObject var settings = UserSettings()
-    @StateObject var clubLocations = ClubLocations()
-    @StateObject var fitnessClasses = FitnessClasses()
-
+    @StateObject var model = Model()
+    @StateObject var clubLocations = ClubLocationsModel()
+    
     var body: some Scene {
         WindowGroup {
-            MainView()
-                .environmentObject(fitnessClasses)
+            ContentView()
+                .environmentObject(model)
                 .environmentObject(clubLocations)
-                .environmentObject(settings)
-                .onAppear {
+                .onAppear{
                     // make initial timetable request.
-                    fitnessClasses.clubId = settings.clubId
-                    fitnessClasses.createRequest()
+                    model.makeDataRequest()
                 }
         }
     }
