@@ -14,7 +14,7 @@ struct LogoLocationView: View {
             Image("LmTextLogo")
                 .resizable()
                 .scaledToFit()
-                .colorMultiply(Color.gray)
+                .colorMultiply(Color(hex: "#e3e3e3"))
             Text(text)
                 .font(.system(size: 12))
                 .padding(0)
@@ -30,10 +30,11 @@ struct ReloadView: View {
         HStack {
             Image(systemName: "arrow.uturn.right.circle.fill")
                 .foregroundColor(Color(hex:"#aa8161"))
-            Text("Reload Timetable")
+            Text("Reload")
                 .foregroundColor(Color.gray)
                 .font(.system(size: 14))
         }
+        .offset(x: -5)
     }
 }
 
