@@ -35,20 +35,27 @@ func createTimetableRequest(
 
         // Handle the request.
         guard let data = data else {
-            let errMessage = "\u{2297} \(error?.localizedDescription ?? "Unknown Error")"
-            callbackFunc([:], errMessage)
-            print(errMessage)
+            let err = "\u{2297} \(error?.localizedDescription ?? "Unknown Error")"
+            // error: run callback func.
+            print(err)
+            callbackFunc([:], err)
             return
         }
         
         let responseJSON = try? JSONSerialization.jsonObject(with: data, options: [])
         if let responseJSON = responseJSON as? [String: Any] {
             guard let responseData = responseJSON["responseData"] as? [String:Any] else {
-                print("--- responseData key missing...!")
+                let err = "Error: \"responseData\" key missing...!"
+                // error: run callback func.
+                print(err)
+                callbackFunc([:], err)
                 return
             }
             guard let cards = responseData["cards"] as? [[String:Any]] else {
-                print("--- cards key missing...!")
+                let err = "Error: \"cards\" key missing...!"
+                // error: run callback func.
+                print(err)
+                callbackFunc([:], err)
                 return
             }
 
@@ -62,7 +69,7 @@ func createTimetableRequest(
                         timetableData[fitnessClass.dateKey!, default: []].append(fitnessClass)
                     }
                 } catch {
-                    print("FitnessClass mapping failed")
+                    print("Error: FitnessClass mapping failed")
                 }
             }
         }

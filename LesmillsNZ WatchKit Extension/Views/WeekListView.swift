@@ -73,7 +73,16 @@ struct WeekListView: View {
                     Button(action: model.makeDataRequest) {
                         ReloadView()
                     }
-                    // no data message.
+
+                    // Error message display.
+                    if (model.requestError != nil) {
+                        Text(model.requestError!)
+                            .foregroundColor(Color(hex:"#ed4e4e"))
+                            .font(.system(size: 12))
+                            .padding()
+                    }
+
+                    // No data message.
                     if (keyLabels.count == 0) {
                         Text("No timetable data avaliable please try reloading.")
                             .foregroundColor(Color.gray)
