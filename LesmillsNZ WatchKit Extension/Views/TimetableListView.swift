@@ -59,6 +59,8 @@ struct TimetableRowView: View {
 }
 
 struct TimetableListView: View {
+    @State private var scrollToRow = true
+
     let classes: [FitnessClass]
 
     var body: some View {
@@ -72,7 +74,17 @@ struct TimetableListView: View {
                     .id(idx)
                 }
                 .onAppear{
+                    if !scrollToRow {return}
                     DispatchQueue.main.async {
+                        // skip scrolling to if date is not today.
+                        let formatter = DateFormatter()
+                        formatter.dateFormat = "yyMMdd"
+                        let currentKey = formatter.string(Date())
+                        let dateKey = classes[0].getFormattedDate(dateFormat:"yyMMdd")
+                        if (currentKey != dateKey) {
+                            scrollToRow.toggle()
+                            return
+                        }
                         // scroll to latest class row.
                         for (idx, cls) in classes.enumerated() {
                             if !cls.hasStarted {
@@ -80,6 +92,7 @@ struct TimetableListView: View {
                                 break
                             }
                         }
+                        scrollToRow.toggle()
                     }
                 }
             }
