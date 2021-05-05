@@ -129,7 +129,10 @@ struct FitnessClass: Codable {
         return getFormattedDate(dateFormat: "h:mm a").lowercased()
     }
     var hasStarted: Bool {
-        return dateObj! < Date()
+        // 5 mins offset.
+        var date = dateObj!
+        date.addTimeInterval(300)
+        return date < Date()
     }
     
     // example test data for preview.
