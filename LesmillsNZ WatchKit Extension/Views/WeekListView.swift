@@ -31,7 +31,7 @@ struct ReloadView: View {
             Image(systemName: "arrow.uturn.right.circle.fill")
                 .foregroundColor(Color(hex:"#aa8161"))
             Text("Reload")
-                .foregroundColor(Color.gray)
+                .foregroundColor(Color(hex:"#d1d1d1"))
                 .font(.system(size: 14))
         }
         .offset(x: -5)
