@@ -10,8 +10,8 @@ import SwiftUI
 struct TimetableRowView: View {
     @Environment(\.scenePhase) var scenePhase
     @State private var textColor = "#ffffff"
-    @State private var classColor = "#ffffff"
-    
+    @State private var classColor = "#636363"
+
     let classInfo: FitnessClass
 
     private func updateClassState() {
