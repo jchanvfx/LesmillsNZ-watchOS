@@ -79,7 +79,7 @@ struct TimetableListView: View {
                         // skip scrolling to if date is not today.
                         let formatter = DateFormatter()
                         formatter.dateFormat = "yyMMdd"
-                        let currentKey = formatter.string(Date())
+                        let currentKey = formatter.string(from:Date())
                         let dateKey = classes[0].getFormattedDate(dateFormat:"yyMMdd")
                         if (currentKey != dateKey) {
                             scrollToRow.toggle()
