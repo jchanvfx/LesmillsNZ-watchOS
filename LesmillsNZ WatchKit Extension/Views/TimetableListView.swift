@@ -80,7 +80,7 @@ struct TimetableListView: View {
                         let formatter = DateFormatter()
                         formatter.dateFormat = "yyMMdd"
                         let currentKey = formatter.string(from:Date())
-                        let dateKey = classes[0].getFormattedDate(dateFormat:"yyMMdd")
+                        let dateKey = classes[0].dateKey!
                         if (currentKey != dateKey) {
                             scrollToRow.toggle()
                             return

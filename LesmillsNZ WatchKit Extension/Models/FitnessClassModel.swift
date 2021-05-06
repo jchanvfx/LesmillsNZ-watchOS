@@ -37,7 +37,7 @@ struct FitnessClass: Codable {
     let startTime: String?
     
     // methods.
-    func getFormattedDate(dateFormat:String) -> String {
+    func getFormattedDate(_ dateFormat:String) -> String {
         let formatter = DateFormatter()
         formatter.timeZone = TimeZone.current
         formatter.locale = Locale.current
@@ -68,7 +68,7 @@ struct FitnessClass: Codable {
             print("no data from dateObject")
             return nil
         }
-        return getFormattedDate(dateFormat: "yyMMdd")
+        return getFormattedDate("yyMMdd")
     }
 
     var nameText: String {
@@ -117,16 +117,16 @@ struct FitnessClass: Codable {
         return "\(siteName!)"
     }
     var dayText: String {
-        return getFormattedDate(dateFormat: "E")
+        return getFormattedDate("E")
     }
     var dateText: String {
-        return getFormattedDate(dateFormat: "dd")
+        return getFormattedDate("dd")
     }
     var monthText: String {
-        return getFormattedDate(dateFormat: "MMM")
+        return getFormattedDate("MMM")
     }
     var timeText: String {
-        return getFormattedDate(dateFormat: "h:mm a").lowercased()
+        return getFormattedDate("h:mm a").lowercased()
     }
     var hasStarted: Bool {
         // 5 mins offset.
