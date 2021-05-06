@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct ClassInfoView: View {
+    @State private var iconName = "stopwatch"
+    @State private var iconColor = "#25f578"
     let classInfo: FitnessClass
     
     var body: some View {
@@ -29,15 +31,20 @@ struct ClassInfoView: View {
                 .font(.system(.caption))
             Text("\(classInfo.dayText) \(classInfo.dateText) \(classInfo.monthText)")
                 .font(.system(.caption))
-            Image(systemName: "stopwatch")
-                .foregroundColor(.green)
+            Image(systemName: iconName)
+                .foregroundColor(Color(hex: iconColor))
                 .padding(.top, 2)
             Text("\(classInfo.durationText) Minutes")
                 .font(.system(size: 14))
-                .foregroundColor(.green)
-            
+                .foregroundColor(Color(hex: iconColor))
         }
         .navigationTitle("Info")
+        .onAppear{
+            if classInfo.hasStarted {
+                self.iconName = "flag.slash"
+                self.iconColor = "#484848"
+            }
+        }
     }
 }
 

@@ -7,8 +7,8 @@
 
 import Foundation
 
-// fitness class color overrides.
-let defaultColors = [
+// fitness class default color overrides.
+let DefaultColors = [
     "BODYATTACK"     : "#FFB81C",
     "BODYBALANCE"    : "#C5E86C",
     "BODYCOMBAT"     : "#787121",
@@ -22,7 +22,7 @@ let defaultColors = [
     "TONE"           : "#8246AF"
 ]
 // exculde black color for since background is black.
-let excludeColors = ["#", "#000", "#000000", "black"]
+let ExcludeColors = ["#", "#000", "#000000", "black"]
 
 struct FitnessClass: Codable {
     
@@ -79,12 +79,12 @@ struct FitnessClass: Codable {
         guard colorHexCode != nil else {return "#848484"}
         // override default color by the class name.
         let name = nameText
-        for (k, v) in defaultColors {
+        for (k, v) in DefaultColors {
             if name.contains(k) {return v}
         }
         // override default color by the class name.
         let color = "#\(colorHexCode!)"
-        if excludeColors.contains(color) {
+        if ExcludeColors.contains(color) {
            return "#848484"
         }
         return color
