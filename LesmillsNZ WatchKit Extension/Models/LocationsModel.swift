@@ -17,7 +17,7 @@ struct ClubLocationModel: Decodable {
         name: "TARANAKI STREET",
         address: "52-70 Taranaki St, Wellington"
     )
-    
+
 }
 
 class ClubLocationsModel: ObservableObject {
