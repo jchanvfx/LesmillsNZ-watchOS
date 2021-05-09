@@ -45,7 +45,7 @@ struct FitnessClass: Codable {
         return formatter.string(from: dateObj!)
     }
 
-    // attributes used by the views.
+    // precomputed attributes used by the views.
     var dateObj: Date? {
         guard startDate != nil else {
             print("startDate data missing!")
@@ -77,12 +77,12 @@ struct FitnessClass: Codable {
     }
     var colorText: String {
         guard colorHexCode != nil else {return "#848484"}
-        // override default color by the class name.
+        // override default color by the class name.
         let name = nameText
         for (k, v) in DefaultColors {
             if name.contains(k) {return v}
         }
-        // override default color by the class name.
+        // override default color by the class name.
         let color = "#\(colorHexCode!)"
         if ExcludeColors.contains(color) {
            return "#848484"
@@ -134,7 +134,7 @@ struct FitnessClass: Codable {
         date.addTimeInterval(300)
         return date < Date()
     }
-    
+
     // example test data for preview.
     static let example = FitnessClass(
         className: "BODYATTACK",
