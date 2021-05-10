@@ -43,7 +43,6 @@ struct WeekListView: View {
     @EnvironmentObject var model: Model
     @EnvironmentObject var locations: ClubLocationsModel
 
-    @State private var pushToView: Int? = 0
     @State private var clubLocationText: String = "SELECT LOCATION"
 
     private func getLocationText() -> String {
@@ -65,10 +64,7 @@ struct WeekListView: View {
                     let keyLabels = model.getButtonLabels()
                     ForEach(0 ..< keyLabels.count) { idx in
                         let classes = model.getClassesByDate(keyLabels[idx].0)
-                        NavigationLink(
-                            destination: TimetableListView(classes:classes),
-                            tag: idx, selection: $pushToView
-                        ) {
+                        NavigationLink(destination: TimetableListView(classes:classes)) {
                             Text(keyLabels[idx].1)
                         }
                         .id(idx)
