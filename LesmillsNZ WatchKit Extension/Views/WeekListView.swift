@@ -39,18 +39,19 @@ struct ReloadView: View {
 }
 
 struct WeekListView: View {
+    @Environment(\.scenePhase) var scenePhase
     @EnvironmentObject var model: Model
     @EnvironmentObject var locations: ClubLocationsModel
-    @State var clubLocationText: String = "SELECT LOCATION"
+
+    @State private var pushToView: Int? = 0
+    @State private var clubLocationText: String = "SELECT LOCATION"
 
     private func getLocationText() -> String {
         let club = locations.getClubById(id: model.selectedClub)
-        if (club != nil) {
-            return club!.name
-        }
-        return "SELECT LOCATION"
+        guard club != nil else { return "SELECT LOCATION" }
+        return club!.name
     }
-    
+
     var body: some View {
         VStack {
             ScrollView {
@@ -64,7 +65,10 @@ struct WeekListView: View {
                     let keyLabels = model.getButtonLabels()
                     ForEach(0 ..< keyLabels.count) { idx in
                         let classes = model.getClassesByDate(keyLabels[idx].0)
-                        NavigationLink(destination: TimetableListView(classes:classes)) {
+                        NavigationLink(
+                            destination: TimetableListView(classes:classes),
+                            tag: idx, selection: $pushToView
+                        ) {
                             Text(keyLabels[idx].1)
                         }
                         .id(idx)
@@ -98,13 +102,26 @@ struct WeekListView: View {
                 Text("www.lesmills.co.nz")
                     .foregroundColor(Color(hex:"#aa8161"))
                     .font(.system(size: 12))
-                    .padding(.top, 5)
+                    .padding([.top, .bottom], 5)
             }
         }
         .navigationTitle("Lesmills NZ")
         .onAppear {
             DispatchQueue.main.async {
                 self.clubLocationText = self.getLocationText()
+            }
+        }
+        .onChange(of: scenePhase) { newPhase in
+            if newPhase == .active {
+                // check if last timetable request is more than 2 days old
+                // if so then make a new request.
+                guard let lastSynced = self.model.lastSyncedDate else {
+                    return
+                }
+                let dateDiff = Date() - lastSynced
+                if (dateDiff.day! > 2) {
+                    self.model.makeDataRequest()
+                }
             }
         }
     }

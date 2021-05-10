@@ -12,7 +12,6 @@ class Model: ObservableObject {
     @Published var isLoading: Bool = false
     @Published var allClasses: [String: [FitnessClass]] = [:]
     @Published var requestError: String?
-    @Published var lastSyncedText: String = ""
 
     var previewMode: Bool
     var lastSyncedDate: Date?
@@ -56,13 +55,10 @@ class Model: ObservableObject {
             self.requestError = error
             self.allClasses = timetableData
             self.lastSyncedDate = Date()
-            self.lastSyncedText = self.formatDateToString(
-                self.lastSyncedDate, "dd MMM - h:mm a"
-            )
         }
     }
     
-    private func formatDateToString(_ dateObject, _ formatString) -> String {
+    private func formatDateToString(_ dateObject:Date, _ formatString:String) -> String {
         let formatter = DateFormatter()
         formatter.timeZone = TimeZone.current
         formatter.locale = Locale.current
