@@ -8,11 +8,13 @@
 import Foundation
 
 class Model: ObservableObject {
-    @Published var previewMode: Bool
     @Published var selectedClub: String = ""
     @Published var isLoading: Bool = false
     @Published var allClasses: [String: [FitnessClass]] = [:]
     @Published var requestError: String?
+
+    var previewMode: Bool
+    var lastSyncedDate: Date?
 
     // functions
 
@@ -52,7 +54,16 @@ class Model: ObservableObject {
             self.isLoading = false
             self.requestError = error
             self.allClasses = timetableData
+            self.lastSyncedDate = Date()
         }
+    }
+    
+    private func formatDateToString(_ dateObject:Date, _ formatString:String) -> String {
+        let formatter = DateFormatter()
+        formatter.timeZone = TimeZone.current
+        formatter.locale = Locale.current
+        formatter.dateFormat = formatString
+        return formatter.string(from: dateObject)
     }
     
     func getButtonLabels() -> [(String, String)] {
@@ -60,19 +71,15 @@ class Model: ObservableObject {
         fmtDate.timeZone = TimeZone.current
         fmtDate.locale = Locale.current
         fmtDate.dateFormat = "yyMMdd"
-        let fmtLabel = DateFormatter()
-        fmtLabel.timeZone = TimeZone.current
-        fmtLabel.locale = Locale.current
-        fmtLabel.dateFormat = "E dd MMM"
         var array = [(key:String, label:String)]()
         for key in Array(self.allClasses.keys).sorted(by: {$0 < $1}) {
             let date = fmtDate.date(from: key)
-            let label = fmtLabel.string(from: date!)
+            let label = self.formatDateToString(date!, "E dd MMM")
             array.append((key, label))
         }
         return array
     }
-    
+
     func getClassesByDate(_ dateKey:String) -> [FitnessClass] {
         guard self.allClasses[dateKey] != nil else {return []}
         return self.allClasses[dateKey]!

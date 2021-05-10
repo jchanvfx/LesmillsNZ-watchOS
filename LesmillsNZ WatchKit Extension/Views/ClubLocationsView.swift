@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ClubLocationRowView: View {
     let location: ClubLocationModel
-    
+
     var body: some View {
         HStack {
             VStack(alignment: .leading) {
@@ -29,7 +29,7 @@ struct ClubLocationsView: View {
     @EnvironmentObject var model: Model
     @EnvironmentObject var clubLocations: ClubLocationsModel
     @Environment(\.presentationMode) var presentationMode
-    
+
     var body: some View {
         ScrollView {
             ScrollViewReader { proxy in

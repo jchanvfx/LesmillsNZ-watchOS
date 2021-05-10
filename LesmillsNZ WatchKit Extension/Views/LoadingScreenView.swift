@@ -32,7 +32,7 @@ struct SlidingBarAnimView: View {
 }
 
 struct LoadingScreenView: View {
-    
+
     var body: some View {
         VStack {
             Image("LmTextLogo")
