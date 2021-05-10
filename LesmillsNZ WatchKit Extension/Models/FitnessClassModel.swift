@@ -72,15 +72,15 @@ struct FitnessClass: Codable {
     }
 
     var nameText: String {
-        guard className != nil else {return "NO DATA"}
+        guard className != nil else { return "NO DATA" }
         return className!.uppercased()
     }
     var colorText: String {
-        guard colorHexCode != nil else {return "#848484"}
+        guard colorHexCode != nil else { return "#848484" }
         // override default color by the class name.
         let name = nameText
         for (k, v) in DefaultColors {
-            if name.contains(k) {return v}
+            if name.contains(k) { return v }
         }
         // override default color by the class name.
         let color = "#\(colorHexCode!)"
@@ -90,11 +90,11 @@ struct FitnessClass: Codable {
         return color
     }
     var instructor1Text: String {
-        guard mainInstructorName != nil else {return ""}
+        guard mainInstructorName != nil else { return "" }
         return mainInstructorName!
     }
     var instructor2Text: String {
-        guard secondaryInstructorName != nil else {return ""}
+        guard secondaryInstructorName != nil else { return "" }
         // TEMP: work around fix we sanitize secondary instructor name
         //       because the lesmills database is returning the name
         //       with a leading "  + " prefix for some reason.
@@ -109,11 +109,11 @@ struct FitnessClass: Codable {
         return instructor1Text
     }
     var durationText: String {
-        guard durationMins != nil else {return "0"}
+        guard durationMins != nil else { return "0" }
         return "\(durationMins!)"
     }
     var locationText: String {
-        guard siteName != nil else {return "NO DATA"}
+        guard siteName != nil else { return "NO DATA" }
         return "\(siteName!)"
     }
     var dayText: String {
