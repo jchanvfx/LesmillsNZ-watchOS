@@ -48,10 +48,13 @@ struct TimetableRowView: View {
             .font(.system(size: 12))
         }
         .onAppear {
-            self.updateClassState()
+            DispatchQueue.main.async {
+                self.updateClassState()
+            }
         }
         .onChange(of: scenePhase) { newPhase in
-            if newPhase == .active {
+            if newPhase != .active { return }
+            DispatchQueue.main.async {
                 self.updateClassState()
             }
         }
@@ -74,7 +77,7 @@ struct TimetableListView: View {
                     .id(idx)
                 }
                 .onAppear{
-                    if !scrollToRow {return}
+                    if !scrollToRow { return }
                     DispatchQueue.main.async {
                         // skip scrolling to if date is not today.
                         let formatter = DateFormatter()

@@ -14,7 +14,7 @@ struct ContentView: View {
         if (model.isLoading) {
             LoadingScreenView()
         } else {
-            NavigationView{
+            NavigationView {
                 WeekListView()
             }
         }

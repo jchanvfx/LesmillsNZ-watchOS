@@ -108,7 +108,8 @@ struct WeekListView: View {
             }
         }
         .onChange(of: scenePhase) { newPhase in
-            if newPhase == .active {
+            if newPhase != .active { return }
+            DispatchQueue.main.async {
                 // check if last timetable request is more than 2 days old
                 // if so then make a new request.
                 guard let lastSynced = self.model.lastSyncedDate else {

@@ -10,6 +10,7 @@ import SwiftUI
 struct ClassInfoView: View {
     @State private var iconName = "stopwatch"
     @State private var iconColor = "#25f578"
+
     let classInfo: FitnessClass
     
     var body: some View {

@@ -50,11 +50,13 @@ class Model: ObservableObject {
     
     private func onDataRequestRevieved(
         _ timetableData: [String:[FitnessClass]], _ error:String?) {
+
+        self.lastSyncedDate = Date()
+
         DispatchQueue.main.async {
             self.isLoading = false
             self.requestError = error
             self.allClasses = timetableData
-            self.lastSyncedDate = Date()
         }
     }
     
