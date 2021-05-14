@@ -77,7 +77,7 @@ struct TimetableListView: View {
                     .id(idx)
                 }
                 .onAppear{
-                    if !scrollToRow { return }
+                    if !self.scrollToRow { return }
                     DispatchQueue.main.async {
                         // skip scrolling to if date is not today.
                         let formatter = DateFormatter()
@@ -85,7 +85,7 @@ struct TimetableListView: View {
                         let currentKey = formatter.string(from:Date())
                         let dateKey = classes[0].dateKey!
                         if (currentKey != dateKey) {
-                            scrollToRow.toggle()
+                            self.scrollToRow.toggle()
                             return
                         }
                         // scroll to latest class row.
@@ -95,7 +95,7 @@ struct TimetableListView: View {
                                 break
                             }
                         }
-                        scrollToRow.toggle()
+                        self.scrollToRow.toggle()
                     }
                 }
             }

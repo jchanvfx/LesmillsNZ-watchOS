@@ -110,13 +110,13 @@ struct WeekListView: View {
         .onChange(of: scenePhase) { newPhase in
             if newPhase != .active { return }
             DispatchQueue.main.async {
-                // check if last timetable request is more than 24 hours old
-                // if so then make a new request.
+                // if last timetable request is 24 hours old then make
+                // a new request.
                 guard let lastSynced = self.model.lastSyncedDate else {
                     return
                 }
-                let dateDiff = Date() - lastSynced
-                if (dateDiff.hour! > 24) {
+                let timeDiff = Date() - lastSynced
+                if (timeDiff.hour! >= 24) {
                     self.model.makeDataRequest()
                 }
             }

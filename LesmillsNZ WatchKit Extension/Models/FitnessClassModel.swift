@@ -139,8 +139,8 @@ struct FitnessClass: Codable {
     static let example = FitnessClass(
         className: "BODYATTACK",
         colorHexCode: "#FFB81C",
-        mainInstructorName: "Text 1",
-        secondaryInstructorName: "Text 2",
+        mainInstructorName: "UserName 1",
+        secondaryInstructorName: "UserName 2",
         durationMins: 45,
         siteName: "Studio 1",
         startDate: "05 May 2021",
