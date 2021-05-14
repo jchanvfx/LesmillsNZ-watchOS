@@ -73,8 +73,13 @@ class Model: ObservableObject {
         fmtDate.timeZone = TimeZone.current
         fmtDate.locale = Locale.current
         fmtDate.dateFormat = "yyMMdd"
+        let currentKey = fmtDate.string(from: Date())
         var array = [(key:String, label:String)]()
         for key in Array(self.allClasses.keys).sorted(by: {$0 < $1}) {
+            if (key == currentKey) {
+                let count = self.getAvaliableClassCount(key)
+                if (count == 0) { continue }
+            }
             let date = fmtDate.date(from: key)
             let label = self.formatDateToString(date!, "E dd MMM")
             array.append((key, label))
@@ -82,8 +87,17 @@ class Model: ObservableObject {
         return array
     }
 
+    func getAvaliableClassCount(_ dateKey:String) -> Int {
+        guard self.allClasses[dateKey] != nil else { return 0 }
+        var count = 0
+        for fitClass in self.allClasses[dateKey] {
+            if !fitClass.hasStarted { count += 1 }
+        }
+        return count
+    }
+
     func getClassesByDate(_ dateKey:String) -> [FitnessClass] {
-        guard self.allClasses[dateKey] != nil else {return []}
+        guard self.allClasses[dateKey] != nil else { return [] }
         return self.allClasses[dateKey]!
     }
 
