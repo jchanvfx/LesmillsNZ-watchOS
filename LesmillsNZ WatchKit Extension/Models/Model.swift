@@ -60,30 +60,40 @@ class Model: ObservableObject {
         }
     }
     
-    private func formatDateToString(_ dateObject:Date, _ formatString:String) -> String {
-        let formatter = DateFormatter()
-        formatter.timeZone = TimeZone.current
-        formatter.locale = Locale.current
-        formatter.dateFormat = formatString
-        return formatter.string(from: dateObject)
-    }
-    
     func getButtonLabels() -> [(String, String)] {
         let fmtDate = DateFormatter()
         fmtDate.timeZone = TimeZone.current
         fmtDate.locale = Locale.current
         fmtDate.dateFormat = "yyMMdd"
+        let fmtLabel = DateFormatter()
+        fmtLabel.timeZone = TimeZone.current
+        fmtLabel.locale = Locale.current
+        fmtLabel.dateFormat = "E dd MMM"
+        let currentKey = fmtDate.string(from: Date())
         var array = [(key:String, label:String)]()
         for key in Array(self.allClasses.keys).sorted(by: {$0 < $1}) {
+            if (key == currentKey) {
+                let count = self.getAvaliableClassCount(key)
+                if (count == 0) { continue }
+            }
             let date = fmtDate.date(from: key)
-            let label = self.formatDateToString(date!, "E dd MMM")
+            let label = fmtLabel.string(from: date!)
             array.append((key, label))
         }
         return array
     }
 
+    func getAvaliableClassCount(_ dateKey:String) -> Int {
+        guard self.allClasses[dateKey] != nil else { return 0 }
+        var count = 0
+        for fitnessClass in self.allClasses[dateKey]! {
+            if !fitnessClass.hasStarted { count += 1 }
+        }
+        return count
+    }
+
     func getClassesByDate(_ dateKey:String) -> [FitnessClass] {
-        guard self.allClasses[dateKey] != nil else {return []}
+        guard self.allClasses[dateKey] != nil else { return [] }
         return self.allClasses[dateKey]!
     }
 
