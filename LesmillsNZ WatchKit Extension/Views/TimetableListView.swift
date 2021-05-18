@@ -53,8 +53,8 @@ struct TimetableRowView: View {
             }
         }
         .onChange(of: scenePhase) { newPhase in
-            if newPhase != .active { return }
             DispatchQueue.main.async {
+                if newPhase != .active { return }
                 self.updateClassState()
             }
         }
