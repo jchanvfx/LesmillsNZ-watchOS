@@ -23,12 +23,10 @@ struct ClassInfoView: View {
             self.textColor = "#ffffff"
             self.iconName = "stopwatch"
             self.iconColor = "#25f578"
-            self.classColor = classInfo.colorText
         } else {
             self.textColor = "#636363"
-            self.iconName = "flag.slash"
+            self.iconName = "flag.slash.circle"
             self.iconColor = "#484848"
-            self.classColor = "#636363"
         }
     }
 
@@ -37,19 +35,18 @@ struct ClassInfoView: View {
             Text(classInfo.nameText)
                 .font(.system(size: 14))
                 .fontWeight(.semibold)
-                .foregroundColor(Color(hex: textColor))
             Text("with")
                 .font(.system(size: 10))
                 .foregroundColor(.gray)
             Text(classInfo.instructorsText)
                 .font(.system(size: 12))
-                .foregroundColor(Color(hex: textColor))
             RoundedRectangle(cornerRadius: 3)
-                .fill(Color(hex: classColor))
+                .fill(Color(hex: classInfo.colorText))
                 .frame(height: 2)
             Text(classInfo.timeText)
                 .font(.system(.caption))
-                .strikethrough(hasStarted)
+                .foregroundColor(Color(hex: textColor))
+//                .strikethrough(hasStarted)
             Text(classInfo.locationText)
                 .font(.system(.caption))
                 .foregroundColor(Color(hex: textColor))

@@ -20,7 +20,7 @@ struct TimetableRowView: View {
             self.classColor = classInfo.colorText
         } else {
             self.textColor = "#636363"
-            self.classColor = "#636363"
+            self.classColor = "#000000"
         }
     }
 
