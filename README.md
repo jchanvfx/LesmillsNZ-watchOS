@@ -6,4 +6,4 @@
 
 **Disclaimer:**
 
-This app is NOT officially part of Les Mills I made this app so I can conveniently display class times without the need of taking out my phone and for the love of group fitness.
+This app is NOT officially part of Les Mills I made this app so I can conveniently display class times without the need of taking out my iPhone.
