@@ -72,6 +72,7 @@ class Model: ObservableObject {
         let currentKey = fmtDate.string(from: Date())
         var array = [(key:String, label:String)]()
         for key in Array(self.allClasses.keys).sorted(by: {$0 < $1}) {
+            if (key < currentKey) { continue }
             if (key == currentKey) {
                 let count = self.getAvaliableClassCount(key)
                 if (count == 0) { continue }

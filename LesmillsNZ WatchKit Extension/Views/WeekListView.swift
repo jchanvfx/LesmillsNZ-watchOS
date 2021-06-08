@@ -108,7 +108,7 @@ struct WeekListView: View {
             }
         }
         .onChange(of: scenePhase) { newPhase in
-            DispatchQueue.main.async {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.6) {
                 if newPhase != .active { return }
                 // if last timetable request is 48 hours old then make
                 // a new request.
