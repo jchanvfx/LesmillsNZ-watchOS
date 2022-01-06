@@ -101,6 +101,7 @@ struct TimetableListView: View {
             }
         }
         .navigationTitle("\(classes[0].dayText) (\(classes[0].dateText))")
+        .navigationBarTitleDisplayMode(.inline)
     }
 }
 

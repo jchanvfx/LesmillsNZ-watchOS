@@ -16,6 +16,7 @@ struct ClubLocationRowView: View {
                 Text(location.name)
                     .font(.system(.caption2))
                 Text(location.address)
+                    .multilineTextAlignment(.leading)
                     .font(.system(size: 12))
                     .foregroundColor(.gray)
             }
@@ -60,12 +61,16 @@ struct ClubLocationsView: View {
             }
         }
         .navigationTitle("Locations")
+        .navigationBarTitleDisplayMode(.inline)
     }
 }
 
 struct ClubLocationsView_Previews: PreviewProvider {
     static var previews: some View {
-        ClubLocationsView()
-            .environmentObject(ClubLocationsModel(preview: true))
+        NavigationView {
+            ClubLocationsView()
+                .environmentObject(ClubLocationsModel(preview: true))
+                .environmentObject(Model())
+        }
     }
 }

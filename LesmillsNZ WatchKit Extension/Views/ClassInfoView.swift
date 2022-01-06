@@ -61,6 +61,7 @@ struct ClassInfoView: View {
                 .foregroundColor(Color(hex: iconColor))
         }
         .navigationTitle("Info")
+        .navigationBarTitleDisplayMode(.inline)
         .onAppear{
             DispatchQueue.main.async {
                 self.updateClassState()

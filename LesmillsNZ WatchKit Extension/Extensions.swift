@@ -33,6 +33,8 @@ extension Color {
             opacity: Double(a) / 255
         )
     }
+    
+    static let brandPrimary = Color(hex:"#aa8161")
 }
 
 // extend NSRegularExpression object for friendlier usage.

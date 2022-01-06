@@ -7,58 +7,93 @@
 
 import Foundation
 
-class Model: ObservableObject {
+
+@MainActor final class Model: ObservableObject {
+
     @Published var selectedClub: String = ""
     @Published var isLoading: Bool = false
     @Published var allClasses: [String: [FitnessClass]] = [:]
     @Published var requestError: String?
-
-    var previewMode: Bool
-    var lastSyncedDate: Date?
-
-    // functions
-
-    init(preview:Bool=false) {
-        self.previewMode = preview
-        if preview {
-            self.selectedClub = "04"
-            self.allClasses = ["210505": [FitnessClass.example]]
-            return
+    @Published var showingAlert = false
+    @Published var error: NetworkManager.NetworkError? {
+        didSet {
+            showingAlert = error != nil
         }
+    }
+
+//    var previewMode: Bool
+    var lastSyncedDate: Date?
+    
+    // MARK: - Functions
+
+    init() {
         // read user app settings.
         self.selectedClub = UserDefaults.standard.string(forKey: "clubID") ?? ""
     }
     
     func setSelectedClub(clubID:String) {
-        if self.previewMode {
-            self.selectedClub = clubID
-            return
-        }
+//        if self.previewMode {
+//            self.selectedClub = clubID
+//            return
+//        }
         self.selectedClub = clubID
         UserDefaults.standard.set(self.selectedClub, forKey: "clubID")
     }
     
+    func reloadTimetable() async {
+        if selectedClub == "" {
+            isLoading = false
+            return
+        }
+        isLoading = true
+        do {
+            let timetableData = try await NetworkManager.shared.timetable(for: selectedClub)
+            lastSyncedDate = Date()
+            
+            isLoading = false
+            allClasses = timetableData
+        } catch is NetworkManager.NetworkError {
+            self.error = error
+        } catch {
+            print(error.localizedDescription)
+        }
+    }
+    
     func makeDataRequest() {
-        if self.selectedClub == "" {
-            self.isLoading = false
+        if selectedClub == "" {
+            isLoading = false
             return
         }
         self.isLoading = true
-        createTimetableRequest(
-            clubID:self.selectedClub, callbackFunc:self.onDataRequestRevieved)
+        Task {
+            do {
+                let timetableData = try await NetworkManager.shared.timetable(for: selectedClub)
+                lastSyncedDate = Date()
+                
+                isLoading = false
+                allClasses = timetableData
+            } catch is NetworkManager.NetworkError {
+                self.error = error
+            } catch {
+                print(error.localizedDescription)
+            }
+            
+        }
+//        createTimetableRequest(
+//            clubID:self.selectedClub, callbackFunc:self.onDataRequestRevieved)
     }
     
-    private func onDataRequestRevieved(
-        _ timetableData: [String:[FitnessClass]], _ error:String?) {
-
-        self.lastSyncedDate = Date()
-
-        DispatchQueue.main.async {
-            self.isLoading = false
-            self.requestError = error
-            self.allClasses = timetableData
-        }
-    }
+//    private func onDataRequestRevieved(
+//        _ timetableData: [String:[FitnessClass]], _ error:String?) {
+//
+//        self.lastSyncedDate = Date()
+//
+//        DispatchQueue.main.async {
+//            self.isLoading = false
+//            self.requestError = error
+//            self.allClasses = timetableData
+//        }
+//    }
     
     func getButtonLabels() -> [(String, String)] {
         let fmtDate = DateFormatter()
@@ -99,3 +134,16 @@ class Model: ObservableObject {
     }
 
 }
+
+#if DEBUG
+extension Model {
+    
+    static let preview: Model = {
+        let model = Model()
+        model.selectedClub = "04"
+        model.allClasses = ["210505": [FitnessClass.example]]
+        return model
+    }()
+    
+}
+#endif

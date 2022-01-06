@@ -52,7 +52,7 @@ struct WeekListView: View {
     }
 
     var body: some View {
-        VStack {
+//        VStack {
             ScrollView {
                 //Location label
                 NavigationLink(destination: ClubLocationsView()) {
@@ -70,7 +70,9 @@ struct WeekListView: View {
                         .id(idx)
                     }
                     // Reload button
-                    Button(action: model.makeDataRequest) {
+                    Button {
+                        model.makeDataRequest()
+                    } label: {
                         ReloadView()
                     }
 
@@ -100,8 +102,13 @@ struct WeekListView: View {
                     .font(.system(size: 12))
                     .padding([.top, .bottom], 5)
             }
-        }
+//            .refreshable {
+//                await model.reloadTimetable()
+//            }
+//        }
         .navigationTitle("Lesmills NZ")
+        .navigationBarTitleDisplayMode(.inline)
+//        .navigationBarHidden(true)
         .onAppear {
             DispatchQueue.main.async {
                 self.clubLocationText = self.getLocationText()
@@ -127,6 +134,6 @@ struct WeekListView: View {
 struct WeekListView_Previews: PreviewProvider {
     static var previews: some View {
         WeekListView()
-            .environmentObject(Model(preview: true))
+            .environmentObject(Model.preview)
     }
 }

@@ -11,12 +11,19 @@ struct ContentView: View {
     @EnvironmentObject var model: Model
     
     var body: some View {
-        if (model.isLoading) {
-            LoadingScreenView()
-        } else {
-            NavigationView {
-                WeekListView()
+        Group {
+            if (model.isLoading) {
+                LoadingScreenView()
+            } else {
+                NavigationView {
+                    WeekListView()
+                }
             }
+        }
+        .alert(isPresented: $model.showingAlert, error: model.error) { error in
+            Button("OK") {}
+        } message: { error in
+            Text(error.localizedDescription)
         }
     }
 }
@@ -24,6 +31,6 @@ struct ContentView: View {
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
-            .environmentObject(Model(preview: true))
+            .environmentObject(Model.preview)
     }
 }

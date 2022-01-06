@@ -8,10 +8,23 @@
 import SwiftUI
 
 struct SlidingBarAnimView: View {
+    
     let color = Color(hex:"#aa8161")
     @State private var isAnimated = false
  
     var body: some View {
+        
+        ProgressView {
+            Label("Loading Classes...", systemImage: "arrow.triangle.2.circlepath")
+                .labelStyle(.titleOnly)
+                .font(.footnote)
+        }
+            .progressViewStyle(.circular)
+            .tint(.brandPrimary)
+            .foregroundColor(.secondary)
+        
+        
+        
         ZStack {
             RoundedRectangle(cornerRadius: 6)
                 .stroke(Color(hex: "#262626"), lineWidth: 3)
@@ -20,9 +33,9 @@ struct SlidingBarAnimView: View {
                 .stroke(color, lineWidth: 3)
                 .frame(width: 20, height: 3)
                 .offset(x: isAnimated ? 80 : -80, y: 0)
-                .animation(Animation.linear(duration: 0.6).repeatForever(autoreverses: true))
+                .animation(.linear(duration: 0.6).repeatForever(autoreverses: true), value: isAnimated)
         }
-        .onAppear() {
+        .onAppear {
             self.isAnimated = true
         }
         .onDisappear {
@@ -47,11 +60,20 @@ struct LoadingScreenView: View {
                 .fill(Color(hex:"#4f3a00"))
                 .frame(height: 1)
                 .padding([.top, .bottom], 5)
-            Spacer()
-            Text("loading classes...")
-                .font(.system(size: 12))
-                .foregroundColor(Color.gray)
-            SlidingBarAnimView()
+//            Spacer()
+//            Text("loading classes...")
+//                .font(.system(size: 12))
+//                .foregroundColor(Color.gray)
+            
+            ProgressView {
+                Label("Loading Classes...", systemImage: "arrow.triangle.2.circlepath")
+                    .labelStyle(.titleOnly)
+                    .font(.footnote)
+            }
+            .progressViewStyle(.circular)
+            .tint(.brandPrimary)
+            .foregroundColor(.secondary)
+//            SlidingBarAnimView()
                 .padding()
             Spacer()
             Text("www.lesmills.co.nz")
